@@ -1,0 +1,3253 @@
+x,y,combined_info
+7109.0,7160.0,Plasma Cell Enriched_Community
+8309.0,8029.0,Mature Epithelial_Community
+8938.0,8593.0,Mature Epithelial_Community
+7819.0,4384.0,Mature Epithelial_Community
+8434.0,5175.0,Mature Epithelial_Community
+6969.0,1701.0,Mature Epithelial_Community
+8403.0,6073.0,Mature Epithelial_Community
+8870.0,8512.0,Mature Epithelial_Community
+6824.0,419.0,Mature Epithelial_Community
+8851.0,8462.0,Mature Epithelial_Community
+6562.0,1386.0,Mature Epithelial_Community
+7920.0,3892.0,Mature Epithelial_Community
+7473.0,2842.0,Mature Epithelial_Community
+8602.0,7494.0,Mature Epithelial_Community
+8808.0,7096.0,CD66+ Mature Epithelial_Community
+8053.0,3859.0,Mature Epithelial_Community
+7359.0,2130.0,Mature Epithelial_Community
+8728.0,6207.0,Mature Epithelial_Community
+7844.0,6946.0,Mature Epithelial_Community
+1391.0,2954.0,Stroma_Community
+8773.0,6238.0,Mature Epithelial_Community
+7938.0,6560.0,Mature Epithelial_Community
+7438.0,2762.0,Mature Epithelial_Community
+7947.0,7685.0,Mature Epithelial_Community
+5997.0,575.0,CD8+ T Enriched IEL_Community
+7008.0,3636.0,Mature Epithelial_Community
+6503.0,2289.0,Mature Epithelial_Community
+7877.0,6517.0,Mature Epithelial_Community
+7523.0,7932.0,Mature Epithelial_Community
+8182.0,6559.0,Mature Epithelial_Community
+8622.0,7575.0,Mature Epithelial_Community
+7622.0,2955.0,Mature Epithelial_Community
+7719.0,6709.0,Mature Epithelial_Community
+6850.0,3817.0,Mature Epithelial_Community
+7635.0,2836.0,Mature Epithelial_Community
+7714.0,6303.0,Mature Epithelial_Community
+7644.0,2686.0,Mature Epithelial_Community
+7935.0,8173.0,Mature Epithelial_Community
+7429.0,4114.0,Mature Epithelial_Community
+3780.0,6790.0,Stroma_Community
+4721.0,3866.0,Stroma_Community
+8036.0,7426.0,Mature Epithelial_Community
+5958.0,553.0,Mature Epithelial_Community
+8066.0,5053.0,Mature Epithelial_Community
+8471.0,8901.0,Mature Epithelial_Community
+5899.0,9065.0,Stroma_Community
+8379.0,8156.0,Mature Epithelial_Community
+6416.0,1150.0,Mature Epithelial_Community
+5757.0,2709.0,Plasma Cell Enriched_Community
+7760.0,6350.0,Mature Epithelial_Community
+6624.0,1315.0,Mature Epithelial_Community
+7357.0,5689.0,Mature Epithelial_Community
+3829.0,1398.0,Stroma_Community
+8194.0,5234.0,Mature Epithelial_Community
+6816.0,2901.0,Mature Epithelial_Community
+8146.0,6501.0,Mature Epithelial_Community
+6893.0,3080.0,Mature Epithelial_Community
+5997.0,360.0,Mature Epithelial_Community
+6699.0,1945.0,Mature Epithelial_Community
+6449.0,4101.0,Plasma Cell Enriched_Community
+7638.0,5831.0,Mature Epithelial_Community
+7902.0,6211.0,Mature Epithelial_Community
+7171.0,8281.0,Secretory Epithelial_Community
+8778.0,6975.0,CD66+ Mature Epithelial_Community
+7788.0,7127.0,Mature Epithelial_Community
+7208.0,8351.0,Secretory Epithelial_Community
+7546.0,5984.0,Mature Epithelial_Community
+5768.0,681.0,Innate Immune Enriched_Community
+8033.0,4048.0,Mature Epithelial_Community
+7179.0,2690.0,CD8+ T Enriched IEL_Community
+5084.0,4892.0,Smooth Muscle_Community
+6291.0,2819.0,Secretory Epithelial_Community
+5959.0,5527.0,Smooth Muscle_Community
+7396.0,5852.0,Mature Epithelial_Community
+7839.0,5507.0,Mature Epithelial_Community
+7369.0,5817.0,Mature Epithelial_Community
+1520.0,317.0,Stroma_Community
+7526.0,3839.0,Mature Epithelial_Community
+7974.0,7652.0,Mature Epithelial_Community
+7724.0,5037.0,Mature Epithelial_Community
+6418.0,311.0,Mature Epithelial_Community
+7257.0,5856.0,Mature Epithelial_Community
+8367.0,8593.0,Mature Epithelial_Community
+6656.0,4022.0,Mature Epithelial_Community
+9073.0,7516.0,Mature Epithelial_Community
+7542.0,7499.0,Plasma Cell Enriched_Community
+5150.0,628.0,Mature Epithelial_Community
+7415.0,7546.0,Plasma Cell Enriched_Community
+7609.0,2920.0,Mature Epithelial_Community
+7671.0,4135.0,Mature Epithelial_Community
+6708.0,4564.0,Plasma Cell Enriched_Community
+8220.0,7245.0,Mature Epithelial_Community
+8328.0,5654.0,Mature Epithelial_Community
+5614.0,1965.0,Plasma Cell Enriched_Community
+7648.0,6927.0,Plasma Cell Enriched_Community
+1986.0,6651.0,Stroma_Community
+6274.0,2171.0,Mature Epithelial_Community
+8017.0,8299.0,Mature Epithelial_Community
+7801.0,6163.0,Mature Epithelial_Community
+7127.0,1934.0,Mature Epithelial_Community
+6328.0,1764.0,Mature Epithelial_Community
+7532.0,8293.0,CD8+ T Enriched IEL_Community
+7335.0,3529.0,Mature Epithelial_Community
+5757.0,2635.0,Plasma Cell Enriched_Community
+8308.0,7289.0,Mature Epithelial_Community
+8218.0,7690.0,Mature Epithelial_Community
+5685.0,413.0,Mature Epithelial_Community
+7696.0,7509.0,Plasma Cell Enriched_Community
+5189.0,154.0,Innate Immune Enriched_Community
+6484.0,3506.0,Mature Epithelial_Community
+7671.0,5813.0,Mature Epithelial_Community
+6596.0,1106.0,Mature Epithelial_Community
+7435.0,6901.0,Mature Epithelial_Community
+7313.0,6157.0,Plasma Cell Enriched_Community
+8345.0,5546.0,Mature Epithelial_Community
+6772.0,2619.0,Mature Epithelial_Community
+5535.0,1257.0,Plasma Cell Enriched_Community
+8317.0,8212.0,Mature Epithelial_Community
+7895.0,8328.0,Mature Epithelial_Community
+6466.0,3951.0,Plasma Cell Enriched_Community
+5091.0,954.0,Plasma Cell Enriched_Community
+7826.0,6406.0,Mature Epithelial_Community
+8135.0,3943.0,Mature Epithelial_Community
+6654.0,3032.0,Mature Epithelial_Community
+6456.0,2616.0,CD8+ T Enriched IEL_Community
+8817.0,7204.0,Mature Epithelial_Community
+7815.0,5371.0,Mature Epithelial_Community
+6544.0,5820.0,Adaptive Immune Enriched_Community
+8461.0,8697.0,Mature Epithelial_Community
+7609.0,7487.0,Mature Epithelial_Community
+7390.0,5860.0,Mature Epithelial_Community
+6242.0,262.0,CD8+ T Enriched IEL_Community
+8228.0,7758.0,Mature Epithelial_Community
+9061.0,7995.0,Mature Epithelial_Community
+8252.0,3952.0,Mature Epithelial_Community
+6640.0,3223.0,Mature Epithelial_Community
+9004.0,8402.0,Mature Epithelial_Community
+8064.0,8458.0,Mature Epithelial_Community
+7338.0,7463.0,Mature Epithelial_Community
+5942.0,4024.0,Plasma Cell Enriched_Community
+8510.0,5659.0,Mature Epithelial_Community
+6753.0,4454.0,Mature Epithelial_Community
+5014.0,2160.0,Adaptive Immune Enriched_Community
+7662.0,6239.0,Mature Epithelial_Community
+6772.0,4015.0,Mature Epithelial_Community
+7994.0,6426.0,Mature Epithelial_Community
+6312.0,74.0,CD8+ T Enriched IEL_Community
+6860.0,4180.0,CD8+ T Enriched IEL_Community
+7306.0,4498.0,Mature Epithelial_Community
+6839.0,2597.0,Mature Epithelial_Community
+5506.0,353.0,Mature Epithelial_Community
+6482.0,160.0,CD8+ T Enriched IEL_Community
+7194.0,3613.0,Mature Epithelial_Community
+7424.0,3145.0,Mature Epithelial_Community
+8027.0,7584.0,Mature Epithelial_Community
+7288.0,7443.0,Secretory Epithelial_Community
+8217.0,4777.0,Mature Epithelial_Community
+7682.0,6268.0,Mature Epithelial_Community
+7102.0,4004.0,CD8+ T Enriched IEL_Community
+7068.0,7114.0,Plasma Cell Enriched_Community
+7670.0,6936.0,CD8+ T Enriched IEL_Community
+8093.0,5247.0,Mature Epithelial_Community
+8471.0,8171.0,Mature Epithelial_Community
+3585.0,6120.0,Stroma_Community
+3115.0,4347.0,Secretory Epithelial_Community
+8137.0,5206.0,Mature Epithelial_Community
+8082.0,8378.0,Mature Epithelial_Community
+9154.0,9019.0,Mature Epithelial_Community
+2329.0,4448.0,Stroma_Community
+6645.0,1958.0,Mature Epithelial_Community
+7267.0,5335.0,CD8+ T Enriched IEL_Community
+6544.0,2346.0,Mature Epithelial_Community
+7743.0,3988.0,Mature Epithelial_Community
+7156.0,1782.0,Mature Epithelial_Community
+6845.0,2378.0,Mature Epithelial_Community
+9169.0,8695.0,Mature Epithelial_Community
+8620.0,8538.0,Mature Epithelial_Community
+7666.0,2581.0,Mature Epithelial_Community
+6924.0,5859.0,Mature Epithelial_Community
+6726.0,2429.0,Mature Epithelial_Community
+7896.0,7760.0,Mature Epithelial_Community
+6721.0,6697.0,Adaptive Immune Enriched_Community
+7677.0,8714.0,Plasma Cell Enriched_Community
+5914.0,2562.0,CD8+ T Enriched IEL_Community
+8900.0,7601.0,Mature Epithelial_Community
+5545.0,3582.0,Adaptive Immune Enriched_Community
+5855.0,1091.0,Mature Epithelial_Community
+7910.0,7788.0,Mature Epithelial_Community
+7952.0,7466.0,Mature Epithelial_Community
+5713.0,407.0,Mature Epithelial_Community
+5429.0,1593.0,CD8+ T Enriched IEL_Community
+4743.0,466.0,CD8+ T Enriched IEL_Community
+3148.0,7042.0,Stroma_Community
+7992.0,4882.0,Mature Epithelial_Community
+8419.0,6956.0,Mature Epithelial_Community
+8551.0,8753.0,Mature Epithelial_Community
+7614.0,7357.0,Mature Epithelial_Community
+8545.0,5494.0,Mature Epithelial_Community
+7001.0,3318.0,Mature Epithelial_Community
+8595.0,8775.0,Mature Epithelial_Community
+8447.0,8869.0,Mature Epithelial_Community
+6117.0,1440.0,CD8+ T Enriched IEL_Community
+8947.0,6783.0,CD66+ Mature Epithelial_Community
+8204.0,3909.0,Mature Epithelial_Community
+7086.0,4698.0,CD8+ T Enriched IEL_Community
+7890.0,7803.0,Mature Epithelial_Community
+8081.0,8140.0,Mature Epithelial_Community
+7353.0,3266.0,Mature Epithelial_Community
+6825.0,3786.0,Mature Epithelial_Community
+8150.0,5223.0,Mature Epithelial_Community
+7068.0,4359.0,Mature Epithelial_Community
+5441.0,1917.0,CD8+ T Enriched IEL_Community
+7835.0,4505.0,Mature Epithelial_Community
+6856.0,2638.0,Mature Epithelial_Community
+6990.0,4685.0,CD8+ T Enriched IEL_Community
+7144.0,5760.0,Mature Epithelial_Community
+5000.0,1967.0,Adaptive Immune Enriched_Community
+7523.0,8262.0,CD8+ T Enriched IEL_Community
+6591.0,2461.0,Mature Epithelial_Community
+8039.0,3364.0,Mature Epithelial_Community
+5775.0,734.0,Innate Immune Enriched_Community
+6713.0,3578.0,Mature Epithelial_Community
+8039.0,8330.0,Mature Epithelial_Community
+6840.0,406.0,Mature Epithelial_Community
+6564.0,3635.0,Innate Immune Enriched_Community
+6371.0,2034.0,Mature Epithelial_Community
+8071.0,5115.0,Mature Epithelial_Community
+6000.0,333.0,Mature Epithelial_Community
+6518.0,2343.0,Mature Epithelial_Community
+6389.0,2717.0,CD8+ T Enriched IEL_Community
+7613.0,6241.0,Mature Epithelial_Community
+6954.0,3298.0,Mature Epithelial_Community
+7561.0,6505.0,Mature Epithelial_Community
+7219.0,3186.0,Mature Epithelial_Community
+6074.0,1466.0,CD8+ T Enriched IEL_Community
+3401.0,4762.0,Stroma_Community
+7289.0,7402.0,Plasma Cell Enriched_Community
+7707.0,8189.0,Plasma Cell Enriched_Community
+6242.0,455.0,Mature Epithelial_Community
+7199.0,6331.0,Plasma Cell Enriched_Community
+6119.0,4699.0,Adaptive Immune Enriched_Community
+8086.0,8348.0,Mature Epithelial_Community
+7564.0,5716.0,Mature Epithelial_Community
+5426.0,1907.0,Plasma Cell Enriched_Community
+7266.0,6896.0,Plasma Cell Enriched_Community
+7123.0,3606.0,Mature Epithelial_Community
+7259.0,4617.0,Mature Epithelial_Community
+7701.0,6126.0,Mature Epithelial_Community
+7241.0,3307.0,Mature Epithelial_Community
+4217.0,8367.0,Stroma_Community
+5163.0,625.0,Mature Epithelial_Community
+7952.0,7482.0,Mature Epithelial_Community
+7666.0,2804.0,Mature Epithelial_Community
+7496.0,5657.0,Mature Epithelial_Community
+7747.0,6631.0,Mature Epithelial_Community
+6367.0,4160.0,Plasma Cell Enriched_Community
+7638.0,4759.0,Mature Epithelial_Community
+8300.0,6789.0,Mature Epithelial_Community
+8050.0,5034.0,Mature Epithelial_Community
+8509.0,5677.0,Mature Epithelial_Community
+4957.0,652.0,Plasma Cell Enriched_Community
+7819.0,5334.0,Mature Epithelial_Community
+1586.0,367.0,Stroma_Community
+3619.0,4191.0,Stroma_Community
+7690.0,5665.0,Mature Epithelial_Community
+7955.0,6030.0,Mature Epithelial_Community
+7135.0,3032.0,Mature Epithelial_Community
+4599.0,8965.0,Stroma_Community
+3426.0,5743.0,Stroma_Community
+6085.0,2158.0,Mature Epithelial_Community
+7703.0,4715.0,Mature Epithelial_Community
+7723.0,8740.0,Mature Epithelial_Community
+7385.0,5609.0,Mature Epithelial_Community
+6797.0,3905.0,Mature Epithelial_Community
+7530.0,6251.0,Plasma Cell Enriched_Community
+8444.0,8895.0,Mature Epithelial_Community
+8058.0,5115.0,Mature Epithelial_Community
+8382.0,6090.0,Mature Epithelial_Community
+6440.0,2766.0,CD8+ T Enriched IEL_Community
+6335.0,3985.0,Plasma Cell Enriched_Community
+8182.0,5328.0,Mature Epithelial_Community
+8659.0,5999.0,Mature Epithelial_Community
+8512.0,5845.0,Mature Epithelial_Community
+1578.0,3008.0,Stroma_Community
+5724.0,1198.0,Mature Epithelial_Community
+6344.0,3598.0,Plasma Cell Enriched_Community
+5827.0,3646.0,Secretory Epithelial_Community
+6716.0,1739.0,Mature Epithelial_Community
+8717.0,6110.0,Mature Epithelial_Community
+962.0,1617.0,Stroma_Community
+6615.0,3171.0,Mature Epithelial_Community
+7596.0,4132.0,Innate Immune Enriched_Community
+7426.0,5294.0,CD8+ T Enriched IEL_Community
+6451.0,335.0,Mature Epithelial_Community
+7207.0,4675.0,Mature Epithelial_Community
+6439.0,3660.0,Plasma Cell Enriched_Community
+6222.0,1761.0,Mature Epithelial_Community
+1679.0,8995.0,Stroma_Community
+7596.0,8179.0,Plasma Cell Enriched_Community
+2805.0,2375.0,Stroma_Community
+7343.0,5532.0,Mature Epithelial_Community
+5756.0,674.0,Innate Immune Enriched_Community
+6009.0,1098.0,CD8+ T Enriched IEL_Community
+8081.0,7067.0,Mature Epithelial_Community
+7524.0,6041.0,Mature Epithelial_Community
+6153.0,3031.0,CD8+ T Enriched IEL_Community
+7668.0,6078.0,Mature Epithelial_Community
+7918.0,5972.0,Mature Epithelial_Community
+8564.0,6827.0,Mature Epithelial_Community
+6805.0,2367.0,Mature Epithelial_Community
+5141.0,860.0,Plasma Cell Enriched_Community
+6893.0,4579.0,Mature Epithelial_Community
+8040.0,6841.0,Mature Epithelial_Community
+3020.0,8458.0,Stroma_Community
+6221.0,3994.0,Secretory Epithelial_Community
+6751.0,5773.0,Plasma Cell Enriched_Community
+8328.0,8468.0,Mature Epithelial_Community
+3658.0,2975.0,Stroma_Community
+6568.0,2305.0,Mature Epithelial_Community
+7812.0,4371.0,Mature Epithelial_Community
+8224.0,5551.0,Mature Epithelial_Community
+6928.0,4987.0,Plasma Cell Enriched_Community
+5710.0,1204.0,CD8+ T Enriched IEL_Community
+8357.0,7411.0,Mature Epithelial_Community
+7628.0,6913.0,Plasma Cell Enriched_Community
+5282.0,1604.0,Plasma Cell Enriched_Community
+5552.0,1267.0,Plasma Cell Enriched_Community
+7416.0,7964.0,Plasma Cell Enriched_Community
+8048.0,7602.0,Mature Epithelial_Community
+5530.0,1431.0,Plasma Cell Enriched_Community
+7340.0,6528.0,Plasma Cell Enriched_Community
+6659.0,5523.0,Secretory Epithelial_Community
+5555.0,2715.0,CD8+ T Enriched IEL_Community
+7653.0,4468.0,Mature Epithelial_Community
+6709.0,4548.0,Plasma Cell Enriched_Community
+8034.0,7969.0,CD8+ T Enriched IEL_Community
+8300.0,8595.0,Mature Epithelial_Community
+9014.0,8007.0,Mature Epithelial_Community
+5745.0,1068.0,Mature Epithelial_Community
+7639.0,6586.0,Mature Epithelial_Community
+6949.0,6024.0,Plasma Cell Enriched_Community
+6359.0,299.0,Mature Epithelial_Community
+5759.0,95.0,Mature Epithelial_Community
+6680.0,3027.0,Mature Epithelial_Community
+4723.0,6.0,Plasma Cell Enriched_Community
+7297.0,4485.0,Mature Epithelial_Community
+6082.0,3155.0,Mature Epithelial_Community
+8592.0,8863.0,Mature Epithelial_Community
+8909.0,8450.0,Mature Epithelial_Community
+7078.0,6555.0,Plasma Cell Enriched_Community
+7933.0,4492.0,Mature Epithelial_Community
+6000.0,1477.0,CD8+ T Enriched IEL_Community
+7314.0,3297.0,Mature Epithelial_Community
+7587.0,6420.0,Innate Immune Enriched_Community
+7552.0,8270.0,CD8+ T Enriched IEL_Community
+8248.0,6019.0,Mature Epithelial_Community
+8884.0,8516.0,Mature Epithelial_Community
+7350.0,6088.0,Plasma Cell Enriched_Community
+7027.0,3030.0,Mature Epithelial_Community
+6522.0,2539.0,Mature Epithelial_Community
+8021.0,5022.0,Mature Epithelial_Community
+8155.0,6574.0,Mature Epithelial_Community
+6612.0,1249.0,Mature Epithelial_Community
+5454.0,2443.0,Plasma Cell Enriched_Community
+6250.0,3093.0,CD8+ T Enriched IEL_Community
+8345.0,5190.0,Mature Epithelial_Community
+5284.0,3805.0,Stroma_Community
+8047.0,5525.0,Mature Epithelial_Community
+8645.0,8599.0,Mature Epithelial_Community
+7132.0,5444.0,Secretory Epithelial_Community
+6336.0,1852.0,Mature Epithelial_Community
+8161.0,8674.0,Mature Epithelial_Community
+6127.0,3028.0,CD8+ T Enriched IEL_Community
+6219.0,1648.0,Mature Epithelial_Community
+8068.0,7083.0,Mature Epithelial_Community
+8433.0,7386.0,Mature Epithelial_Community
+7323.0,8192.0,Plasma Cell Enriched_Community
+7467.0,2808.0,Mature Epithelial_Community
+7979.0,5327.0,Mature Epithelial_Community
+7477.0,3154.0,Mature Epithelial_Community
+6660.0,1471.0,Mature Epithelial_Community
+7491.0,5647.0,Mature Epithelial_Community
+6284.0,881.0,Mature Epithelial_Community
+6818.0,4627.0,Mature Epithelial_Community
+8589.0,7459.0,Mature Epithelial_Community
+6148.0,3041.0,CD8+ T Enriched IEL_Community
+6542.0,1308.0,Mature Epithelial_Community
+6383.0,2705.0,CD8+ T Enriched IEL_Community
+8469.0,7928.0,Mature Epithelial_Community
+6930.0,5757.0,Plasma Cell Enriched_Community
+7747.0,8656.0,Mature Epithelial_Community
+6337.0,4654.0,Adaptive Immune Enriched_Community
+5819.0,816.0,Mature Epithelial_Community
+7927.0,8532.0,Mature Epithelial_Community
+8431.0,7485.0,Mature Epithelial_Community
+6298.0,3968.0,Plasma Cell Enriched_Community
+7761.0,8665.0,Mature Epithelial_Community
+7716.0,7500.0,Plasma Cell Enriched_Community
+5720.0,976.0,Innate Immune Enriched_Community
+6350.0,1833.0,Mature Epithelial_Community
+5094.0,600.0,Plasma Cell Enriched_Community
+6765.0,768.0,CD66+ Mature Epithelial_Community
+6524.0,1314.0,Mature Epithelial_Community
+5221.0,544.0,Mature Epithelial_Community
+6916.0,2630.0,Mature Epithelial_Community
+7012.0,4258.0,Mature Epithelial_Community
+6534.0,3355.0,Mature Epithelial_Community
+7266.0,3338.0,Mature Epithelial_Community
+8135.0,7990.0,CD8+ T Enriched IEL_Community
+4886.0,267.0,Plasma Cell Enriched_Community
+4971.0,129.0,Plasma Cell Enriched_Community
+8428.0,5821.0,Mature Epithelial_Community
+7113.0,3018.0,Mature Epithelial_Community
+7273.0,5211.0,CD8+ T Enriched IEL_Community
+8143.0,5164.0,Mature Epithelial_Community
+8003.0,7851.0,Mature Epithelial_Community
+3203.0,7964.0,Stroma_Community
+7093.0,3295.0,Mature Epithelial_Community
+7626.0,3700.0,Mature Epithelial_Community
+6354.0,4338.0,Plasma Cell Enriched_Community
+8053.0,7990.0,CD8+ T Enriched IEL_Community
+6356.0,1819.0,Mature Epithelial_Community
+7077.0,4620.0,CD8+ T Enriched IEL_Community
+6548.0,3315.0,Mature Epithelial_Community
+7920.0,5695.0,CD8+ T Enriched IEL_Community
+7690.0,5052.0,Mature Epithelial_Community
+7732.0,6947.0,CD8+ T Enriched IEL_Community
+8049.0,5801.0,Mature Epithelial_Community
+7168.0,4636.0,Mature Epithelial_Community
+6566.0,2514.0,Mature Epithelial_Community
+5986.0,1987.0,Innate Immune Enriched_Community
+5729.0,173.0,Mature Epithelial_Community
+8229.0,4602.0,Mature Epithelial_Community
+5909.0,100.0,Mature Epithelial_Community
+2773.0,6038.0,Stroma_Community
+8006.0,6457.0,Mature Epithelial_Community
+8124.0,8158.0,Mature Epithelial_Community
+7690.0,6481.0,Mature Epithelial_Community
+8578.0,8605.0,Mature Epithelial_Community
+7340.0,3948.0,Mature Epithelial_Community
+8174.0,5639.0,Mature Epithelial_Community
+4812.0,1171.0,Adaptive Immune Enriched_Community
+7309.0,3284.0,Mature Epithelial_Community
+6982.0,2927.0,Mature Epithelial_Community
+5228.0,1382.0,Plasma Cell Enriched_Community
+7345.0,5818.0,Mature Epithelial_Community
+5415.0,1286.0,Plasma Cell Enriched_Community
+6866.0,6424.0,Plasma Cell Enriched_Community
+6007.0,1509.0,CD8+ T Enriched IEL_Community
+4906.0,192.0,Plasma Cell Enriched_Community
+6956.0,2829.0,Mature Epithelial_Community
+2198.0,373.0,Stroma_Community
+7545.0,5777.0,Mature Epithelial_Community
+8860.0,8205.0,CD66+ Mature Epithelial_Community
+7173.0,4391.0,Mature Epithelial_Community
+7026.0,1771.0,Mature Epithelial_Community
+7944.0,3498.0,Mature Epithelial_Community
+6837.0,5544.0,Plasma Cell Enriched_Community
+6600.0,1998.0,Mature Epithelial_Community
+6883.0,1891.0,Mature Epithelial_Community
+7539.0,6011.0,Mature Epithelial_Community
+8070.0,3513.0,Mature Epithelial_Community
+7895.0,7776.0,Mature Epithelial_Community
+7652.0,6227.0,Mature Epithelial_Community
+8690.0,7353.0,Mature Epithelial_Community
+7515.0,8270.0,CD8+ T Enriched IEL_Community
+7521.0,6652.0,Mature Epithelial_Community
+7464.0,4625.0,Mature Epithelial_Community
+7585.0,6672.0,Mature Epithelial_Community
+4327.0,54.0,Adaptive Immune Enriched_Community
+6824.0,2636.0,Mature Epithelial_Community
+5893.0,1351.0,CD8+ T Enriched IEL_Community
+7813.0,5453.0,Mature Epithelial_Community
+8209.0,6366.0,Mature Epithelial_Community
+5814.0,3886.0,Adaptive Immune Enriched_Community
+7517.0,6665.0,Mature Epithelial_Community
+7784.0,4366.0,Mature Epithelial_Community
+7990.0,6567.0,Mature Epithelial_Community
+6456.0,2588.0,CD8+ T Enriched IEL_Community
+6899.0,1161.0,Mature Epithelial_Community
+5812.0,1171.0,Mature Epithelial_Community
+7402.0,5829.0,Mature Epithelial_Community
+5732.0,3321.0,Plasma Cell Enriched_Community
+7844.0,4204.0,Mature Epithelial_Community
+7918.0,6272.0,Mature Epithelial_Community
+8974.0,6954.0,CD66+ Mature Epithelial_Community
+6125.0,2617.0,CD8+ T Enriched IEL_Community
+6499.0,5531.0,Plasma Cell Enriched_Community
+3952.0,4163.0,Stroma_Community
+7477.0,6280.0,Plasma Cell Enriched_Community
+7185.0,7460.0,Secretory Epithelial_Community
+7684.0,7806.0,Plasma Cell Enriched_Community
+8917.0,7140.0,CD66+ Mature Epithelial_Community
+7337.0,3307.0,Mature Epithelial_Community
+6483.0,3939.0,Plasma Cell Enriched_Community
+4955.0,3940.0,Stroma_Community
+7139.0,4637.0,Mature Epithelial_Community
+6127.0,3093.0,CD8+ T Enriched IEL_Community
+8061.0,6389.0,Mature Epithelial_Community
+5998.0,1323.0,CD8+ T Enriched IEL_Community
+7382.0,7143.0,Plasma Cell Enriched_Community
+7592.0,6656.0,Mature Epithelial_Community
+7928.0,6227.0,Mature Epithelial_Community
+6275.0,1440.0,Mature Epithelial_Community
+8509.0,6042.0,Mature Epithelial_Community
+5774.0,116.0,Mature Epithelial_Community
+5999.0,2467.0,CD8+ T Enriched IEL_Community
+5736.0,358.0,Mature Epithelial_Community
+5658.0,217.0,Mature Epithelial_Community
+7054.0,2915.0,Mature Epithelial_Community
+8493.0,8708.0,Mature Epithelial_Community
+6071.0,3174.0,CD8+ T Enriched IEL_Community
+7699.0,6493.0,Mature Epithelial_Community
+6136.0,2940.0,CD8+ T Enriched IEL_Community
+7483.0,4303.0,Mature Epithelial_Community
+6828.0,2678.0,Mature Epithelial_Community
+8169.0,8505.0,Mature Epithelial_Community
+6354.0,1544.0,Mature Epithelial_Community
+6907.0,2601.0,Mature Epithelial_Community
+7311.0,2843.0,Mature Epithelial_Community
+6429.0,8055.0,Stroma_Community
+8097.0,8383.0,Mature Epithelial_Community
+7661.0,8358.0,Plasma Cell Enriched_Community
+6115.0,1941.0,CD8+ T Enriched IEL_Community
+7676.0,8685.0,Plasma Cell Enriched_Community
+6389.0,2916.0,CD8+ T Enriched IEL_Community
+7320.0,3340.0,Mature Epithelial_Community
+7118.0,5211.0,CD8+ T Enriched IEL_Community
+8170.0,5756.0,Mature Epithelial_Community
+7811.0,7268.0,Mature Epithelial_Community
+7268.0,2675.0,Mature Epithelial_Community
+5993.0,2429.0,CD8+ T Enriched IEL_Community
+5981.0,561.0,Mature Epithelial_Community
+4729.0,7361.0,Stroma_Community
+6444.0,5379.0,Plasma Cell Enriched_Community
+7161.0,2872.0,Mature Epithelial_Community
+6209.0,1892.0,CD8+ T Enriched IEL_Community
+5205.0,690.0,Plasma Cell Enriched_Community
+6147.0,4725.0,Adaptive Immune Enriched_Community
+5607.0,2058.0,Plasma Cell Enriched_Community
+6898.0,5598.0,Plasma Cell Enriched_Community
+5805.0,644.0,Mature Epithelial_Community
+7002.0,3302.0,Mature Epithelial_Community
+7407.0,5594.0,Mature Epithelial_Community
+6841.0,4823.0,Mature Epithelial_Community
+7925.0,8600.0,Mature Epithelial_Community
+7535.0,5706.0,Mature Epithelial_Community
+5810.0,3031.0,Plasma Cell Enriched_Community
+7165.0,3638.0,Mature Epithelial_Community
+6579.0,4462.0,Mature Epithelial_Community
+6740.0,4458.0,Mature Epithelial_Community
+7176.0,6603.0,Mature Epithelial_Community
+7038.0,3575.0,Mature Epithelial_Community
+8095.0,6747.0,Mature Epithelial_Community
+7681.0,8700.0,Plasma Cell Enriched_Community
+812.0,8774.0,Smooth Muscle_Community
+8069.0,3467.0,Mature Epithelial_Community
+8039.0,478.0,CD66+ Mature Epithelial_Community
+6911.0,6624.0,Plasma Cell Enriched_Community
+7899.0,5311.0,Mature Epithelial_Community
+6976.0,3948.0,CD8+ T Enriched IEL_Community
+6978.0,3092.0,Mature Epithelial_Community
+8142.0,8498.0,Mature Epithelial_Community
+6060.0,849.0,Mature Epithelial_Community
+8256.0,8487.0,Mature Epithelial_Community
+7995.0,6831.0,Mature Epithelial_Community
+7305.0,3995.0,Mature Epithelial_Community
+7762.0,6986.0,Mature Epithelial_Community
+6812.0,3863.0,Mature Epithelial_Community
+7986.0,8424.0,Mature Epithelial_Community
+6377.0,1555.0,Mature Epithelial_Community
+6971.0,2238.0,Mature Epithelial_Community
+8006.0,7159.0,Mature Epithelial_Community
+8214.0,8201.0,Mature Epithelial_Community
+5120.0,69.0,CD8+ T Enriched IEL_Community
+7244.0,3599.0,Mature Epithelial_Community
+6925.0,2642.0,Mature Epithelial_Community
+8342.0,4726.0,Mature Epithelial_Community
+6904.0,3730.0,Innate Immune Enriched_Community
+6563.0,2020.0,Mature Epithelial_Community
+7786.0,5476.0,Mature Epithelial_Community
+5882.0,610.0,Mature Epithelial_Community
+8051.0,6728.0,Mature Epithelial_Community
+5956.0,1497.0,CD8+ T Enriched IEL_Community
+6440.0,4104.0,Plasma Cell Enriched_Community
+7382.0,5289.0,CD8+ T Enriched IEL_Community
+7785.0,92.0,CD66+ Mature Epithelial_Community
+5681.0,240.0,Mature Epithelial_Community
+6612.0,810.0,CD8+ T Enriched IEL_Community
+7152.0,5579.0,Mature Epithelial_Community
+7057.0,4863.0,Innate Immune Enriched_Community
+8672.0,7578.0,Mature Epithelial_Community
+5598.0,1974.0,Plasma Cell Enriched_Community
+7886.0,4649.0,Mature Epithelial_Community
+6381.0,1789.0,Mature Epithelial_Community
+5859.0,336.0,Mature Epithelial_Community
+8576.0,8859.0,Mature Epithelial_Community
+7482.0,3881.0,Mature Epithelial_Community
+6352.0,2023.0,Mature Epithelial_Community
+3733.0,8073.0,Stroma_Community
+2368.0,5255.0,Stroma_Community
+6233.0,3795.0,Plasma Cell Enriched_Community
+7428.0,6869.0,Plasma Cell Enriched_Community
+6715.0,4314.0,Plasma Cell Enriched_Community
+3017.0,4513.0,Stroma_Community
+6649.0,5130.0,Plasma Cell Enriched_Community
+5600.0,1413.0,CD8+ T Enriched IEL_Community
+7919.0,6238.0,Mature Epithelial_Community
+7799.0,5544.0,Mature Epithelial_Community
+8532.0,7915.0,Mature Epithelial_Community
+7020.0,4132.0,CD8+ T Enriched IEL_Community
+5741.0,2636.0,Plasma Cell Enriched_Community
+5173.0,5697.0,Stroma_Community
+6011.0,2549.0,CD8+ T Enriched IEL_Community
+7025.0,6713.0,Plasma Cell Enriched_Community
+864.0,9015.0,Smooth Muscle_Community
+7664.0,5044.0,Mature Epithelial_Community
+6838.0,2633.0,Mature Epithelial_Community
+7761.0,7164.0,Mature Epithelial_Community
+8388.0,7365.0,Mature Epithelial_Community
+6947.0,6421.0,Plasma Cell Enriched_Community
+5229.0,727.0,Plasma Cell Enriched_Community
+6577.0,4874.0,Plasma Cell Enriched_Community
+7113.0,1758.0,Mature Epithelial_Community
+7119.0,5879.0,Mature Epithelial_Community
+7499.0,6514.0,Plasma Cell Enriched_Community
+6939.0,7627.0,Adaptive Immune Enriched_Community
+5920.0,2682.0,Secretory Epithelial_Community
+8187.0,4604.0,Mature Epithelial_Community
+8461.0,9000.0,Mature Epithelial_Community
+7593.0,5779.0,Mature Epithelial_Community
+8071.0,3537.0,Mature Epithelial_Community
+8148.0,6301.0,Mature Epithelial_Community
+5590.0,2875.0,CD8+ T Enriched IEL_Community
+7579.0,5789.0,Mature Epithelial_Community
+8357.0,7249.0,Mature Epithelial_Community
+5495.0,2443.0,Plasma Cell Enriched_Community
+6687.0,3618.0,Innate Immune Enriched_Community
+7553.0,4332.0,Mature Epithelial_Community
+6939.0,1939.0,Mature Epithelial_Community
+7102.0,3704.0,Mature Epithelial_Community
+7589.0,7539.0,Plasma Cell Enriched_Community
+8048.0,7114.0,Mature Epithelial_Community
+7329.0,7125.0,Plasma Cell Enriched_Community
+7604.0,4339.0,Mature Epithelial_Community
+6906.0,4315.0,Mature Epithelial_Community
+7797.0,4301.0,Mature Epithelial_Community
+6208.0,3965.0,Secretory Epithelial_Community
+7516.0,7052.0,Mature Epithelial_Community
+1717.0,8842.0,Stroma_Community
+7049.0,4885.0,Innate Immune Enriched_Community
+5908.0,1638.0,Mature Epithelial_Community
+5832.0,3020.0,Plasma Cell Enriched_Community
+7653.0,8748.0,Mature Epithelial_Community
+8050.0,4045.0,Mature Epithelial_Community
+6008.0,2102.0,Mature Epithelial_Community
+7879.0,4067.0,Mature Epithelial_Community
+7080.0,3081.0,Mature Epithelial_Community
+7394.0,5643.0,Mature Epithelial_Community
+6940.0,7590.0,Adaptive Immune Enriched_Community
+8078.0,8642.0,Mature Epithelial_Community
+7818.0,3470.0,Mature Epithelial_Community
+7082.0,4120.0,CD8+ T Enriched IEL_Community
+6715.0,4922.0,Plasma Cell Enriched_Community
+7023.0,3485.0,Mature Epithelial_Community
+8127.0,8435.0,Mature Epithelial_Community
+6233.0,1445.0,Mature Epithelial_Community
+7172.0,6584.0,Plasma Cell Enriched_Community
+7784.0,4339.0,Mature Epithelial_Community
+7948.0,8614.0,Mature Epithelial_Community
+7174.0,3850.0,Mature Epithelial_Community
+8605.0,8497.0,Mature Epithelial_Community
+7037.0,5537.0,CD8+ T Enriched IEL_Community
+5714.0,2418.0,Plasma Cell Enriched_Community
+7561.0,4454.0,Mature Epithelial_Community
+7011.0,4431.0,Mature Epithelial_Community
+5168.0,1586.0,Plasma Cell Enriched_Community
+5028.0,828.0,Plasma Cell Enriched_Community
+8290.0,4912.0,Mature Epithelial_Community
+7455.0,6935.0,Mature Epithelial_Community
+7388.0,7102.0,Plasma Cell Enriched_Community
+6407.0,1555.0,Mature Epithelial_Community
+6725.0,2769.0,Mature Epithelial_Community
+6064.0,2996.0,CD8+ T Enriched IEL_Community
+4316.0,37.0,Adaptive Immune Enriched_Community
+6371.0,2922.0,CD8+ T Enriched IEL_Community
+7096.0,4428.0,Mature Epithelial_Community
+8389.0,5648.0,Mature Epithelial_Community
+7876.0,7789.0,Mature Epithelial_Community
+7283.0,6555.0,Mature Epithelial_Community
+7577.0,2623.0,Mature Epithelial_Community
+7373.0,5634.0,Mature Epithelial_Community
+6013.0,3719.0,Plasma Cell Enriched_Community
+7093.0,4388.0,Mature Epithelial_Community
+7375.0,2808.0,Mature Epithelial_Community
+7544.0,4490.0,Mature Epithelial_Community
+6205.0,4001.0,Secretory Epithelial_Community
+6924.0,6023.0,Plasma Cell Enriched_Community
+8340.0,8580.0,Mature Epithelial_Community
+6000.0,2173.0,Mature Epithelial_Community
+6806.0,4444.0,Mature Epithelial_Community
+6774.0,4648.0,Mature Epithelial_Community
+6561.0,1929.0,Mature Epithelial_Community
+7120.0,6657.0,Plasma Cell Enriched_Community
+5699.0,461.0,Mature Epithelial_Community
+8451.0,7529.0,Mature Epithelial_Community
+7034.0,4107.0,CD8+ T Enriched IEL_Community
+7391.0,3527.0,Mature Epithelial_Community
+5434.0,2108.0,Plasma Cell Enriched_Community
+1949.0,7166.0,Stroma_Community
+66.0,3102.0,Smooth Muscle_Community
+5593.0,540.0,CD8+ T Enriched IEL_Community
+5906.0,3571.0,Plasma Cell Enriched_Community
+8032.0,3519.0,Mature Epithelial_Community
+5894.0,3232.0,Plasma Cell Enriched_Community
+8107.0,8614.0,Mature Epithelial_Community
+5579.0,1974.0,CD8+ T Enriched IEL_Community
+7309.0,7008.0,Plasma Cell Enriched_Community
+6999.0,4804.0,Mature Epithelial_Community
+7553.0,6036.0,Mature Epithelial_Community
+1836.0,7185.0,Stroma_Community
+8009.0,8149.0,Innate Immune Enriched_Community
+7539.0,4930.0,Innate Immune Enriched_Community
+7255.0,5294.0,CD8+ T Enriched IEL_Community
+7535.0,7357.0,Plasma Cell Enriched_Community
+8348.0,8713.0,Mature Epithelial_Community
+7619.0,6721.0,Mature Epithelial_Community
+5893.0,2160.0,Innate Immune Enriched_Community
+5577.0,2916.0,CD8+ T Enriched IEL_Community
+7099.0,4636.0,CD8+ T Enriched IEL_Community
+6696.0,1734.0,Mature Epithelial_Community
+7271.0,5284.0,CD8+ T Enriched IEL_Community
+7037.0,4136.0,CD8+ T Enriched IEL_Community
+8195.0,8342.0,Mature Epithelial_Community
+7246.0,6496.0,Plasma Cell Enriched_Community
+6950.0,2697.0,Mature Epithelial_Community
+7439.0,5922.0,Mature Epithelial_Community
+6109.0,2847.0,CD8+ T Enriched IEL_Community
+7766.0,8628.0,Mature Epithelial_Community
+5191.0,956.0,Plasma Cell Enriched_Community
+8212.0,7414.0,Mature Epithelial_Community
+1606.0,2350.0,Stroma_Community
+7595.0,3255.0,Mature Epithelial_Community
+7481.0,4424.0,Mature Epithelial_Community
+7882.0,5443.0,Mature Epithelial_Community
+7650.0,7331.0,Mature Epithelial_Community
+8329.0,8072.0,Mature Epithelial_Community
+7441.0,6523.0,Plasma Cell Enriched_Community
+6879.0,2854.0,Mature Epithelial_Community
+6185.0,314.0,Mature Epithelial_Community
+8152.0,8417.0,Mature Epithelial_Community
+8757.0,7100.0,CD66+ Mature Epithelial_Community
+7856.0,5251.0,Mature Epithelial_Community
+6805.0,2744.0,Mature Epithelial_Community
+8374.0,8034.0,Mature Epithelial_Community
+7997.0,4023.0,Mature Epithelial_Community
+7961.0,6899.0,Mature Epithelial_Community
+6297.0,867.0,Mature Epithelial_Community
+6866.0,4196.0,CD8+ T Enriched IEL_Community
+7805.0,8698.0,Mature Epithelial_Community
+6568.0,4813.0,Plasma Cell Enriched_Community
+8905.0,8532.0,Mature Epithelial_Community
+6059.0,741.0,Mature Epithelial_Community
+6230.0,1709.0,Mature Epithelial_Community
+8539.0,8928.0,Mature Epithelial_Community
+7757.0,5055.0,Mature Epithelial_Community
+7741.0,3741.0,Mature Epithelial_Community
+7772.0,4321.0,Mature Epithelial_Community
+6872.0,4797.0,Mature Epithelial_Community
+7866.0,7915.0,Mature Epithelial_Community
+7409.0,3618.0,Mature Epithelial_Community
+7236.0,6175.0,CD8+ T Enriched IEL_Community
+7315.0,6130.0,Plasma Cell Enriched_Community
+6401.0,825.0,Mature Epithelial_Community
+7316.0,3610.0,Mature Epithelial_Community
+2084.0,8289.0,Stroma_Community
+6479.0,393.0,Mature Epithelial_Community
+5997.0,2074.0,Mature Epithelial_Community
+8446.0,6782.0,Mature Epithelial_Community
+7632.0,3566.0,Mature Epithelial_Community
+6533.0,2036.0,Mature Epithelial_Community
+7688.0,194.0,CD66+ Mature Epithelial_Community
+5913.0,149.0,Mature Epithelial_Community
+5085.0,641.0,Plasma Cell Enriched_Community
+8292.0,4948.0,Mature Epithelial_Community
+8063.0,8376.0,Mature Epithelial_Community
+7007.0,5744.0,Plasma Cell Enriched_Community
+6878.0,4700.0,Mature Epithelial_Community
+8275.0,7507.0,Mature Epithelial_Community
+8315.0,5681.0,Mature Epithelial_Community
+7260.0,3970.0,Mature Epithelial_Community
+7974.0,8330.0,Mature Epithelial_Community
+5748.0,762.0,Innate Immune Enriched_Community
+6509.0,3343.0,Mature Epithelial_Community
+8604.0,6681.0,Mature Epithelial_Community
+258.0,2784.0,Smooth Muscle_Community
+6968.0,1959.0,Mature Epithelial_Community
+7853.0,6008.0,Mature Epithelial_Community
+7355.0,6661.0,Plasma Cell Enriched_Community
+8766.0,7083.0,CD66+ Mature Epithelial_Community
+7763.0,7805.0,Plasma Cell Enriched_Community
+7014.0,3857.0,Mature Epithelial_Community
+6779.0,3889.0,Mature Epithelial_Community
+7633.0,6661.0,Mature Epithelial_Community
+7325.0,2052.0,Mature Epithelial_Community
+8085.0,7853.0,Mature Epithelial_Community
+8005.0,3418.0,Mature Epithelial_Community
+7617.0,3677.0,Mature Epithelial_Community
+7283.0,6530.0,Plasma Cell Enriched_Community
+6638.0,3079.0,Mature Epithelial_Community
+6117.0,1284.0,CD8+ T Enriched IEL_Community
+5970.0,2429.0,CD8+ T Enriched IEL_Community
+6391.0,2169.0,Mature Epithelial_Community
+7837.0,4187.0,Mature Epithelial_Community
+7325.0,4408.0,Mature Epithelial_Community
+7121.0,6730.0,Plasma Cell Enriched_Community
+8397.0,7385.0,Mature Epithelial_Community
+6891.0,6437.0,Plasma Cell Enriched_Community
+7161.0,6638.0,Mature Epithelial_Community
+6849.0,6089.0,Plasma Cell Enriched_Community
+6771.0,5535.0,Plasma Cell Enriched_Community
+8461.0,5764.0,Mature Epithelial_Community
+7471.0,4101.0,Mature Epithelial_Community
+7728.0,7278.0,Mature Epithelial_Community
+5525.0,2859.0,CD8+ T Enriched IEL_Community
+6803.0,4975.0,Plasma Cell Enriched_Community
+6491.0,4428.0,Plasma Cell Enriched_Community
+8475.0,6102.0,Mature Epithelial_Community
+5229.0,495.0,Mature Epithelial_Community
+8280.0,7208.0,Mature Epithelial_Community
+7573.0,5724.0,Mature Epithelial_Community
+6953.0,2233.0,Mature Epithelial_Community
+6404.0,2111.0,Mature Epithelial_Community
+7728.0,6935.0,CD8+ T Enriched IEL_Community
+6739.0,3092.0,Mature Epithelial_Community
+6646.0,3091.0,Mature Epithelial_Community
+6137.0,2186.0,Mature Epithelial_Community
+6437.0,2024.0,Mature Epithelial_Community
+7519.0,2198.0,Mature Epithelial_Community
+6027.0,3730.0,Plasma Cell Enriched_Community
+6369.0,3601.0,Plasma Cell Enriched_Community
+6144.0,721.0,Mature Epithelial_Community
+7997.0,4609.0,Mature Epithelial_Community
+4323.0,19.0,Adaptive Immune Enriched_Community
+8279.0,5161.0,Mature Epithelial_Community
+5945.0,340.0,Mature Epithelial_Community
+5465.0,1647.0,Mature Epithelial_Community
+5558.0,3574.0,Adaptive Immune Enriched_Community
+5916.0,2099.0,CD8+ T Enriched IEL_Community
+260.0,1294.0,Smooth Muscle_Community
+8043.0,7451.0,Mature Epithelial_Community
+8404.0,5178.0,Mature Epithelial_Community
+8388.0,6101.0,Mature Epithelial_Community
+7125.0,4171.0,CD8+ T Enriched IEL_Community
+7701.0,8333.0,Mature Epithelial_Community
+7049.0,2338.0,Mature Epithelial_Community
+6387.0,358.0,Mature Epithelial_Community
+8058.0,6284.0,Mature Epithelial_Community
+6629.0,4331.0,Mature Epithelial_Community
+8483.0,6663.0,Mature Epithelial_Community
+8423.0,8420.0,Mature Epithelial_Community
+7499.0,7887.0,Mature Epithelial_Community
+7662.0,6061.0,Mature Epithelial_Community
+8097.0,5826.0,Mature Epithelial_Community
+8164.0,5239.0,Mature Epithelial_Community
+7620.0,3578.0,Mature Epithelial_Community
+6713.0,1449.0,Mature Epithelial_Community
+6854.0,4408.0,Mature Epithelial_Community
+6963.0,5576.0,Plasma Cell Enriched_Community
+8434.0,6071.0,Mature Epithelial_Community
+6327.0,1740.0,Mature Epithelial_Community
+6188.0,3669.0,Plasma Cell Enriched_Community
+5663.0,2423.0,Plasma Cell Enriched_Community
+5553.0,10.0,Innate Immune Enriched_Community
+5830.0,144.0,Mature Epithelial_Community
+7690.0,6016.0,Mature Epithelial_Community
+6453.0,2010.0,Mature Epithelial_Community
+7173.0,3053.0,Mature Epithelial_Community
+7530.0,4865.0,Mature Epithelial_Community
+5899.0,2123.0,Plasma Cell Enriched_Community
+8209.0,7529.0,Mature Epithelial_Community
+7064.0,6340.0,Plasma Cell Enriched_Community
+5237.0,485.0,Plasma Cell Enriched_Community
+6144.0,1731.0,Mature Epithelial_Community
+8054.0,3583.0,Mature Epithelial_Community
+7559.0,7334.0,Plasma Cell Enriched_Community
+5346.0,2640.0,Plasma Cell Enriched_Community
+6176.0,332.0,Mature Epithelial_Community
+7826.0,3382.0,Mature Epithelial_Community
+8095.0,5224.0,Mature Epithelial_Community
+7440.0,5641.0,Mature Epithelial_Community
+7847.0,5716.0,Mature Epithelial_Community
+5767.0,3979.0,Adaptive Immune Enriched_Community
+7860.0,8541.0,Mature Epithelial_Community
+8186.0,4711.0,Mature Epithelial_Community
+8216.0,5034.0,Mature Epithelial_Community
+6887.0,5988.0,Plasma Cell Enriched_Community
+8076.0,5822.0,Mature Epithelial_Community
+8109.0,4939.0,Mature Epithelial_Community
+8480.0,8405.0,Mature Epithelial_Community
+5856.0,599.0,Mature Epithelial_Community
+6331.0,1117.0,Mature Epithelial_Community
+8319.0,8051.0,Mature Epithelial_Community
+6504.0,3139.0,Innate Immune Enriched_Community
+6525.0,999.0,Mature Epithelial_Community
+8467.0,8334.0,Mature Epithelial_Community
+7443.0,4751.0,CD8+ T Enriched IEL_Community
+7986.0,5702.0,Mature Epithelial_Community
+8231.0,4844.0,Mature Epithelial_Community
+8167.0,4695.0,Mature Epithelial_Community
+7102.0,4148.0,CD8+ T Enriched IEL_Community
+8460.0,6813.0,Mature Epithelial_Community
+6112.0,1871.0,CD8+ T Enriched IEL_Community
+7032.0,3532.0,Mature Epithelial_Community
+6022.0,2163.0,Mature Epithelial_Community
+7745.0,3758.0,Mature Epithelial_Community
+7267.0,7145.0,Plasma Cell Enriched_Community
+8174.0,8421.0,Mature Epithelial_Community
+8197.0,7672.0,Mature Epithelial_Community
+7571.0,8771.0,Plasma Cell Enriched_Community
+8040.0,6466.0,Mature Epithelial_Community
+7701.0,6057.0,Mature Epithelial_Community
+8079.0,7132.0,Mature Epithelial_Community
+8171.0,4605.0,Mature Epithelial_Community
+7739.0,4133.0,Mature Epithelial_Community
+7500.0,4428.0,Mature Epithelial_Community
+8712.0,7545.0,Mature Epithelial_Community
+8613.0,8038.0,Mature Epithelial_Community
+6161.0,980.0,Mature Epithelial_Community
+6121.0,3417.0,Plasma Cell Enriched_Community
+7810.0,4245.0,Mature Epithelial_Community
+6813.0,614.0,CD66+ Mature Epithelial_Community
+6351.0,250.0,CD8+ T Enriched IEL_Community
+8563.0,8825.0,Mature Epithelial_Community
+8827.0,7265.0,Mature Epithelial_Community
+6916.0,1720.0,Mature Epithelial_Community
+7259.0,4082.0,Mature Epithelial_Community
+721.0,2450.0,Smooth Muscle_Community
+5773.0,3635.0,Secretory Epithelial_Community
+5294.0,1443.0,Plasma Cell Enriched_Community
+7082.0,6895.0,Plasma Cell Enriched_Community
+5709.0,4144.0,Adaptive Immune Enriched_Community
+8238.0,1256.0,Mature Epithelial_Community
+4363.0,5009.0,Stroma_Community
+4582.0,198.0,Adaptive Immune Enriched_Community
+7201.0,7202.0,Plasma Cell Enriched_Community
+8003.0,6718.0,Mature Epithelial_Community
+1074.0,8887.0,Stroma_Community
+6222.0,4419.0,Plasma Cell Enriched_Community
+5914.0,4608.0,Adaptive Immune Enriched_Community
+1686.0,1955.0,Stroma_Community
+7243.0,8432.0,Plasma Cell Enriched_Community
+6179.0,4808.0,Adaptive Immune Enriched_Community
+6644.0,5027.0,Plasma Cell Enriched_Community
+5893.0,2631.0,Secretory Epithelial_Community
+6299.0,5150.0,Adaptive Immune Enriched_Community
+6002.0,322.0,Mature Epithelial_Community
+8406.0,5874.0,Mature Epithelial_Community
+7252.0,5482.0,Secretory Epithelial_Community
+5994.0,4187.0,Plasma Cell Enriched_Community
+7835.0,8721.0,Mature Epithelial_Community
+5663.0,3716.0,Adaptive Immune Enriched_Community
+7283.0,8857.0,Secretory Epithelial_Community
+5068.0,1919.0,Plasma Cell Enriched_Community
+7130.0,9025.0,Adaptive Immune Enriched_Community
+8356.0,8675.0,Mature Epithelial_Community
+5080.0,2219.0,Adaptive Immune Enriched_Community
+6240.0,4434.0,Plasma Cell Enriched_Community
+8524.0,7038.0,Mature Epithelial_Community
+5916.0,4461.0,Adaptive Immune Enriched_Community
+6339.0,2110.0,Mature Epithelial_Community
+5526.0,1958.0,CD8+ T Enriched IEL_Community
+6558.0,3899.0,Plasma Cell Enriched_Community
+4742.0,1006.0,Adaptive Immune Enriched_Community
+7789.0,3396.0,Mature Epithelial_Community
+5495.0,2289.0,Plasma Cell Enriched_Community
+5053.0,1882.0,Plasma Cell Enriched_Community
+5721.0,3707.0,Adaptive Immune Enriched_Community
+4986.0,2055.0,Adaptive Immune Enriched_Community
+6577.0,4662.0,CD8+ T Enriched IEL_Community
+5019.0,1198.0,Plasma Cell Enriched_Community
+6224.0,4731.0,Adaptive Immune Enriched_Community
+5204.0,2636.0,Adaptive Immune Enriched_Community
+7415.0,7494.0,Mature Epithelial_Community
+7231.0,7758.0,Plasma Cell Enriched_Community
+8779.0,7584.0,Mature Epithelial_Community
+6722.0,5877.0,Plasma Cell Enriched_Community
+6524.0,5549.0,Adaptive Immune Enriched_Community
+5215.0,159.0,Innate Immune Enriched_Community
+6389.0,4119.0,Plasma Cell Enriched_Community
+7306.0,8874.0,Plasma Cell Enriched_Community
+6950.0,4300.0,Mature Epithelial_Community
+8854.0,8675.0,Mature Epithelial_Community
+4697.0,71.0,Plasma Cell Enriched_Community
+4812.0,623.0,Plasma Cell Enriched_Community
+6020.0,4140.0,Plasma Cell Enriched_Community
+3342.0,3595.0,Stroma_Community
+6431.0,4770.0,CD8+ T Enriched IEL_Community
+6377.0,4683.0,Plasma Cell Enriched_Community
+5827.0,4169.0,Secretory Epithelial_Community
+4935.0,868.0,Plasma Cell Enriched_Community
+4816.0,1545.0,Adaptive Immune Enriched_Community
+6716.0,5860.0,Plasma Cell Enriched_Community
+5930.0,2665.0,CD8+ T Enriched IEL_Community
+5347.0,3042.0,Adaptive Immune Enriched_Community
+5418.0,1703.0,Mature Epithelial_Community
+5997.0,291.0,Mature Epithelial_Community
+6256.0,5218.0,Adaptive Immune Enriched_Community
+5707.0,3722.0,Adaptive Immune Enriched_Community
+6001.0,68.0,Mature Epithelial_Community
+6588.0,3631.0,Innate Immune Enriched_Community
+7260.0,4247.0,Mature Epithelial_Community
+7643.0,3617.0,Mature Epithelial_Community
+6927.0,7387.0,Adaptive Immune Enriched_Community
+7044.0,5592.0,Plasma Cell Enriched_Community
+6447.0,4854.0,Plasma Cell Enriched_Community
+7042.0,4540.0,Mature Epithelial_Community
+5182.0,1117.0,Plasma Cell Enriched_Community
+5586.0,486.0,Mature Epithelial_Community
+5446.0,2358.0,Plasma Cell Enriched_Community
+6150.0,5035.0,Adaptive Immune Enriched_Community
+6933.0,6404.0,Plasma Cell Enriched_Community
+7145.0,2675.0,CD8+ T Enriched IEL_Community
+6641.0,5458.0,Plasma Cell Enriched_Community
+5158.0,2345.0,Adaptive Immune Enriched_Community
+6681.0,5549.0,Plasma Cell Enriched_Community
+5449.0,3334.0,Adaptive Immune Enriched_Community
+4535.0,426.0,Adaptive Immune Enriched_Community
+1019.0,456.0,Stroma_Community
+7244.0,7877.0,Plasma Cell Enriched_Community
+7264.0,5493.0,Secretory Epithelial_Community
+7092.0,8847.0,Adaptive Immune Enriched_Community
+5585.0,3557.0,Adaptive Immune Enriched_Community
+6497.0,5202.0,Secretory Epithelial_Community
+6527.0,3381.0,Mature Epithelial_Community
+4901.0,1698.0,Adaptive Immune Enriched_Community
+6943.0,6262.0,Plasma Cell Enriched_Community
+7015.0,6804.0,Plasma Cell Enriched_Community
+6298.0,4790.0,Adaptive Immune Enriched_Community
+5310.0,2734.0,Adaptive Immune Enriched_Community
+5893.0,3952.0,Plasma Cell Enriched_Community
+5706.0,3804.0,Adaptive Immune Enriched_Community
+6665.0,4577.0,Plasma Cell Enriched_Community
+5844.0,1684.0,Mature Epithelial_Community
+6588.0,6468.0,Adaptive Immune Enriched_Community
+3790.0,3683.0,Stroma_Community
+6149.0,4417.0,Plasma Cell Enriched_Community
+7816.0,8701.0,Mature Epithelial_Community
+5760.0,3651.0,Secretory Epithelial_Community
+7283.0,5490.0,Secretory Epithelial_Community
+8118.0,8414.0,Mature Epithelial_Community
+4799.0,1070.0,Plasma Cell Enriched_Community
+6733.0,6686.0,Adaptive Immune Enriched_Community
+7481.0,8240.0,CD8+ T Enriched IEL_Community
+4752.0,632.0,Plasma Cell Enriched_Community
+6948.0,7738.0,Adaptive Immune Enriched_Community
+5093.0,2092.0,Secretory Epithelial_Community
+5810.0,3098.0,Plasma Cell Enriched_Community
+6215.0,4557.0,Plasma Cell Enriched_Community
+7050.0,6348.0,Plasma Cell Enriched_Community
+6941.0,3737.0,Mature Epithelial_Community
+5074.0,1975.0,Plasma Cell Enriched_Community
+6352.0,5053.0,Adaptive Immune Enriched_Community
+6276.0,4454.0,Plasma Cell Enriched_Community
+7647.0,6040.0,Mature Epithelial_Community
+7642.0,7899.0,Mature Epithelial_Community
+4858.0,1447.0,Adaptive Immune Enriched_Community
+4441.0,86.0,Adaptive Immune Enriched_Community
+4700.0,470.0,Plasma Cell Enriched_Community
+6281.0,4958.0,Adaptive Immune Enriched_Community
+5198.0,2266.0,Plasma Cell Enriched_Community
+7354.0,7405.0,Plasma Cell Enriched_Community
+5774.0,4024.0,Adaptive Immune Enriched_Community
+4683.0,86.0,Plasma Cell Enriched_Community
+6599.0,6428.0,Adaptive Immune Enriched_Community
+4915.0,637.0,Plasma Cell Enriched_Community
+6529.0,5571.0,Adaptive Immune Enriched_Community
+5948.0,4357.0,Secretory Epithelial_Community
+6523.0,1918.0,Mature Epithelial_Community
+4768.0,1010.0,Plasma Cell Enriched_Community
+6259.0,4284.0,Plasma Cell Enriched_Community
+6617.0,5870.0,Adaptive Immune Enriched_Community
+1325.0,1576.0,Stroma_Community
+6789.0,3572.0,Innate Immune Enriched_Community
+7019.0,7857.0,Secretory Epithelial_Community
+4804.0,575.0,Plasma Cell Enriched_Community
+5859.0,3625.0,Secretory Epithelial_Community
+5520.0,1615.0,Mature Epithelial_Community
+7286.0,6509.0,Plasma Cell Enriched_Community
+5534.0,3573.0,Adaptive Immune Enriched_Community
+6517.0,6264.0,Adaptive Immune Enriched_Community
+4739.0,906.0,Plasma Cell Enriched_Community
+6520.0,1939.0,Mature Epithelial_Community
+3119.0,6047.0,Stroma_Community
+5535.0,316.0,Mature Epithelial_Community
+6633.0,6479.0,Adaptive Immune Enriched_Community
+4459.0,250.0,Adaptive Immune Enriched_Community
+6405.0,4703.0,Adaptive Immune Enriched_Community
+7893.0,3537.0,Mature Epithelial_Community
+5436.0,3070.0,Adaptive Immune Enriched_Community
+5529.0,3075.0,Secretory Epithelial_Community
+6176.0,4570.0,Plasma Cell Enriched_Community
+6809.0,7062.0,Adaptive Immune Enriched_Community
+6030.0,4689.0,Adaptive Immune Enriched_Community
+8430.0,8958.0,Mature Epithelial_Community
+5646.0,4027.0,Adaptive Immune Enriched_Community
+6263.0,4754.0,Adaptive Immune Enriched_Community
+6593.0,5931.0,Adaptive Immune Enriched_Community
+5976.0,4689.0,Adaptive Immune Enriched_Community
+6555.0,5848.0,Adaptive Immune Enriched_Community
+6515.0,1902.0,Mature Epithelial_Community
+7232.0,8949.0,Secretory Epithelial_Community
+5154.0,2595.0,Adaptive Immune Enriched_Community
+5957.0,4012.0,Plasma Cell Enriched_Community
+6315.0,5184.0,Adaptive Immune Enriched_Community
+7222.0,8953.0,Adaptive Immune Enriched_Community
+5749.0,4325.0,Adaptive Immune Enriched_Community
+6609.0,6132.0,Adaptive Immune Enriched_Community
+5726.0,3236.0,Plasma Cell Enriched_Community
+6662.0,3895.0,Mature Epithelial_Community
+6774.0,6535.0,Plasma Cell Enriched_Community
+4601.0,429.0,Adaptive Immune Enriched_Community
+5529.0,2805.0,CD8+ T Enriched IEL_Community
+8399.0,8060.0,Mature Epithelial_Community
+4987.0,2074.0,Adaptive Immune Enriched_Community
+6081.0,4775.0,Adaptive Immune Enriched_Community
+6221.0,4710.0,Adaptive Immune Enriched_Community
+6645.0,5993.0,Adaptive Immune Enriched_Community
+5888.0,4593.0,Adaptive Immune Enriched_Community
+6660.0,5043.0,Plasma Cell Enriched_Community
+5626.0,3418.0,Plasma Cell Enriched_Community
+3014.0,1761.0,Stroma_Community
+4861.0,1376.0,Adaptive Immune Enriched_Community
+6666.0,6570.0,Adaptive Immune Enriched_Community
+6824.0,3054.0,Mature Epithelial_Community
+4627.0,411.0,Plasma Cell Enriched_Community
+5495.0,2982.0,CD8+ T Enriched IEL_Community
+6563.0,5977.0,Adaptive Immune Enriched_Community
+6939.0,5551.0,Plasma Cell Enriched_Community
+6663.0,5643.0,Plasma Cell Enriched_Community
+5340.0,3063.0,Adaptive Immune Enriched_Community
+6401.0,5614.0,Adaptive Immune Enriched_Community
+4807.0,1322.0,Follicle_Community
+8334.0,6732.0,Mature Epithelial_Community
+5298.0,2857.0,Adaptive Immune Enriched_Community
+6545.0,6250.0,Adaptive Immune Enriched_Community
+4739.0,674.0,Plasma Cell Enriched_Community
+4993.0,1221.0,Plasma Cell Enriched_Community
+5432.0,3353.0,Adaptive Immune Enriched_Community
+5799.0,3877.0,Adaptive Immune Enriched_Community
+5562.0,2272.0,Plasma Cell Enriched_Community
+6134.0,5035.0,Adaptive Immune Enriched_Community
+5992.0,4705.0,Adaptive Immune Enriched_Community
+5188.0,1948.0,Plasma Cell Enriched_Community
+6806.0,5449.0,Plasma Cell Enriched_Community
+5080.0,2286.0,Adaptive Immune Enriched_Community
+4824.0,1159.0,Adaptive Immune Enriched_Community
+5396.0,1992.0,Plasma Cell Enriched_Community
+5193.0,1695.0,Plasma Cell Enriched_Community
+7202.0,7737.0,Plasma Cell Enriched_Community
+4975.0,1015.0,Plasma Cell Enriched_Community
+4961.0,1457.0,Adaptive Immune Enriched_Community
+6093.0,4756.0,Adaptive Immune Enriched_Community
+5760.0,3348.0,Plasma Cell Enriched_Community
+5994.0,4632.0,Adaptive Immune Enriched_Community
+2234.0,2543.0,Stroma_Community
+5127.0,1928.0,Plasma Cell Enriched_Community
+6751.0,6855.0,Adaptive Immune Enriched_Community
+6520.0,5979.0,Adaptive Immune Enriched_Community
+6830.0,6542.0,Plasma Cell Enriched_Community
+8407.0,5146.0,Mature Epithelial_Community
+7179.0,7374.0,Secretory Epithelial_Community
+7032.0,5601.0,Plasma Cell Enriched_Community
+7858.0,3640.0,Mature Epithelial_Community
+7863.0,4053.0,Mature Epithelial_Community
+6241.0,1840.0,CD8+ T Enriched IEL_Community
+7837.0,5303.0,Mature Epithelial_Community
+6944.0,7058.0,Plasma Cell Enriched_Community
+5582.0,3419.0,Adaptive Immune Enriched_Community
+7384.0,8217.0,Plasma Cell Enriched_Community
+5566.0,3490.0,Adaptive Immune Enriched_Community
+6646.0,6334.0,Adaptive Immune Enriched_Community
+4640.0,903.0,Adaptive Immune Enriched_Community
+7077.0,8253.0,Adaptive Immune Enriched_Community
+5384.0,3208.0,Adaptive Immune Enriched_Community
+6446.0,5258.0,Adaptive Immune Enriched_Community
+6254.0,4569.0,Plasma Cell Enriched_Community
+6036.0,4719.0,Adaptive Immune Enriched_Community
+6892.0,6121.0,Plasma Cell Enriched_Community
+6774.0,6257.0,Plasma Cell Enriched_Community
+4841.0,1650.0,Adaptive Immune Enriched_Community
+5702.0,3868.0,Adaptive Immune Enriched_Community
+6519.0,4984.0,Plasma Cell Enriched_Community
+5053.0,2157.0,Adaptive Immune Enriched_Community
+5606.0,3203.0,Secretory Epithelial_Community
+4701.0,637.0,Plasma Cell Enriched_Community
+6264.0,5177.0,Adaptive Immune Enriched_Community
+2735.0,4933.0,Stroma_Community
+6855.0,2264.0,Mature Epithelial_Community
+6529.0,5820.0,Adaptive Immune Enriched_Community
+6430.0,4784.0,CD8+ T Enriched IEL_Community
+5717.0,3864.0,Adaptive Immune Enriched_Community
+8462.0,8360.0,Mature Epithelial_Community
+5745.0,3974.0,Adaptive Immune Enriched_Community
+6665.0,5197.0,Secretory Epithelial_Community
+4547.0,387.0,Adaptive Immune Enriched_Community
+8125.0,9028.0,Innate Immune Enriched_Community
+5234.0,1166.0,Plasma Cell Enriched_Community
+4780.0,601.0,Plasma Cell Enriched_Community
+6228.0,4152.0,Plasma Cell Enriched_Community
+5438.0,2904.0,CD8+ T Enriched IEL_Community
+4691.0,1082.0,Adaptive Immune Enriched_Community
+5734.0,4369.0,Adaptive Immune Enriched_Community
+5490.0,2385.0,Plasma Cell Enriched_Community
+5538.0,2716.0,CD8+ T Enriched IEL_Community
+6295.0,4854.0,Adaptive Immune Enriched_Community
+6480.0,5769.0,Adaptive Immune Enriched_Community
+6545.0,5792.0,Adaptive Immune Enriched_Community
+6164.0,5020.0,Adaptive Immune Enriched_Community
+7853.0,4394.0,Mature Epithelial_Community
+5554.0,2957.0,CD8+ T Enriched IEL_Community
+7779.0,3411.0,Mature Epithelial_Community
+4597.0,446.0,Plasma Cell Enriched_Community
+6094.0,1986.0,Mature Epithelial_Community
+4939.0,1347.0,Adaptive Immune Enriched_Community
+7089.0,8079.0,Adaptive Immune Enriched_Community
+8093.0,8404.0,Mature Epithelial_Community
+6834.0,6072.0,Plasma Cell Enriched_Community
+5599.0,3711.0,Adaptive Immune Enriched_Community
+6049.0,12.0,Mature Epithelial_Community
+6467.0,5135.0,Secretory Epithelial_Community
+6378.0,5383.0,Plasma Cell Enriched_Community
+4871.0,1577.0,Adaptive Immune Enriched_Community
+7113.0,8111.0,Plasma Cell Enriched_Community
+5841.0,3376.0,Plasma Cell Enriched_Community
+6622.0,5128.0,Secretory Epithelial_Community
+6948.0,6445.0,Plasma Cell Enriched_Community
+7365.0,8205.0,Plasma Cell Enriched_Community
+5567.0,486.0,Mature Epithelial_Community
+5364.0,2164.0,Plasma Cell Enriched_Community
+1449.0,2731.0,Stroma_Community
+7075.0,8513.0,Adaptive Immune Enriched_Community
+7664.0,8674.0,Plasma Cell Enriched_Community
+5926.0,3986.0,Plasma Cell Enriched_Community
+6598.0,5835.0,Adaptive Immune Enriched_Community
+6924.0,7421.0,Adaptive Immune Enriched_Community
+7955.0,5395.0,Mature Epithelial_Community
+4802.0,1336.0,Follicle_Community
+6984.0,1962.0,Mature Epithelial_Community
+6520.0,6159.0,Adaptive Immune Enriched_Community
+5235.0,2630.0,Adaptive Immune Enriched_Community
+6650.0,5309.0,Plasma Cell Enriched_Community
+6904.0,7384.0,Adaptive Immune Enriched_Community
+5935.0,4461.0,Adaptive Immune Enriched_Community
+6583.0,3936.0,Mature Epithelial_Community
+6641.0,6372.0,Adaptive Immune Enriched_Community
+4695.0,1031.0,Adaptive Immune Enriched_Community
+4929.0,1777.0,Adaptive Immune Enriched_Community
+6589.0,6089.0,Adaptive Immune Enriched_Community
+6820.0,6880.0,Secretory Epithelial_Community
+6777.0,6879.0,Adaptive Immune Enriched_Community
+6852.0,6800.0,Secretory Epithelial_Community
+5524.0,2886.0,CD8+ T Enriched IEL_Community
+7169.0,6764.0,Plasma Cell Enriched_Community
+8484.0,8339.0,Mature Epithelial_Community
+6448.0,4738.0,CD8+ T Enriched IEL_Community
+7604.0,7813.0,Plasma Cell Enriched_Community
+5093.0,893.0,Plasma Cell Enriched_Community
+5029.0,1746.0,Plasma Cell Enriched_Community
+7047.0,4384.0,Mature Epithelial_Community
+6712.0,4839.0,Secretory Epithelial_Community
+6018.0,4253.0,Plasma Cell Enriched_Community
+7443.0,4466.0,Mature Epithelial_Community
+7661.0,6032.0,Mature Epithelial_Community
+7130.0,5563.0,Mature Epithelial_Community
+6703.0,5543.0,Plasma Cell Enriched_Community
+7093.0,5314.0,Secretory Epithelial_Community
+6801.0,4877.0,Secretory Epithelial_Community
+5827.0,3893.0,Plasma Cell Enriched_Community
+6891.0,4382.0,Mature Epithelial_Community
+6972.0,4812.0,Mature Epithelial_Community
+5619.0,3135.0,Secretory Epithelial_Community
+6167.0,3016.0,CD8+ T Enriched IEL_Community
+6482.0,5556.0,Adaptive Immune Enriched_Community
+6585.0,4587.0,Plasma Cell Enriched_Community
+6949.0,4739.0,Mature Epithelial_Community
+7297.0,5515.0,Mature Epithelial_Community
+5188.0,706.0,Plasma Cell Enriched_Community
+5499.0,2155.0,Plasma Cell Enriched_Community
+6842.0,4833.0,Mature Epithelial_Community
+4635.0,286.0,Plasma Cell Enriched_Community
+7057.0,6642.0,Plasma Cell Enriched_Community
+7459.0,7346.0,Plasma Cell Enriched_Community
+5724.0,3164.0,Secretory Epithelial_Community
+5370.0,1609.0,Plasma Cell Enriched_Community
+5833.0,2710.0,Plasma Cell Enriched_Community
+5402.0,2422.0,Plasma Cell Enriched_Community
+5651.0,1424.0,Plasma Cell Enriched_Community
+6162.0,4045.0,Plasma Cell Enriched_Community
+8069.0,7069.0,Mature Epithelial_Community
+7900.0,5906.0,Mature Epithelial_Community
+5355.0,2786.0,Adaptive Immune Enriched_Community
+6327.0,3935.0,Plasma Cell Enriched_Community
+6867.0,6928.0,Secretory Epithelial_Community
+6961.0,4331.0,Mature Epithelial_Community
+5811.0,4342.0,Secretory Epithelial_Community
+6398.0,3667.0,Plasma Cell Enriched_Community
+7344.0,8359.0,Plasma Cell Enriched_Community
+5394.0,1810.0,Plasma Cell Enriched_Community
+6120.0,2789.0,CD8+ T Enriched IEL_Community
+6440.0,2857.0,CD8+ T Enriched IEL_Community
+5775.0,3125.0,Plasma Cell Enriched_Community
+5225.0,1750.0,Plasma Cell Enriched_Community
+5545.0,2633.0,Plasma Cell Enriched_Community
+6800.0,6340.0,Plasma Cell Enriched_Community
+5517.0,2767.0,CD8+ T Enriched IEL_Community
+6959.0,4763.0,Mature Epithelial_Community
+6923.0,6867.0,Secretory Epithelial_Community
+8430.0,5655.0,Mature Epithelial_Community
+5248.0,958.0,Plasma Cell Enriched_Community
+7094.0,4602.0,Mature Epithelial_Community
+6825.0,4869.0,Mature Epithelial_Community
+6904.0,6849.0,Secretory Epithelial_Community
+6814.0,5215.0,Plasma Cell Enriched_Community
+7088.0,7460.0,Secretory Epithelial_Community
+5985.0,4292.0,Secretory Epithelial_Community
+7326.0,6529.0,Plasma Cell Enriched_Community
+5029.0,1836.0,Adaptive Immune Enriched_Community
+6103.0,4501.0,Adaptive Immune Enriched_Community
+7207.0,7808.0,Plasma Cell Enriched_Community
+7092.0,7111.0,Plasma Cell Enriched_Community
+7994.0,8408.0,Mature Epithelial_Community
+6135.0,2762.0,CD8+ T Enriched IEL_Community
+6374.0,3674.0,Plasma Cell Enriched_Community
+5468.0,2558.0,Plasma Cell Enriched_Community
+7092.0,5434.0,CD8+ T Enriched IEL_Community
+6967.0,4754.0,Mature Epithelial_Community
+6287.0,1761.0,Mature Epithelial_Community
+6843.0,4513.0,Mature Epithelial_Community
+6520.0,3309.0,Mature Epithelial_Community
+5214.0,515.0,Mature Epithelial_Community
+6488.0,3460.0,Mature Epithelial_Community
+5789.0,3765.0,CD8+ T Enriched IEL_Community
+5653.0,1765.0,Mature Epithelial_Community
+7535.0,4310.0,Mature Epithelial_Community
+4857.0,438.0,Plasma Cell Enriched_Community
+6721.0,3252.0,Mature Epithelial_Community
+6242.0,4109.0,Plasma Cell Enriched_Community
+6153.0,3616.0,Plasma Cell Enriched_Community
+7751.0,7292.0,Mature Epithelial_Community
+7259.0,6505.0,Plasma Cell Enriched_Community
+6228.0,3627.0,Plasma Cell Enriched_Community
+7786.0,8628.0,Mature Epithelial_Community
+6285.0,4360.0,Plasma Cell Enriched_Community
+5986.0,3030.0,Plasma Cell Enriched_Community
+7919.0,7207.0,Mature Epithelial_Community
+6732.0,4298.0,Plasma Cell Enriched_Community
+7725.0,6908.0,CD8+ T Enriched IEL_Community
+6102.0,2769.0,CD8+ T Enriched IEL_Community
+7572.0,6466.0,Innate Immune Enriched_Community
+4991.0,1212.0,Plasma Cell Enriched_Community
+6258.0,4449.0,Plasma Cell Enriched_Community
+4999.0,1282.0,Adaptive Immune Enriched_Community
+7320.0,8762.0,Plasma Cell Enriched_Community
+7117.0,7422.0,Secretory Epithelial_Community
+4537.0,50.0,Plasma Cell Enriched_Community
+6900.0,6242.0,Plasma Cell Enriched_Community
+5738.0,3246.0,Plasma Cell Enriched_Community
+6916.0,6251.0,Plasma Cell Enriched_Community
+7187.0,8335.0,Secretory Epithelial_Community
+7040.0,7853.0,Secretory Epithelial_Community
+7038.0,7120.0,Plasma Cell Enriched_Community
+5626.0,3289.0,Plasma Cell Enriched_Community
+6962.0,6816.0,Secretory Epithelial_Community
+5509.0,3000.0,CD8+ T Enriched IEL_Community
+4785.0,1251.0,Follicle_Community
+6149.0,4766.0,Adaptive Immune Enriched_Community
+6882.0,7185.0,Adaptive Immune Enriched_Community
+5469.0,3453.0,Adaptive Immune Enriched_Community
+8156.0,8502.0,Mature Epithelial_Community
+6321.0,4637.0,Plasma Cell Enriched_Community
+7126.0,4617.0,Mature Epithelial_Community
+5408.0,583.0,CD8+ T Enriched IEL_Community
+5849.0,3970.0,Plasma Cell Enriched_Community
+6361.0,5548.0,Adaptive Immune Enriched_Community
+6977.0,7621.0,Plasma Cell Enriched_Community
+5769.0,700.0,Innate Immune Enriched_Community
+7285.0,5833.0,Mature Epithelial_Community
+6543.0,3506.0,Mature Epithelial_Community
+6413.0,2701.0,CD8+ T Enriched IEL_Community
+8175.0,6576.0,Mature Epithelial_Community
+7625.0,6479.0,Innate Immune Enriched_Community
+7489.0,4826.0,CD8+ T Enriched IEL_Community
+6603.0,4787.0,CD8+ T Enriched IEL_Community
+7067.0,3059.0,Mature Epithelial_Community
+6721.0,5212.0,Plasma Cell Enriched_Community
+6973.0,3992.0,CD8+ T Enriched IEL_Community
+5368.0,3053.0,Adaptive Immune Enriched_Community
+7278.0,5194.0,CD8+ T Enriched IEL_Community
+7191.0,6196.0,Plasma Cell Enriched_Community
+5424.0,2741.0,CD8+ T Enriched IEL_Community
+6753.0,6075.0,Plasma Cell Enriched_Community
+6319.0,4887.0,Adaptive Immune Enriched_Community
+5468.0,2638.0,Plasma Cell Enriched_Community
+7744.0,7174.0,Mature Epithelial_Community
+6934.0,7306.0,Adaptive Immune Enriched_Community
+6788.0,2304.0,Mature Epithelial_Community
+8523.0,5852.0,Mature Epithelial_Community
+7696.0,3132.0,Mature Epithelial_Community
+8118.0,4098.0,Mature Epithelial_Community
+8248.0,5108.0,Mature Epithelial_Community
+6673.0,3549.0,Mature Epithelial_Community
+6899.0,742.0,CD66+ Mature Epithelial_Community
+7411.0,2545.0,Mature Epithelial_Community
+6693.0,458.0,Mature Epithelial_Community
+6756.0,339.0,Mature Epithelial_Community
+8496.0,5923.0,Mature Epithelial_Community
+8388.0,4276.0,CD66+ Mature Epithelial_Community
+8379.0,4241.0,CD66+ Mature Epithelial_Community
+8915.0,7007.0,CD66+ Mature Epithelial_Community
+7990.0,6940.0,Mature Epithelial_Community
+8594.0,8960.0,Mature Epithelial_Community
+7818.0,3211.0,Mature Epithelial_Community
+6456.0,1149.0,Mature Epithelial_Community
+8929.0,8197.0,Mature Epithelial_Community
+6776.0,1528.0,Mature Epithelial_Community
+8368.0,5737.0,Mature Epithelial_Community
+8834.0,8121.0,CD66+ Mature Epithelial_Community
+8813.0,8098.0,Mature Epithelial_Community
+8681.0,7002.0,Mature Epithelial_Community
+7752.0,110.0,CD66+ Mature Epithelial_Community
+8484.0,6209.0,Mature Epithelial_Community
+8868.0,7077.0,CD66+ Mature Epithelial_Community
+7856.0,3238.0,Mature Epithelial_Community
+6714.0,6303.0,Adaptive Immune Enriched_Community
+6945.0,7334.0,Adaptive Immune Enriched_Community
+6728.0,4962.0,Plasma Cell Enriched_Community
+7831.0,6738.0,Mature Epithelial_Community
+6465.0,4590.0,Plasma Cell Enriched_Community
+3747.0,2227.0,Stroma_Community
+4637.0,953.0,Adaptive Immune Enriched_Community
+4523.0,664.0,Follicle_Community
+5804.0,4003.0,Secretory Epithelial_Community
+4459.0,20.0,Plasma Cell Enriched_Community
+4184.0,4796.0,Stroma_Community
+7045.0,8048.0,Adaptive Immune Enriched_Community
+910.0,7430.0,Smooth Muscle_Community
+4033.0,4130.0,Stroma_Community
+3700.0,7591.0,Stroma_Community
+5023.0,8557.0,Stroma_Community
+5324.0,3533.0,Stroma_Community
+4716.0,2170.0,Stroma_Community
+2488.0,338.0,Stroma_Community
+3982.0,4263.0,Stroma_Community
+862.0,550.0,Stroma_Community
+1607.0,2022.0,Stroma_Community
+1190.0,604.0,Stroma_Community
+1837.0,2224.0,Stroma_Community
+3373.0,2656.0,Stroma_Community
+2008.0,7392.0,Stroma_Community
+3429.0,2622.0,Stroma_Community
+2345.0,1188.0,Stroma_Community
+8843.0,6911.0,CD66+ Mature Epithelial_Community
+8857.0,8269.0,CD66+ Mature Epithelial_Community
+3645.0,6716.0,Stroma_Community
+5613.0,734.0,Innate Immune Enriched_Community
+5341.0,3427.0,Adaptive Immune Enriched_Community
+6218.0,4319.0,Plasma Cell Enriched_Community
+6501.0,6557.0,Adaptive Immune Enriched_Community
+686.0,7450.0,Smooth Muscle_Community
+588.0,2518.0,Smooth Muscle_Community
+407.0,8513.0,Smooth Muscle_Community
+5272.0,6109.0,Stroma_Community
+3534.0,771.0,Stroma_Community
+6657.0,3777.0,Innate Immune Enriched_Community
+6812.0,5134.0,Plasma Cell Enriched_Community
+4679.0,713.0,Adaptive Immune Enriched_Community
+6368.0,3236.0,Stroma_Community
+6401.0,5123.0,Adaptive Immune Enriched_Community
+6256.0,5933.0,Smooth Muscle_Community
+6853.0,6068.0,Plasma Cell Enriched_Community
+6605.0,6670.0,Adaptive Immune Enriched_Community
+3449.0,8936.0,Stroma_Community
+4906.0,7053.0,Stroma_Community
+6419.0,3807.0,Plasma Cell Enriched_Community
+403.0,8945.0,Smooth Muscle_Community
+636.0,8393.0,Smooth Muscle_Community
+6478.0,4242.0,Plasma Cell Enriched_Community
+3807.0,2270.0,Stroma_Community
+6387.0,6053.0,Smooth Muscle_Community
+262.0,4313.0,Smooth Muscle_Community
+3684.0,2042.0,Stroma_Community
+532.0,7401.0,Smooth Muscle_Community
+5561.0,2201.0,Plasma Cell Enriched_Community
+5294.0,3179.0,Adaptive Immune Enriched_Community
+2409.0,77.0,Stroma_Community
+6324.0,5364.0,Adaptive Immune Enriched_Community
+7215.0,8121.0,Plasma Cell Enriched_Community
+285.0,6508.0,Stroma_Community
+4571.0,1216.0,Follicle_Community
+7632.0,9036.0,Plasma Cell Enriched_Community
+321.0,8174.0,Smooth Muscle_Community
+7599.0,5275.0,Innate Immune Enriched_Community
+459.0,5710.0,Smooth Muscle_Community
+5957.0,4825.0,Adaptive Immune Enriched_Community
+6821.0,4154.0,CD8+ T Enriched IEL_Community
+3567.0,2321.0,Stroma_Community
+648.0,7127.0,Smooth Muscle_Community
+6325.0,6148.0,Smooth Muscle_Community
+5588.0,3468.0,Adaptive Immune Enriched_Community
+5465.0,7894.0,Stroma_Community
+6106.0,5259.0,Smooth Muscle_Community
+7654.0,7699.0,Plasma Cell Enriched_Community
+4596.0,7238.0,Stroma_Community
+36.0,2551.0,Smooth Muscle_Community
+7795.0,7659.0,Plasma Cell Enriched_Community
+1111.0,2799.0,Smooth Muscle_Community
+1001.0,4202.0,Smooth Muscle_Community
+2616.0,8932.0,Stroma_Community
+3611.0,1951.0,Stroma_Community
+6110.0,5247.0,Smooth Muscle_Community
+6277.0,5783.0,Smooth Muscle_Community
+6937.0,7974.0,Adaptive Immune Enriched_Community
+6650.0,5491.0,Plasma Cell Enriched_Community
+468.0,8239.0,Smooth Muscle_Community
+710.0,5904.0,Smooth Muscle_Community
+6812.0,7239.0,Adaptive Immune Enriched_Community
+4786.0,7791.0,Stroma_Community
+1039.0,2281.0,Smooth Muscle_Community
+4611.0,3814.0,Stroma_Community
+6175.0,5228.0,Adaptive Immune Enriched_Community
+7620.0,8570.0,Plasma Cell Enriched_Community
+3405.0,8784.0,Stroma_Community
+7709.0,6810.0,Plasma Cell Enriched_Community
+5487.0,2778.0,CD8+ T Enriched IEL_Community
+52.0,9049.0,Smooth Muscle_Community
+599.0,8066.0,Smooth Muscle_Community
+853.0,4521.0,Smooth Muscle_Community
+191.0,6989.0,Smooth Muscle_Community
+4276.0,8083.0,Stroma_Community
+628.0,6808.0,Smooth Muscle_Community
+4929.0,2230.0,Adaptive Immune Enriched_Community
+5542.0,3952.0,Adaptive Immune Enriched_Community
+4942.0,3549.0,Stroma_Community
+4775.0,2429.0,Smooth Muscle_Community
+120.0,6565.0,Stroma_Community
+6260.0,5990.0,Smooth Muscle_Community
+141.0,5344.0,Smooth Muscle_Community
+6863.0,7720.0,Adaptive Immune Enriched_Community
+493.0,7356.0,Smooth Muscle_Community
+6055.0,4570.0,Adaptive Immune Enriched_Community
+924.0,4843.0,Smooth Muscle_Community
+6366.0,8245.0,Stroma_Community
+4202.0,164.0,Adaptive Immune Enriched_Community
+3546.0,7837.0,Stroma_Community
+6342.0,3317.0,Innate Immune Enriched_Community
+5188.0,2679.0,Adaptive Immune Enriched_Community
+5332.0,7950.0,Stroma_Community
+4394.0,8518.0,Stroma_Community
+4903.0,3613.0,Stroma_Community
+5627.0,2982.0,CD8+ T Enriched IEL_Community
+2001.0,2235.0,Stroma_Community
+4380.0,351.0,Adaptive Immune Enriched_Community
+831.0,6383.0,Smooth Muscle_Community
+5659.0,7918.0,Stroma_Community
+6410.0,5180.0,Adaptive Immune Enriched_Community
+4276.0,8068.0,Stroma_Community
+6086.0,5344.0,Smooth Muscle_Community
+7458.0,8922.0,Plasma Cell Enriched_Community
+6989.0,8483.0,Adaptive Immune Enriched_Community
+2658.0,182.0,Stroma_Community
+574.0,6207.0,Smooth Muscle_Community
+478.0,5373.0,Smooth Muscle_Community
+6409.0,5161.0,Adaptive Immune Enriched_Community
+4569.0,7861.0,Stroma_Community
+6272.0,4482.0,Plasma Cell Enriched_Community
+6311.0,2510.0,Innate Immune Enriched_Community
+860.0,2659.0,Smooth Muscle_Community
+5039.0,8043.0,Stroma_Community
+4814.0,3429.0,Stroma_Community
+6439.0,5324.0,Plasma Cell Enriched_Community
+4663.0,1473.0,Follicle_Community
+4992.0,1347.0,Adaptive Immune Enriched_Community
+6835.0,7583.0,Adaptive Immune Enriched_Community
+6416.0,3848.0,Plasma Cell Enriched_Community
+6283.0,2350.0,Innate Immune Enriched_Community
+5320.0,3229.0,Adaptive Immune Enriched_Community
+200.0,1484.0,Stroma_Community
+4982.0,2506.0,Adaptive Immune Enriched_Community
+5904.0,1269.0,CD8+ T Enriched IEL_Community
+6275.0,4613.0,Plasma Cell Enriched_Community
+6057.0,4113.0,Plasma Cell Enriched_Community
+633.0,8671.0,Smooth Muscle_Community
+165.0,5418.0,Smooth Muscle_Community
+3395.0,8688.0,Stroma_Community
+7234.0,8123.0,Plasma Cell Enriched_Community
+5793.0,1294.0,CD8+ T Enriched IEL_Community
+5525.0,7930.0,Stroma_Community
+5679.0,7867.0,Stroma_Community
+835.0,5849.0,Smooth Muscle_Community
+6165.0,3479.0,Plasma Cell Enriched_Community
+3373.0,8671.0,Stroma_Community
+6464.0,4214.0,Plasma Cell Enriched_Community
+7350.0,4940.0,Innate Immune Enriched_Community
+4302.0,195.0,Adaptive Immune Enriched_Community
+7580.0,5458.0,Stroma_Community
+6785.0,4156.0,CD8+ T Enriched IEL_Community
+4773.0,229.0,Plasma Cell Enriched_Community
+5.0,7250.0,Smooth Muscle_Community
+4936.0,2207.0,Adaptive Immune Enriched_Community
+654.0,8359.0,Smooth Muscle_Community
+6920.0,8953.0,Adaptive Immune Enriched_Community
+7641.0,7694.0,Plasma Cell Enriched_Community
+277.0,5246.0,Smooth Muscle_Community
+5072.0,1100.0,Plasma Cell Enriched_Community
+5336.0,2499.0,Plasma Cell Enriched_Community
+683.0,7865.0,Smooth Muscle_Community
+351.0,883.0,Smooth Muscle_Community
+939.0,3375.0,Smooth Muscle_Community
+6234.0,4992.0,Adaptive Immune Enriched_Community
+591.0,7540.0,Smooth Muscle_Community
+6381.0,5147.0,Adaptive Immune Enriched_Community
+268.0,2207.0,Smooth Muscle_Community
+6421.0,6331.0,Smooth Muscle_Community
+6517.0,6333.0,Adaptive Immune Enriched_Community
+24.0,4770.0,Smooth Muscle_Community
+1012.0,3996.0,Smooth Muscle_Community
+7360.0,7232.0,Plasma Cell Enriched_Community
+6888.0,7966.0,Adaptive Immune Enriched_Community
+5726.0,7416.0,Stroma_Community
+5548.0,729.0,Innate Immune Enriched_Community
+5315.0,3198.0,Adaptive Immune Enriched_Community
+4877.0,2216.0,Adaptive Immune Enriched_Community
+836.0,4787.0,Smooth Muscle_Community
+5101.0,2736.0,Adaptive Immune Enriched_Community
+220.0,111.0,Smooth Muscle_Community
+5265.0,2471.0,Plasma Cell Enriched_Community
+5654.0,3823.0,Adaptive Immune Enriched_Community
+5572.0,161.0,Innate Immune Enriched_Community
+783.0,2817.0,Smooth Muscle_Community
+4634.0,1234.0,Follicle_Community
+6940.0,7906.0,Adaptive Immune Enriched_Community
+6840.0,3652.0,Innate Immune Enriched_Community
+7112.0,4050.0,Mature Epithelial_Community
+7442.0,5057.0,Innate Immune Enriched_Community
+5279.0,3247.0,Adaptive Immune Enriched_Community
+6735.0,7011.0,Adaptive Immune Enriched_Community
+227.0,5026.0,Smooth Muscle_Community
+5432.0,2334.0,Plasma Cell Enriched_Community
+5922.0,4802.0,Adaptive Immune Enriched_Community
+395.0,350.0,Smooth Muscle_Community
+6064.0,5165.0,Adaptive Immune Enriched_Community
+848.0,5804.0,Smooth Muscle_Community
+149.0,1424.0,Smooth Muscle_Community
+353.0,7478.0,Smooth Muscle_Community
+6580.0,4205.0,Plasma Cell Enriched_Community
+72.0,8190.0,Smooth Muscle_Community
+5661.0,4249.0,Adaptive Immune Enriched_Community
+3811.0,1634.0,Stroma_Community
+3506.0,8539.0,Stroma_Community
+7377.0,8118.0,Plasma Cell Enriched_Community
+6691.0,7048.0,Smooth Muscle_Community
+7198.0,9062.0,Adaptive Immune Enriched_Community
+195.0,248.0,Smooth Muscle_Community
+5519.0,4131.0,Adaptive Immune Enriched_Community
+602.0,1181.0,Stroma_Community
+4197.0,12.0,Adaptive Immune Enriched_Community
+59.0,928.0,Smooth Muscle_Community
+401.0,5750.0,Smooth Muscle_Community
+7628.0,5387.0,Stroma_Community
+330.0,3277.0,Smooth Muscle_Community
+765.0,6645.0,Smooth Muscle_Community
+5072.0,3480.0,Smooth Muscle_Community
+6404.0,4188.0,Plasma Cell Enriched_Community
+6546.0,6669.0,Smooth Muscle_Community
+6870.0,7749.0,Adaptive Immune Enriched_Community
+679.0,3066.0,Smooth Muscle_Community
+6798.0,3684.0,Innate Immune Enriched_Community
+4490.0,892.0,Adaptive Immune Enriched_Community
+4372.0,7931.0,Stroma_Community
+287.0,383.0,Smooth Muscle_Community
+6393.0,4251.0,Plasma Cell Enriched_Community
+322.0,3785.0,Smooth Muscle_Community
+270.0,6656.0,Smooth Muscle_Community
+78.0,7915.0,Smooth Muscle_Community
+7057.0,6060.0,Plasma Cell Enriched_Community
+343.0,8660.0,Smooth Muscle_Community
+5575.0,734.0,Innate Immune Enriched_Community
+7561.0,5240.0,Innate Immune Enriched_Community
+521.0,3210.0,Smooth Muscle_Community
+4922.0,1828.0,Adaptive Immune Enriched_Community
+292.0,6320.0,Smooth Muscle_Community
+521.0,4035.0,Smooth Muscle_Community
+7001.0,8464.0,Adaptive Immune Enriched_Community
+6484.0,5995.0,Adaptive Immune Enriched_Community
+547.0,2905.0,Smooth Muscle_Community
+5806.0,4578.0,Adaptive Immune Enriched_Community
+4297.0,8011.0,Stroma_Community
+7484.0,8613.0,Plasma Cell Enriched_Community
+4655.0,3037.0,Stroma_Community
+4645.0,1664.0,Smooth Muscle_Community
+167.0,1466.0,Smooth Muscle_Community
+533.0,6281.0,Smooth Muscle_Community
+4304.0,79.0,Adaptive Immune Enriched_Community
+6395.0,3787.0,Plasma Cell Enriched_Community
+7178.0,8125.0,Plasma Cell Enriched_Community
+847.0,7711.0,Smooth Muscle_Community
+682.0,8081.0,Smooth Muscle_Community
+4966.0,2458.0,Adaptive Immune Enriched_Community
+501.0,5399.0,Smooth Muscle_Community
+5791.0,1951.0,Plasma Cell Enriched_Community
+206.0,6122.0,Smooth Muscle_Community
+585.0,5009.0,Smooth Muscle_Community
+6889.0,7887.0,Adaptive Immune Enriched_Community
+5253.0,3338.0,Smooth Muscle_Community
+168.0,134.0,Smooth Muscle_Community
+5738.0,3691.0,Secretory Epithelial_Community
+6914.0,8006.0,Adaptive Immune Enriched_Community
+21.0,2396.0,Smooth Muscle_Community
+6312.0,4535.0,Plasma Cell Enriched_Community
+4613.0,7853.0,Stroma_Community
+567.0,1288.0,Stroma_Community
+6791.0,7297.0,Adaptive Immune Enriched_Community
+168.0,1923.0,Smooth Muscle_Community
+401.0,8231.0,Smooth Muscle_Community
+265.0,7778.0,Smooth Muscle_Community
+6388.0,6001.0,Adaptive Immune Enriched_Community
+238.0,8492.0,Smooth Muscle_Community
+5986.0,4964.0,Adaptive Immune Enriched_Community
+309.0,1107.0,Smooth Muscle_Community
+537.0,7194.0,Smooth Muscle_Community
+6387.0,2435.0,Innate Immune Enriched_Community
+6801.0,7451.0,Adaptive Immune Enriched_Community
+820.0,3429.0,Smooth Muscle_Community
+49.0,8169.0,Smooth Muscle_Community
+1008.0,2492.0,Smooth Muscle_Community
+369.0,5042.0,Smooth Muscle_Community
+900.0,2300.0,Smooth Muscle_Community
+1136.0,2644.0,Smooth Muscle_Community
+336.0,918.0,Smooth Muscle_Community
+214.0,7708.0,Smooth Muscle_Community
+4267.0,119.0,Adaptive Immune Enriched_Community
+430.0,8542.0,Smooth Muscle_Community
+609.0,1275.0,Stroma_Community
+378.0,7275.0,Smooth Muscle_Community
+981.0,3364.0,Smooth Muscle_Community
+483.0,6200.0,Smooth Muscle_Community
+468.0,7526.0,Smooth Muscle_Community
+629.0,6034.0,Smooth Muscle_Community
+797.0,4608.0,Smooth Muscle_Community
+94.0,4548.0,Smooth Muscle_Community
+528.0,8041.0,Smooth Muscle_Community
+6728.0,4133.0,Plasma Cell Enriched_Community
+78.0,6903.0,Smooth Muscle_Community
+608.0,6066.0,Smooth Muscle_Community
+11.0,98.0,Smooth Muscle_Community
+992.0,4100.0,Smooth Muscle_Community
+848.0,6474.0,Smooth Muscle_Community
+584.0,3869.0,Smooth Muscle_Community
+834.0,4727.0,Smooth Muscle_Community
+565.0,5198.0,Smooth Muscle_Community
+6415.0,6068.0,Adaptive Immune Enriched_Community
+820.0,6234.0,Smooth Muscle_Community
+118.0,7979.0,Smooth Muscle_Community
+603.0,5206.0,Smooth Muscle_Community
+584.0,7977.0,Smooth Muscle_Community
+225.0,8637.0,Smooth Muscle_Community
+6375.0,5936.0,Follicle_Community
+4245.0,84.0,Adaptive Immune Enriched_Community
+338.0,2216.0,Smooth Muscle_Community
+7376.0,6746.0,Plasma Cell Enriched_Community
+978.0,2646.0,Smooth Muscle_Community
+2803.0,191.0,Stroma_Community
+895.0,6269.0,Smooth Muscle_Community
+6956.0,6284.0,Plasma Cell Enriched_Community
+5540.0,3267.0,Secretory Epithelial_Community
+6484.0,5118.0,Secretory Epithelial_Community
+7015.0,6627.0,Plasma Cell Enriched_Community
+531.0,1986.0,Smooth Muscle_Community
+5191.0,3847.0,Stroma_Community
+6738.0,7190.0,Adaptive Immune Enriched_Community
+5968.0,2317.0,Innate Immune Enriched_Community
+5171.0,444.0,Plasma Cell Enriched_Community
+2128.0,1838.0,Stroma_Community
+6875.0,3566.0,Innate Immune Enriched_Community
+7691.0,8651.0,Plasma Cell Enriched_Community
+5077.0,302.0,Plasma Cell Enriched_Community
+4980.0,1438.0,Adaptive Immune Enriched_Community
+2268.0,144.0,Stroma_Community
+6290.0,3400.0,Plasma Cell Enriched_Community
+478.0,6286.0,Smooth Muscle_Community
+7687.0,7985.0,Plasma Cell Enriched_Community
+5018.0,356.0,Plasma Cell Enriched_Community
+6055.0,2895.0,CD8+ T Enriched IEL_Community
+5250.0,243.0,Innate Immune Enriched_Community
+6255.0,5858.0,Smooth Muscle_Community
+6125.0,3450.0,Plasma Cell Enriched_Community
+6203.0,3364.0,Plasma Cell Enriched_Community
+2948.0,7345.0,Stroma_Community
+7067.0,8937.0,Adaptive Immune Enriched_Community
+6901.0,4091.0,CD8+ T Enriched IEL_Community
+7360.0,6687.0,Plasma Cell Enriched_Community
+5880.0,2300.0,Innate Immune Enriched_Community
+7575.0,6409.0,Innate Immune Enriched_Community
+7587.0,6343.0,Innate Immune Enriched_Community
+6426.0,4402.0,Plasma Cell Enriched_Community
+5856.0,1803.0,Innate Immune Enriched_Community
+8211.0,8047.0,Mature Epithelial_Community
+5972.0,2816.0,Plasma Cell Enriched_Community
+6483.0,2962.0,Innate Immune Enriched_Community
+6553.0,5497.0,Plasma Cell Enriched_Community
+6822.0,4988.0,Plasma Cell Enriched_Community
+5224.0,1000.0,Plasma Cell Enriched_Community
+5965.0,2250.0,Innate Immune Enriched_Community
+6275.0,3842.0,Plasma Cell Enriched_Community
+5983.0,2321.0,Innate Immune Enriched_Community
+7574.0,8559.0,Plasma Cell Enriched_Community
+6528.0,4113.0,Plasma Cell Enriched_Community
+6683.0,3820.0,Innate Immune Enriched_Community
+100.0,8858.0,Smooth Muscle_Community
+6557.0,4097.0,Plasma Cell Enriched_Community
+5656.0,114.0,Mature Epithelial_Community
+6636.0,4103.0,Plasma Cell Enriched_Community
+7586.0,5542.0,Stroma_Community
+7094.0,4924.0,Innate Immune Enriched_Community
+7479.0,5354.0,Innate Immune Enriched_Community
+7509.0,8734.0,Plasma Cell Enriched_Community
+6813.0,4058.0,Innate Immune Enriched_Community
+7422.0,7595.0,Plasma Cell Enriched_Community
+6974.0,8570.0,Adaptive Immune Enriched_Community
+5460.0,300.0,Innate Immune Enriched_Community
+6821.0,4573.0,Mature Epithelial_Community
+5122.0,37.0,Plasma Cell Enriched_Community
+6595.0,2888.0,Innate Immune Enriched_Community
+5277.0,1830.0,Plasma Cell Enriched_Community
+5023.0,999.0,Plasma Cell Enriched_Community
+3808.0,7683.0,Stroma_Community
+4986.0,1055.0,Plasma Cell Enriched_Community
+5628.0,2924.0,Plasma Cell Enriched_Community
+5118.0,566.0,Mature Epithelial_Community
+6478.0,5646.0,Adaptive Immune Enriched_Community
+5426.0,5992.0,Stroma_Community
+4368.0,2232.0,Stroma_Community
+3164.0,5328.0,Stroma_Community
+6063.0,4135.0,Plasma Cell Enriched_Community
+5314.0,1650.0,Plasma Cell Enriched_Community
+5804.0,6141.0,Stroma_Community
+6466.0,6075.0,Adaptive Immune Enriched_Community
+6858.0,5723.0,Plasma Cell Enriched_Community
+4707.0,141.0,Plasma Cell Enriched_Community
+5486.0,845.0,Plasma Cell Enriched_Community
+7669.0,5363.0,Stroma_Community
+6644.0,4989.0,Plasma Cell Enriched_Community
+4930.0,680.0,Plasma Cell Enriched_Community
+3365.0,8267.0,Stroma_Community
+4626.0,520.0,Adaptive Immune Enriched_Community
+3096.0,5262.0,Stroma_Community
+3876.0,1955.0,Stroma_Community
+6205.0,4995.0,Adaptive Immune Enriched_Community
+6419.0,8078.0,Stroma_Community
+3704.0,5854.0,Stroma_Community
+5724.0,1320.0,CD8+ T Enriched IEL_Community
+5601.0,7656.0,Stroma_Community
+4894.0,531.0,Plasma Cell Enriched_Community
+5602.0,2382.0,Plasma Cell Enriched_Community
+4853.0,7038.0,Stroma_Community
+7816.0,6625.0,Mature Epithelial_Community
+6348.0,370.0,Mature Epithelial_Community
+8173.0,6438.0,Mature Epithelial_Community
+8024.0,7942.0,Mature Epithelial_Community
+8315.0,5549.0,Mature Epithelial_Community
+6279.0,4662.0,Adaptive Immune Enriched_Community
+6643.0,4586.0,Plasma Cell Enriched_Community
+5187.0,8155.0,Stroma_Community
+8066.0,5008.0,Mature Epithelial_Community
+4777.0,450.0,Plasma Cell Enriched_Community
+5213.0,1122.0,Plasma Cell Enriched_Community
+6291.0,2992.0,Mature Epithelial_Community
+7721.0,7930.0,Plasma Cell Enriched_Community
+7986.0,8351.0,Mature Epithelial_Community
+8629.0,7357.0,Mature Epithelial_Community
+8287.0,5643.0,Mature Epithelial_Community
+7297.0,6166.0,CD8+ T Enriched IEL_Community
+7080.0,3952.0,CD8+ T Enriched IEL_Community
+7495.0,6702.0,Plasma Cell Enriched_Community
+7469.0,7561.0,Plasma Cell Enriched_Community
+7752.0,3716.0,Mature Epithelial_Community
+5400.0,2196.0,Plasma Cell Enriched_Community
+7130.0,3370.0,Mature Epithelial_Community
+6481.0,813.0,Mature Epithelial_Community
+5517.0,3054.0,Secretory Epithelial_Community
+6744.0,6387.0,Plasma Cell Enriched_Community
+7121.0,4291.0,Mature Epithelial_Community
+7298.0,4666.0,Innate Immune Enriched_Community
+5591.0,2625.0,Plasma Cell Enriched_Community
+8642.0,8650.0,Mature Epithelial_Community
+7226.0,2689.0,CD8+ T Enriched IEL_Community
+6186.0,241.0,CD8+ T Enriched IEL_Community
+7274.0,8409.0,Plasma Cell Enriched_Community
+6951.0,3724.0,Mature Epithelial_Community
+7068.0,5999.0,Plasma Cell Enriched_Community
+5929.0,3341.0,Plasma Cell Enriched_Community
+6872.0,2627.0,Mature Epithelial_Community
+8107.0,7887.0,Mature Epithelial_Community
+8290.0,5307.0,Mature Epithelial_Community
+6841.0,711.0,CD66+ Mature Epithelial_Community
+6528.0,5498.0,Plasma Cell Enriched_Community
+6100.0,3070.0,Mature Epithelial_Community
+5360.0,1932.0,Plasma Cell Enriched_Community
+5039.0,265.0,Plasma Cell Enriched_Community
+8159.0,8647.0,Mature Epithelial_Community
+6287.0,3028.0,Mature Epithelial_Community
+6655.0,1964.0,Mature Epithelial_Community
+7477.0,4624.0,Mature Epithelial_Community
+6151.0,3057.0,CD8+ T Enriched IEL_Community
+7263.0,5248.0,CD8+ T Enriched IEL_Community
+4857.0,1012.0,Plasma Cell Enriched_Community
+6252.0,2652.0,CD8+ T Enriched IEL_Community
+6614.0,2658.0,Mature Epithelial_Community
+7677.0,5800.0,Mature Epithelial_Community
+5573.0,1276.0,Plasma Cell Enriched_Community
+6225.0,454.0,Mature Epithelial_Community
+7872.0,6486.0,Mature Epithelial_Community
+6902.0,5779.0,Plasma Cell Enriched_Community
+6628.0,2920.0,Mature Epithelial_Community
+6456.0,4108.0,Plasma Cell Enriched_Community
+7199.0,8953.0,Adaptive Immune Enriched_Community
+7494.0,5233.0,Innate Immune Enriched_Community
+7052.0,5510.0,CD8+ T Enriched IEL_Community
+8367.0,8631.0,Mature Epithelial_Community
+6335.0,2637.0,CD8+ T Enriched IEL_Community
+8463.0,8912.0,Mature Epithelial_Community
+7535.0,7514.0,Plasma Cell Enriched_Community
+7896.0,8104.0,Innate Immune Enriched_Community
+8374.0,8175.0,Mature Epithelial_Community
+8155.0,7528.0,Mature Epithelial_Community
+8453.0,8901.0,Mature Epithelial_Community
+6279.0,3046.0,Innate Immune Enriched_Community
+7066.0,5906.0,Mature Epithelial_Community
+6225.0,1507.0,Mature Epithelial_Community
+4710.0,185.0,Plasma Cell Enriched_Community
+4552.0,793.0,Adaptive Immune Enriched_Community
+8167.0,8461.0,Mature Epithelial_Community
+8185.0,6434.0,Mature Epithelial_Community
+6214.0,1769.0,Mature Epithelial_Community
+6929.0,5586.0,Plasma Cell Enriched_Community
+5550.0,3555.0,Adaptive Immune Enriched_Community
+7772.0,6353.0,Mature Epithelial_Community
+7217.0,6371.0,Plasma Cell Enriched_Community
+6523.0,5481.0,Plasma Cell Enriched_Community
+6029.0,1039.0,Mature Epithelial_Community
+5615.0,642.0,Innate Immune Enriched_Community
+7488.0,3909.0,Mature Epithelial_Community
+7965.0,6543.0,Mature Epithelial_Community
+4694.0,863.0,Adaptive Immune Enriched_Community
+5402.0,1294.0,Plasma Cell Enriched_Community
+6993.0,4713.0,CD8+ T Enriched IEL_Community
+5592.0,3078.0,Secretory Epithelial_Community
+5223.0,963.0,Plasma Cell Enriched_Community
+8367.0,5985.0,Mature Epithelial_Community
+6280.0,1883.0,Mature Epithelial_Community
+7476.0,7545.0,Plasma Cell Enriched_Community
+7101.0,5032.0,Plasma Cell Enriched_Community
+5653.0,473.0,Mature Epithelial_Community
+7433.0,8132.0,Plasma Cell Enriched_Community
+7033.0,4705.0,CD8+ T Enriched IEL_Community
+5814.0,3713.0,Secretory Epithelial_Community
+6467.0,2787.0,CD8+ T Enriched IEL_Community
+6015.0,2517.0,CD8+ T Enriched IEL_Community
+7062.0,7953.0,Secretory Epithelial_Community
+6596.0,1497.0,Mature Epithelial_Community
+4913.0,1623.0,Adaptive Immune Enriched_Community
+7167.0,6278.0,CD8+ T Enriched IEL_Community
+7650.0,5839.0,Mature Epithelial_Community
+5605.0,3537.0,Adaptive Immune Enriched_Community
+6635.0,4705.0,CD8+ T Enriched IEL_Community
+6061.0,713.0,Mature Epithelial_Community
+5510.0,80.0,Innate Immune Enriched_Community
+7314.0,2620.0,Mature Epithelial_Community
+6833.0,4995.0,Plasma Cell Enriched_Community
+7128.0,5149.0,CD8+ T Enriched IEL_Community
+6003.0,4279.0,Secretory Epithelial_Community
+5541.0,3564.0,Adaptive Immune Enriched_Community
+5949.0,1962.0,Innate Immune Enriched_Community
+7672.0,7122.0,Mature Epithelial_Community
+7862.0,3476.0,Mature Epithelial_Community
+6610.0,1533.0,CD8+ T Enriched IEL_Community
+7045.0,2363.0,Mature Epithelial_Community
+6565.0,4593.0,Secretory Epithelial_Community
+6433.0,5863.0,Adaptive Immune Enriched_Community
+6578.0,3638.0,Innate Immune Enriched_Community
+6464.0,3558.0,Mature Epithelial_Community
+6833.0,2663.0,Mature Epithelial_Community
+6571.0,4067.0,Plasma Cell Enriched_Community
+6212.0,5200.0,Adaptive Immune Enriched_Community
+6044.0,718.0,Mature Epithelial_Community
+7157.0,3260.0,Mature Epithelial_Community
+7298.0,5045.0,CD8+ T Enriched IEL_Community
+5424.0,2850.0,CD8+ T Enriched IEL_Community
+5438.0,1867.0,Plasma Cell Enriched_Community
+7598.0,2636.0,Mature Epithelial_Community
+7802.0,7131.0,Mature Epithelial_Community
+6171.0,1887.0,CD8+ T Enriched IEL_Community
+8011.0,7575.0,Mature Epithelial_Community
+7676.0,6045.0,Mature Epithelial_Community
+7634.0,2768.0,Mature Epithelial_Community
+7005.0,4005.0,CD8+ T Enriched IEL_Community
+7118.0,3668.0,Mature Epithelial_Community
+6387.0,860.0,Mature Epithelial_Community
+6262.0,1740.0,Mature Epithelial_Community
+6206.0,1871.0,CD8+ T Enriched IEL_Community
+8155.0,7268.0,Mature Epithelial_Community
+4864.0,1857.0,Adaptive Immune Enriched_Community
+5576.0,65.0,Innate Immune Enriched_Community
+6359.0,2460.0,Innate Immune Enriched_Community
+5695.0,75.0,Mature Epithelial_Community
+5015.0,723.0,Plasma Cell Enriched_Community
+7578.0,8185.0,Plasma Cell Enriched_Community
+7391.0,5418.0,CD8+ T Enriched IEL_Community
+6222.0,2168.0,Mature Epithelial_Community
+7821.0,8338.0,Mature Epithelial_Community
+8113.0,9036.0,Innate Immune Enriched_Community
+7071.0,8798.0,Adaptive Immune Enriched_Community
+5519.0,2729.0,CD8+ T Enriched IEL_Community
+8052.0,7872.0,Mature Epithelial_Community
+7561.0,3237.0,Mature Epithelial_Community
+7541.0,8032.0,Plasma Cell Enriched_Community
+7126.0,3680.0,Mature Epithelial_Community
+5478.0,3628.0,Stroma_Community
+7011.0,4714.0,CD8+ T Enriched IEL_Community
+8433.0,7370.0,Mature Epithelial_Community
+6920.0,5573.0,Plasma Cell Enriched_Community
+7810.0,8947.0,Innate Immune Enriched_Community
+6929.0,3079.0,Mature Epithelial_Community
+6710.0,4342.0,Mature Epithelial_Community
+5639.0,257.0,Mature Epithelial_Community
+7452.0,3859.0,Mature Epithelial_Community
+6164.0,1097.0,Mature Epithelial_Community
+7705.0,8879.0,Plasma Cell Enriched_Community
+6933.0,6598.0,Plasma Cell Enriched_Community
+6728.0,4252.0,Plasma Cell Enriched_Community
+4994.0,825.0,Plasma Cell Enriched_Community
+5350.0,2338.0,Plasma Cell Enriched_Community
+7113.0,3326.0,Mature Epithelial_Community
+5980.0,1741.0,CD8+ T Enriched IEL_Community
+6396.0,5078.0,Adaptive Immune Enriched_Community
+5892.0,61.0,Mature Epithelial_Community
+8024.0,6438.0,Mature Epithelial_Community
+6898.0,4396.0,Mature Epithelial_Community
+7821.0,6030.0,Mature Epithelial_Community
+7714.0,6468.0,Mature Epithelial_Community
+8373.0,8113.0,Mature Epithelial_Community
+7178.0,6285.0,CD8+ T Enriched IEL_Community
+6869.0,4822.0,Mature Epithelial_Community
+6783.0,4242.0,Plasma Cell Enriched_Community
+6883.0,4170.0,CD8+ T Enriched IEL_Community
+5242.0,2497.0,Plasma Cell Enriched_Community
+381.0,5977.0,Smooth Muscle_Community
+7776.0,6188.0,Mature Epithelial_Community
+8322.0,8620.0,Mature Epithelial_Community
+7759.0,8458.0,Plasma Cell Enriched_Community
+6865.0,7590.0,Adaptive Immune Enriched_Community
+6955.0,7622.0,Adaptive Immune Enriched_Community
+7597.0,4735.0,Mature Epithelial_Community
+4970.0,1652.0,Plasma Cell Enriched_Community
+7257.0,8693.0,Secretory Epithelial_Community
+5775.0,3265.0,Plasma Cell Enriched_Community
+7852.0,8586.0,Mature Epithelial_Community
+7075.0,6441.0,Plasma Cell Enriched_Community
+5933.0,674.0,Mature Epithelial_Community
+7104.0,3385.0,Mature Epithelial_Community
+7542.0,6397.0,Innate Immune Enriched_Community
+4789.0,1550.0,Adaptive Immune Enriched_Community
+6969.0,2602.0,Mature Epithelial_Community
+4752.0,539.0,Plasma Cell Enriched_Community
+5801.0,3457.0,Plasma Cell Enriched_Community
+6996.0,4751.0,CD8+ T Enriched IEL_Community
+5014.0,833.0,Plasma Cell Enriched_Community
+6510.0,1216.0,Mature Epithelial_Community
+7168.0,5059.0,CD8+ T Enriched IEL_Community
+4940.0,898.0,Plasma Cell Enriched_Community
+5581.0,3058.0,Secretory Epithelial_Community
+4867.0,593.0,Plasma Cell Enriched_Community
+6885.0,5763.0,Plasma Cell Enriched_Community
+7964.0,4926.0,Mature Epithelial_Community
+7632.0,5805.0,Mature Epithelial_Community
+5773.0,4086.0,Secretory Epithelial_Community
+7395.0,5049.0,Innate Immune Enriched_Community
+8057.0,6833.0,Mature Epithelial_Community
+6732.0,3662.0,Innate Immune Enriched_Community
+6043.0,707.0,Mature Epithelial_Community
+7863.0,6189.0,Mature Epithelial_Community
+5849.0,1388.0,CD8+ T Enriched IEL_Community
+7082.0,5409.0,CD8+ T Enriched IEL_Community
+8074.0,8679.0,Mature Epithelial_Community
+6830.0,6783.0,Secretory Epithelial_Community
+5990.0,2584.0,CD8+ T Enriched IEL_Community
+6501.0,5639.0,Adaptive Immune Enriched_Community
+4736.0,285.0,Plasma Cell Enriched_Community
+5462.0,1446.0,Plasma Cell Enriched_Community
+6550.0,1995.0,Mature Epithelial_Community
+6993.0,7861.0,Adaptive Immune Enriched_Community
+5041.0,1983.0,Adaptive Immune Enriched_Community
+6904.0,5675.0,Plasma Cell Enriched_Community
+7541.0,6502.0,Plasma Cell Enriched_Community
+5469.0,1468.0,Plasma Cell Enriched_Community
+5584.0,2372.0,Plasma Cell Enriched_Community
+5931.0,2076.0,CD8+ T Enriched IEL_Community
+7508.0,7530.0,Plasma Cell Enriched_Community
+6676.0,4653.0,CD8+ T Enriched IEL_Community
+7230.0,2844.0,Mature Epithelial_Community
+7150.0,6265.0,Plasma Cell Enriched_Community
+7637.0,5955.0,Mature Epithelial_Community
+6107.0,4297.0,Plasma Cell Enriched_Community
+6070.0,757.0,Mature Epithelial_Community
+6431.0,3776.0,Plasma Cell Enriched_Community
+5644.0,1350.0,Plasma Cell Enriched_Community
+5433.0,585.0,CD8+ T Enriched IEL_Community
+7843.0,6745.0,Mature Epithelial_Community
+6079.0,2484.0,CD8+ T Enriched IEL_Community
+5469.0,48.0,Innate Immune Enriched_Community
+6639.0,4019.0,Mature Epithelial_Community
+72.0,5914.0,Smooth Muscle_Community
+7276.0,3204.0,Mature Epithelial_Community
+6468.0,4466.0,Plasma Cell Enriched_Community
+7151.0,4132.0,Mature Epithelial_Community
+6681.0,1410.0,Mature Epithelial_Community
+6717.0,2954.0,Mature Epithelial_Community
+5405.0,1350.0,Plasma Cell Enriched_Community
+5840.0,3867.0,Plasma Cell Enriched_Community
+6117.0,489.0,Mature Epithelial_Community
+7983.0,8097.0,Innate Immune Enriched_Community
+7096.0,4448.0,Mature Epithelial_Community
+6193.0,4160.0,Plasma Cell Enriched_Community
+8411.0,8401.0,Mature Epithelial_Community
+6383.0,57.0,CD8+ T Enriched IEL_Community
+7032.0,6036.0,Plasma Cell Enriched_Community
+5027.0,1549.0,Plasma Cell Enriched_Community
+7317.0,4239.0,Mature Epithelial_Community
+6915.0,5059.0,Plasma Cell Enriched_Community
+7503.0,6041.0,Mature Epithelial_Community
+6577.0,5668.0,Adaptive Immune Enriched_Community
+6347.0,2493.0,Innate Immune Enriched_Community
+7770.0,3864.0,Mature Epithelial_Community
+8009.0,7876.0,Mature Epithelial_Community
+5869.0,2135.0,Plasma Cell Enriched_Community
+5568.0,2644.0,Plasma Cell Enriched_Community
+6970.0,4149.0,CD8+ T Enriched IEL_Community
+6978.0,3279.0,Mature Epithelial_Community
+5661.0,889.0,Plasma Cell Enriched_Community
+7875.0,7605.0,Innate Immune Enriched_Community
+6490.0,3677.0,Innate Immune Enriched_Community
+5483.0,2218.0,Plasma Cell Enriched_Community
+7075.0,4429.0,Mature Epithelial_Community
+6415.0,122.0,CD8+ T Enriched IEL_Community
+6841.0,3619.0,Innate Immune Enriched_Community
+4810.0,6.0,Plasma Cell Enriched_Community
+6641.0,6009.0,Adaptive Immune Enriched_Community
+5043.0,1311.0,Adaptive Immune Enriched_Community
+7426.0,7169.0,Plasma Cell Enriched_Community
+7589.0,5212.0,Innate Immune Enriched_Community
+5665.0,3566.0,CD8+ T Enriched IEL_Community
+6734.0,5896.0,Plasma Cell Enriched_Community
+8467.0,7437.0,Mature Epithelial_Community
+6622.0,2438.0,Mature Epithelial_Community
+7901.0,6881.0,Mature Epithelial_Community
+7962.0,4541.0,Mature Epithelial_Community
+5355.0,2632.0,Plasma Cell Enriched_Community
+7572.0,8953.0,Plasma Cell Enriched_Community
+6669.0,3010.0,Mature Epithelial_Community
+5601.0,624.0,CD8+ T Enriched IEL_Community
+8182.0,7675.0,Mature Epithelial_Community
+7444.0,4811.0,Innate Immune Enriched_Community
+7193.0,7663.0,Plasma Cell Enriched_Community
+6710.0,2892.0,Mature Epithelial_Community
+5078.0,1851.0,Plasma Cell Enriched_Community
+7062.0,1984.0,Mature Epithelial_Community
+5229.0,208.0,Plasma Cell Enriched_Community
+8127.0,8922.0,Innate Immune Enriched_Community
+6369.0,2361.0,Innate Immune Enriched_Community
+6565.0,1519.0,Mature Epithelial_Community
+7437.0,5022.0,Innate Immune Enriched_Community
+6019.0,4465.0,Secretory Epithelial_Community
+6826.0,5550.0,Plasma Cell Enriched_Community
+7196.0,5904.0,Plasma Cell Enriched_Community
+7487.0,5145.0,CD8+ T Enriched IEL_Community
+7639.0,5128.0,Mature Epithelial_Community
+7305.0,4355.0,Mature Epithelial_Community
+8567.0,7334.0,Mature Epithelial_Community
+6058.0,1909.0,Mature Epithelial_Community
+5965.0,2204.0,Innate Immune Enriched_Community
+7070.0,4204.0,CD8+ T Enriched IEL_Community
+8052.0,6799.0,Mature Epithelial_Community
+7282.0,6212.0,CD8+ T Enriched IEL_Community
+7429.0,4431.0,Mature Epithelial_Community
+7456.0,4145.0,Mature Epithelial_Community
+6299.0,3049.0,Innate Immune Enriched_Community
+7249.0,4317.0,Mature Epithelial_Community
+4611.0,7254.0,Stroma_Community
+3208.0,5524.0,Stroma_Community
+6160.0,4322.0,Plasma Cell Enriched_Community
+3987.0,1359.0,Stroma_Community
+3424.0,8295.0,Stroma_Community
+7645.0,6300.0,Innate Immune Enriched_Community
+315.0,8977.0,Smooth Muscle_Community
+5502.0,5970.0,Stroma_Community
+6432.0,3723.0,Plasma Cell Enriched_Community
+5413.0,3699.0,Stroma_Community
+4840.0,9018.0,Stroma_Community
+3773.0,5880.0,Stroma_Community
+6196.0,3348.0,Plasma Cell Enriched_Community
+6054.0,7852.0,Stroma_Community
+7647.0,5539.0,Stroma_Community
+6109.0,2309.0,Innate Immune Enriched_Community
+5682.0,7405.0,Stroma_Community
+6483.0,3083.0,Stroma_Community
+6683.0,7268.0,Stroma_Community
+6797.0,3710.0,Innate Immune Enriched_Community
+5222.0,3674.0,Stroma_Community
+7033.0,4050.0,CD8+ T Enriched IEL_Community
+6976.0,6582.0,Plasma Cell Enriched_Community
+3652.0,1493.0,Stroma_Community
+5473.0,7873.0,Stroma_Community
+5739.0,1847.0,Innate Immune Enriched_Community
+6326.0,2358.0,Innate Immune Enriched_Community
+6377.0,2540.0,Innate Immune Enriched_Community
+4919.0,8900.0,Stroma_Community
+52.0,8441.0,Smooth Muscle_Community
+7803.0,8103.0,Innate Immune Enriched_Community
+7612.0,5567.0,Stroma_Community
+7967.0,8930.0,Stroma_Community
+3475.0,7771.0,Stroma_Community
+4600.0,7875.0,Stroma_Community
+4580.0,3020.0,Stroma_Community
+7291.0,4745.0,Innate Immune Enriched_Community
+6258.0,2353.0,Innate Immune Enriched_Community
+7003.0,6880.0,Secretory Epithelial_Community
+7022.0,5373.0,Plasma Cell Enriched_Community
+5043.0,522.0,Plasma Cell Enriched_Community
+4534.0,8572.0,Stroma_Community
+5836.0,1903.0,Innate Immune Enriched_Community
+5765.0,2968.0,Plasma Cell Enriched_Community
+6886.0,8154.0,Adaptive Immune Enriched_Community
+2768.0,3028.0,Stroma_Community
+1838.0,2772.0,Stroma_Community
+804.0,1523.0,Stroma_Community
+7804.0,7602.0,Innate Immune Enriched_Community
+7528.0,8060.0,Plasma Cell Enriched_Community
+7678.0,5434.0,Stroma_Community
+5105.0,987.0,Plasma Cell Enriched_Community
+3481.0,3153.0,Stroma_Community
+7608.0,4183.0,Mature Epithelial_Community
+5971.0,1823.0,Innate Immune Enriched_Community
+6115.0,4987.0,Adaptive Immune Enriched_Community
+6533.0,6063.0,Adaptive Immune Enriched_Community
+5920.0,4291.0,Secretory Epithelial_Community
+5320.0,3709.0,Stroma_Community
+6430.0,4318.0,Plasma Cell Enriched_Community
+5775.0,3237.0,Plasma Cell Enriched_Community
+4510.0,7909.0,Stroma_Community
+7139.0,4891.0,Innate Immune Enriched_Community
+6551.0,3017.0,Innate Immune Enriched_Community
+4813.0,3413.0,Stroma_Community
+6402.0,4133.0,Plasma Cell Enriched_Community
+7133.0,4814.0,Innate Immune Enriched_Community
+6520.0,5690.0,Adaptive Immune Enriched_Community
+7800.0,8005.0,Innate Immune Enriched_Community
+5380.0,766.0,Plasma Cell Enriched_Community
+6637.0,7215.0,Stroma_Community
+3736.0,5832.0,Stroma_Community
+3718.0,1823.0,Stroma_Community
+7486.0,5076.0,Innate Immune Enriched_Community
+7765.0,8539.0,Plasma Cell Enriched_Community
+3639.0,1488.0,Stroma_Community
+3397.0,8391.0,Stroma_Community
+4748.0,8253.0,Stroma_Community
+2085.0,2547.0,Stroma_Community
+4520.0,7906.0,Stroma_Community
+5102.0,1049.0,Plasma Cell Enriched_Community
+6515.0,2955.0,Innate Immune Enriched_Community
+4859.0,1401.0,Adaptive Immune Enriched_Community
+6076.0,7891.0,Stroma_Community
+7894.0,7658.0,Innate Immune Enriched_Community
+4525.0,7930.0,Stroma_Community
+2041.0,2234.0,Stroma_Community
+7917.0,7646.0,Mature Epithelial_Community
+1796.0,2983.0,Stroma_Community
+6106.0,3562.0,Plasma Cell Enriched_Community
+7120.0,4768.0,CD8+ T Enriched IEL_Community
+5441.0,3733.0,Stroma_Community
+190.0,3503.0,Smooth Muscle_Community
+7091.0,6133.0,Plasma Cell Enriched_Community
+5990.0,2874.0,Plasma Cell Enriched_Community
+2522.0,1212.0,Stroma_Community
+7420.0,6462.0,Plasma Cell Enriched_Community
+5591.0,108.0,Innate Immune Enriched_Community
+5386.0,3701.0,Stroma_Community
+6561.0,7150.0,Smooth Muscle_Community
+7378.0,4710.0,CD8+ T Enriched IEL_Community
+858.0,6602.0,Smooth Muscle_Community
+5646.0,7296.0,Stroma_Community
+5587.0,709.0,Innate Immune Enriched_Community
+3548.0,1013.0,Stroma_Community
+7782.0,5326.0,Mature Epithelial_Community
+5332.0,320.0,Innate Immune Enriched_Community
+5670.0,7381.0,Stroma_Community
+5925.0,4299.0,Secretory Epithelial_Community
+6021.0,3306.0,Plasma Cell Enriched_Community
+7768.0,8981.0,Plasma Cell Enriched_Community
+7608.0,4227.0,Mature Epithelial_Community
+6301.0,4238.0,Plasma Cell Enriched_Community
+6769.0,5958.0,Plasma Cell Enriched_Community
+9.0,9037.0,Smooth Muscle_Community
+7420.0,7822.0,Plasma Cell Enriched_Community
+4758.0,3793.0,Stroma_Community
+5118.0,1035.0,Plasma Cell Enriched_Community
+5528.0,3532.0,Adaptive Immune Enriched_Community
+6434.0,3740.0,Plasma Cell Enriched_Community
+8053.0,8964.0,Stroma_Community
+6007.0,4485.0,Adaptive Immune Enriched_Community
+454.0,1474.0,Stroma_Community
+7298.0,4914.0,Innate Immune Enriched_Community
+4793.0,3.0,Plasma Cell Enriched_Community
+1696.0,2913.0,Stroma_Community
+1583.0,2672.0,Stroma_Community
+3539.0,3285.0,Stroma_Community
+5833.0,1308.0,CD8+ T Enriched IEL_Community
+5312.0,3689.0,Stroma_Community
+3421.0,8535.0,Stroma_Community
+6280.0,3563.0,Plasma Cell Enriched_Community
+3837.0,8236.0,Stroma_Community
+4577.0,3445.0,Stroma_Community
+3009.0,7433.0,Stroma_Community
+33.0,1508.0,Smooth Muscle_Community
+7216.0,6656.0,Mature Epithelial_Community
+4007.0,1183.0,Stroma_Community
+2591.0,2434.0,Stroma_Community
+5252.0,2095.0,Plasma Cell Enriched_Community
+7455.0,4966.0,Innate Immune Enriched_Community
+6600.0,2923.0,Innate Immune Enriched_Community
+3066.0,7752.0,Stroma_Community
+6182.0,4348.0,Plasma Cell Enriched_Community
+7030.0,7311.0,Adaptive Immune Enriched_Community
+6405.0,3741.0,Plasma Cell Enriched_Community
+5646.0,903.0,Plasma Cell Enriched_Community
+6815.0,6905.0,Secretory Epithelial_Community
+5253.0,8166.0,Stroma_Community
+7171.0,4860.0,Innate Immune Enriched_Community
+6394.0,8230.0,Stroma_Community
+6494.0,3121.0,Innate Immune Enriched_Community
+379.0,4055.0,Smooth Muscle_Community
+4897.0,1070.0,Plasma Cell Enriched_Community
+5825.0,551.0,Mature Epithelial_Community
+5132.0,1451.0,Follicle_Community
+4621.0,1913.0,Stroma_Community
+1510.0,8327.0,Stroma_Community
+6291.0,2380.0,Stroma_Community
+4514.0,8801.0,Stroma_Community
+6022.0,2251.0,Innate Immune Enriched_Community
+7466.0,5068.0,Innate Immune Enriched_Community
+7451.0,9067.0,Plasma Cell Enriched_Community
+5032.0,1394.0,Follicle_Community
+6080.0,7805.0,Stroma_Community
+7232.0,4925.0,Innate Immune Enriched_Community
+2620.0,2438.0,Stroma_Community
+5011.0,7419.0,Stroma_Community
+204.0,6174.0,Stroma_Community
+6002.0,3771.0,Plasma Cell Enriched_Community
+7723.0,5414.0,Innate Immune Enriched_Community
+4616.0,3035.0,Stroma_Community
+5537.0,107.0,Innate Immune Enriched_Community
+81.0,5667.0,Smooth Muscle_Community
+5065.0,1390.0,Follicle_Community
+236.0,2653.0,Smooth Muscle_Community
+3666.0,3075.0,Stroma_Community
+6368.0,2419.0,Innate Immune Enriched_Community
+6053.0,2873.0,CD8+ T Enriched IEL_Community
+7819.0,9041.0,Innate Immune Enriched_Community
+307.0,8899.0,Smooth Muscle_Community
+4452.0,8243.0,Stroma_Community
+5022.0,2280.0,Adaptive Immune Enriched_Community
+7003.0,5383.0,Plasma Cell Enriched_Community
+6975.0,6329.0,Plasma Cell Enriched_Community
+7451.0,4984.0,Innate Immune Enriched_Community
+6066.0,1792.0,CD8+ T Enriched IEL_Community
+7612.0,7269.0,Plasma Cell Enriched_Community
+7880.0,8415.0,Mature Epithelial_Community
+5583.0,694.0,Innate Immune Enriched_Community
+893.0,8181.0,Smooth Muscle_Community
+84.0,7242.0,Smooth Muscle_Community
+4857.0,1071.0,Plasma Cell Enriched_Community
+7309.0,4910.0,Innate Immune Enriched_Community
+4524.0,1931.0,Stroma_Community
+5407.0,1330.0,Plasma Cell Enriched_Community
+2718.0,5591.0,Stroma_Community
+6851.0,6672.0,Plasma Cell Enriched_Community
+5311.0,8117.0,Stroma_Community
+6202.0,2343.0,Innate Immune Enriched_Community
+6517.0,6075.0,Adaptive Immune Enriched_Community
+1905.0,2721.0,Stroma_Community
+7109.0,6491.0,Plasma Cell Enriched_Community
+611.0,3768.0,Smooth Muscle_Community
+4704.0,8691.0,Stroma_Community
+7410.0,4911.0,Innate Immune Enriched_Community
+7284.0,5923.0,Plasma Cell Enriched_Community
+1548.0,8305.0,Stroma_Community
+7647.0,5598.0,Mature Epithelial_Community
+821.0,4046.0,Smooth Muscle_Community
+46.0,6231.0,Stroma_Community
+7449.0,7765.0,Plasma Cell Enriched_Community
+6845.0,5995.0,Plasma Cell Enriched_Community
+4923.0,7062.0,Stroma_Community
+767.0,1402.0,Stroma_Community
+428.0,6125.0,Smooth Muscle_Community
+4384.0,7909.0,Stroma_Community
+7906.0,6778.0,Mature Epithelial_Community
+785.0,4019.0,Smooth Muscle_Community
+927.0,5742.0,Smooth Muscle_Community
+7668.0,6835.0,Plasma Cell Enriched_Community
+5299.0,1903.0,Plasma Cell Enriched_Community
+6809.0,5027.0,Plasma Cell Enriched_Community
+5056.0,1637.0,Plasma Cell Enriched_Community
+5967.0,1769.0,Innate Immune Enriched_Community
+4691.0,1191.0,Follicle_Community
+8156.0,8974.0,Innate Immune Enriched_Community
+7600.0,7604.0,Plasma Cell Enriched_Community
+676.0,2146.0,Smooth Muscle_Community
+6363.0,3715.0,Plasma Cell Enriched_Community
+4797.0,9043.0,Stroma_Community
+6546.0,4741.0,CD8+ T Enriched IEL_Community
+7636.0,6837.0,Plasma Cell Enriched_Community
+5479.0,1054.0,Plasma Cell Enriched_Community
+6357.0,4637.0,Plasma Cell Enriched_Community
+7786.0,8098.0,Plasma Cell Enriched_Community
+2754.0,183.0,Stroma_Community
+788.0,1876.0,Smooth Muscle_Community
+7666.0,7586.0,Plasma Cell Enriched_Community
+6810.0,6030.0,Plasma Cell Enriched_Community
+7712.0,8126.0,Plasma Cell Enriched_Community
+60.0,6727.0,Stroma_Community
+5365.0,3678.0,Stroma_Community
+7437.0,8220.0,CD8+ T Enriched IEL_Community
+5255.0,732.0,Plasma Cell Enriched_Community
+5940.0,4371.0,Secretory Epithelial_Community
+5192.0,2168.0,Plasma Cell Enriched_Community
+5849.0,3930.0,Plasma Cell Enriched_Community
+5676.0,3077.0,Secretory Epithelial_Community
+7220.0,7308.0,Plasma Cell Enriched_Community
+5478.0,1624.0,Mature Epithelial_Community
+6142.0,4589.0,Adaptive Immune Enriched_Community
+6435.0,4515.0,Plasma Cell Enriched_Community
+5552.0,2942.0,CD8+ T Enriched IEL_Community
+7220.0,8969.0,Adaptive Immune Enriched_Community
+5586.0,2021.0,Plasma Cell Enriched_Community
+4898.0,729.0,Plasma Cell Enriched_Community
+6512.0,3440.0,Mature Epithelial_Community
+5770.0,4172.0,Adaptive Immune Enriched_Community
+7246.0,7584.0,Plasma Cell Enriched_Community
+6234.0,3745.0,Plasma Cell Enriched_Community
+7162.0,9008.0,Adaptive Immune Enriched_Community
+7247.0,5469.0,Secretory Epithelial_Community
+5768.0,3767.0,CD8+ T Enriched IEL_Community
+5306.0,1764.0,Plasma Cell Enriched_Community
+6685.0,6257.0,Adaptive Immune Enriched_Community
+7305.0,9054.0,Secretory Epithelial_Community
+5885.0,2704.0,Plasma Cell Enriched_Community
+7293.0,8437.0,Plasma Cell Enriched_Community
+6380.0,2873.0,CD8+ T Enriched IEL_Community
+6032.0,3178.0,Secretory Epithelial_Community
+6886.0,7094.0,Adaptive Immune Enriched_Community
+7058.0,7852.0,Secretory Epithelial_Community
+5354.0,2888.0,Adaptive Immune Enriched_Community
+5220.0,1836.0,Plasma Cell Enriched_Community
+6864.0,6659.0,Plasma Cell Enriched_Community
+7218.0,7947.0,Plasma Cell Enriched_Community
+6401.0,4689.0,Plasma Cell Enriched_Community
+4636.0,193.0,Plasma Cell Enriched_Community
+5882.0,4242.0,Secretory Epithelial_Community
+7122.0,5340.0,CD8+ T Enriched IEL_Community
+7869.0,8772.0,Mature Epithelial_Community
+6752.0,6154.0,Secretory Epithelial_Community
+7177.0,6716.0,Plasma Cell Enriched_Community
+7415.0,8213.0,Plasma Cell Enriched_Community
+5645.0,3046.0,Plasma Cell Enriched_Community
+5541.0,1986.0,CD8+ T Enriched IEL_Community
+7023.0,7465.0,Secretory Epithelial_Community
+6124.0,4591.0,Adaptive Immune Enriched_Community
+7121.0,7128.0,Plasma Cell Enriched_Community
+5525.0,2645.0,Plasma Cell Enriched_Community
+5467.0,1867.0,CD8+ T Enriched IEL_Community
+5299.0,1746.0,Plasma Cell Enriched_Community
+6683.0,5192.0,Plasma Cell Enriched_Community
+5943.0,3100.0,Plasma Cell Enriched_Community
+6877.0,4776.0,Mature Epithelial_Community
+6935.0,6856.0,Secretory Epithelial_Community
+4466.0,203.0,Adaptive Immune Enriched_Community
+6680.0,5476.0,Plasma Cell Enriched_Community
+6101.0,3443.0,Plasma Cell Enriched_Community
+7292.0,6545.0,Mature Epithelial_Community
+6585.0,3379.0,Mature Epithelial_Community
+4256.0,3432.0,Stroma_Community
+7622.0,4435.0,Mature Epithelial_Community
+4315.0,100.0,Adaptive Immune Enriched_Community
+8164.0,8873.0,Innate Immune Enriched_Community
+904.0,7923.0,Smooth Muscle_Community
+2540.0,7323.0,Stroma_Community
+4009.0,1918.0,Stroma_Community
+903.0,517.0,Stroma_Community
+369.0,1085.0,Smooth Muscle_Community
+559.0,162.0,Smooth Muscle_Community
+5359.0,6660.0,Stroma_Community
+4537.0,2011.0,Stroma_Community
+5938.0,5436.0,Smooth Muscle_Community
+6564.0,8122.0,Stroma_Community
+3044.0,1739.0,Stroma_Community
+3214.0,7979.0,Stroma_Community
+3313.0,432.0,Stroma_Community
+4119.0,781.0,Smooth Muscle_Community
+3120.0,2058.0,Stroma_Community
+3747.0,5455.0,Stroma_Community
+1074.0,5772.0,Smooth Muscle_Community
+3900.0,1313.0,Stroma_Community
+934.0,5654.0,Smooth Muscle_Community
+3154.0,4352.0,Stroma_Community
+1820.0,8658.0,Stroma_Community
+2103.0,8206.0,Stroma_Community
+5559.0,7105.0,Stroma_Community
+4294.0,2427.0,Stroma_Community
+4138.0,4194.0,Stroma_Community
+3760.0,2054.0,Stroma_Community
+4025.0,2054.0,Stroma_Community
+5055.0,7197.0,Stroma_Community
+5046.0,4640.0,Stroma_Community
+7243.0,4104.0,Mature Epithelial_Community
+166.0,2089.0,Smooth Muscle_Community
+2829.0,2960.0,Stroma_Community
+2855.0,5615.0,Stroma_Community
+5893.0,6104.0,Stroma_Community
+844.0,8290.0,Smooth Muscle_Community
+3594.0,1428.0,Stroma_Community
+3160.0,4509.0,Stroma_Community
+6086.0,1208.0,CD8+ T Enriched IEL_Community
+1614.0,1170.0,Stroma_Community
+1325.0,224.0,Stroma_Community
+1627.0,1951.0,Stroma_Community
+1518.0,9068.0,Stroma_Community
+4862.0,7535.0,Stroma_Community
+4439.0,4004.0,Stroma_Community
+3138.0,8671.0,Stroma_Community
+5593.0,2543.0,Plasma Cell Enriched_Community
+7399.0,8143.0,Plasma Cell Enriched_Community
+3161.0,5532.0,Stroma_Community
+7.0,5476.0,Smooth Muscle_Community
+3542.0,7786.0,Stroma_Community
+4017.0,4780.0,Stroma_Community
+3512.0,6148.0,Stroma_Community
+3131.0,8259.0,Stroma_Community
+5592.0,4650.0,Smooth Muscle_Community
+1471.0,8454.0,Stroma_Community
+2497.0,8536.0,Stroma_Community
+3615.0,4119.0,Stroma_Community
+4144.0,3396.0,Stroma_Community
+3420.0,2906.0,Stroma_Community
+6056.0,8401.0,Stroma_Community
+3489.0,3180.0,Stroma_Community
+888.0,6663.0,Smooth Muscle_Community
+5648.0,882.0,Plasma Cell Enriched_Community
+521.0,423.0,Smooth Muscle_Community
+3752.0,6162.0,Stroma_Community
+4334.0,463.0,Adaptive Immune Enriched_Community
+4169.0,7910.0,Stroma_Community
+265.0,4073.0,Smooth Muscle_Community
+1726.0,1935.0,Stroma_Community
+1946.0,9033.0,Stroma_Community
+3641.0,5132.0,Stroma_Community
+619.0,3122.0,Smooth Muscle_Community
+2859.0,1360.0,Stroma_Community
+3659.0,1074.0,Stroma_Community
+3129.0,1733.0,Stroma_Community
+4230.0,8848.0,Stroma_Community
+543.0,6542.0,Smooth Muscle_Community
+377.0,4033.0,Smooth Muscle_Community
+283.0,1373.0,Smooth Muscle_Community
+4096.0,8777.0,Stroma_Community
+2794.0,319.0,Stroma_Community
+1593.0,8473.0,Stroma_Community
+1619.0,4218.0,Smooth Muscle_Community
+3147.0,6735.0,Stroma_Community
+4006.0,7196.0,Stroma_Community
+4807.0,2414.0,Smooth Muscle_Community
+4583.0,3770.0,Stroma_Community
+1078.0,7515.0,Smooth Muscle_Community
+861.0,137.0,Stroma_Community
+3536.0,3574.0,Stroma_Community
+4200.0,5843.0,Stroma_Community
+5991.0,8295.0,Stroma_Community
+4117.0,8336.0,Stroma_Community
+744.0,3611.0,Smooth Muscle_Community
+5139.0,8955.0,Stroma_Community
+723.0,1345.0,Stroma_Community
+2056.0,246.0,Stroma_Community
+1889.0,8227.0,Stroma_Community
+7078.0,4231.0,CD8+ T Enriched IEL_Community
+1863.0,8855.0,Stroma_Community
+3696.0,876.0,Stroma_Community
+409.0,7748.0,Smooth Muscle_Community
+3712.0,4585.0,Stroma_Community
+2641.0,7738.0,Stroma_Community
+1882.0,2160.0,Stroma_Community
+4623.0,6941.0,Stroma_Community
+3773.0,1865.0,Stroma_Community
+5100.0,1601.0,Plasma Cell Enriched_Community
+666.0,4344.0,Smooth Muscle_Community
+5302.0,2758.0,Adaptive Immune Enriched_Community
+3118.0,6162.0,Stroma_Community
+504.0,497.0,Smooth Muscle_Community
+7541.0,7280.0,Plasma Cell Enriched_Community
+5349.0,8911.0,Stroma_Community
+2163.0,1992.0,Stroma_Community
+4810.0,5783.0,Stroma_Community
+870.0,8247.0,Smooth Muscle_Community
+521.0,2783.0,Smooth Muscle_Community
+462.0,5254.0,Smooth Muscle_Community
+257.0,7546.0,Smooth Muscle_Community
+4779.0,134.0,Plasma Cell Enriched_Community
+4669.0,1270.0,Follicle_Community
+7255.0,8917.0,Adaptive Immune Enriched_Community
+4718.0,1277.0,Follicle_Community
+5314.0,3162.0,Adaptive Immune Enriched_Community
+5076.0,1345.0,Follicle_Community
+4620.0,8188.0,Stroma_Community
+7140.0,7242.0,Plasma Cell Enriched_Community
+5499.0,3663.0,Adaptive Immune Enriched_Community
+7397.0,8911.0,Plasma Cell Enriched_Community
+5369.0,2620.0,Plasma Cell Enriched_Community
+4684.0,281.0,Plasma Cell Enriched_Community
+6089.0,1816.0,CD8+ T Enriched IEL_Community
+6259.0,4658.0,Adaptive Immune Enriched_Community
+6047.0,4843.0,Adaptive Immune Enriched_Community
+6278.0,4631.0,Adaptive Immune Enriched_Community
+4868.0,1891.0,Adaptive Immune Enriched_Community
+7154.0,4857.0,Innate Immune Enriched_Community
+6348.0,5133.0,Adaptive Immune Enriched_Community
+4675.0,509.0,Plasma Cell Enriched_Community
+6466.0,5959.0,Adaptive Immune Enriched_Community
+4899.0,1733.0,Adaptive Immune Enriched_Community
+6748.0,5892.0,Plasma Cell Enriched_Community
+7663.0,7602.0,Plasma Cell Enriched_Community
+6410.0,5064.0,Secretory Epithelial_Community
+4688.0,5053.0,Stroma_Community
+6581.0,1778.0,Mature Epithelial_Community
+6536.0,6705.0,Smooth Muscle_Community
+5470.0,839.0,Plasma Cell Enriched_Community
+7471.0,6331.0,Plasma Cell Enriched_Community
+5019.0,2257.0,Adaptive Immune Enriched_Community
+7072.0,8982.0,Adaptive Immune Enriched_Community
+6735.0,6187.0,Adaptive Immune Enriched_Community
+5178.0,291.0,Plasma Cell Enriched_Community
+6941.0,6235.0,Plasma Cell Enriched_Community
+6163.0,2400.0,Innate Immune Enriched_Community
+6449.0,6007.0,Adaptive Immune Enriched_Community
+4637.0,1124.0,Follicle_Community
+7224.0,4395.0,Mature Epithelial_Community
+4788.0,137.0,Plasma Cell Enriched_Community
+4973.0,431.0,Plasma Cell Enriched_Community
+4790.0,2045.0,Stroma_Community
+6944.0,6121.0,Plasma Cell Enriched_Community
+5801.0,4472.0,Adaptive Immune Enriched_Community
+5148.0,2531.0,Adaptive Immune Enriched_Community
+5086.0,2393.0,Adaptive Immune Enriched_Community
+7067.0,8554.0,Adaptive Immune Enriched_Community
+7380.0,7900.0,Plasma Cell Enriched_Community
+7228.0,6753.0,Plasma Cell Enriched_Community
+4910.0,1833.0,Adaptive Immune Enriched_Community
+5456.0,2225.0,Plasma Cell Enriched_Community
+6496.0,6169.0,Adaptive Immune Enriched_Community
+5039.0,1574.0,Plasma Cell Enriched_Community
+7041.0,6216.0,Plasma Cell Enriched_Community
+3726.0,2202.0,Stroma_Community
+5418.0,2212.0,Plasma Cell Enriched_Community
+7538.0,8490.0,Plasma Cell Enriched_Community
+6089.0,4074.0,Plasma Cell Enriched_Community
+5253.0,2287.0,Plasma Cell Enriched_Community
+5858.0,4528.0,Adaptive Immune Enriched_Community
+4893.0,32.0,Plasma Cell Enriched_Community
+5115.0,1412.0,Follicle_Community
+7422.0,6476.0,Plasma Cell Enriched_Community
+6678.0,5982.0,Adaptive Immune Enriched_Community
+5925.0,3848.0,Plasma Cell Enriched_Community
+4652.0,1200.0,Follicle_Community
+5289.0,2297.0,Plasma Cell Enriched_Community
+6810.0,5155.0,Plasma Cell Enriched_Community
+4654.0,1080.0,Adaptive Immune Enriched_Community
+7194.0,4916.0,Innate Immune Enriched_Community
+7069.0,7283.0,Adaptive Immune Enriched_Community
+5382.0,3324.0,Adaptive Immune Enriched_Community
+7063.0,8532.0,Adaptive Immune Enriched_Community
+6696.0,5667.0,Plasma Cell Enriched_Community
+5822.0,4252.0,Secretory Epithelial_Community
+4730.0,1220.0,Follicle_Community
+5434.0,960.0,Plasma Cell Enriched_Community
+6751.0,6983.0,Adaptive Immune Enriched_Community
+5494.0,2181.0,Plasma Cell Enriched_Community
+6964.0,5471.0,Plasma Cell Enriched_Community
+5045.0,1609.0,Plasma Cell Enriched_Community
+4799.0,1669.0,Adaptive Immune Enriched_Community
+7385.0,8670.0,Plasma Cell Enriched_Community
+5653.0,3844.0,Adaptive Immune Enriched_Community
+5264.0,1639.0,Plasma Cell Enriched_Community
+7396.0,7882.0,Plasma Cell Enriched_Community
+6849.0,5419.0,Plasma Cell Enriched_Community
+6699.0,6823.0,Adaptive Immune Enriched_Community
+6441.0,4483.0,Plasma Cell Enriched_Community
+4780.0,286.0,Plasma Cell Enriched_Community
+6746.0,5097.0,Plasma Cell Enriched_Community
+5158.0,743.0,Plasma Cell Enriched_Community
+5046.0,1083.0,Plasma Cell Enriched_Community
+5043.0,1297.0,Adaptive Immune Enriched_Community
+6619.0,5370.0,Plasma Cell Enriched_Community
+6543.0,4245.0,Plasma Cell Enriched_Community
+6769.0,6723.0,Plasma Cell Enriched_Community
+4711.0,1356.0,Follicle_Community
+4862.0,450.0,Plasma Cell Enriched_Community
+7696.0,5324.0,Innate Immune Enriched_Community
+6464.0,5975.0,Adaptive Immune Enriched_Community
+6589.0,6505.0,Adaptive Immune Enriched_Community
+7224.0,8085.0,Plasma Cell Enriched_Community
+5013.0,1464.0,Adaptive Immune Enriched_Community
+6504.0,5368.0,Plasma Cell Enriched_Community
+5092.0,1351.0,Follicle_Community
+5432.0,2466.0,Plasma Cell Enriched_Community
+5164.0,732.0,Plasma Cell Enriched_Community
+5893.0,3880.0,Plasma Cell Enriched_Community
+7064.0,7244.0,Adaptive Immune Enriched_Community
+7341.0,8891.0,Plasma Cell Enriched_Community
+6966.0,6619.0,Plasma Cell Enriched_Community
+5681.0,3649.0,Secretory Epithelial_Community
+5639.0,4110.0,Adaptive Immune Enriched_Community
+6040.0,3635.0,Plasma Cell Enriched_Community
+5644.0,3858.0,Adaptive Immune Enriched_Community
+6962.0,6879.0,Secretory Epithelial_Community
+6952.0,6084.0,Plasma Cell Enriched_Community
+7374.0,8238.0,Plasma Cell Enriched_Community
+5632.0,2154.0,Plasma Cell Enriched_Community
+7473.0,8544.0,Plasma Cell Enriched_Community
+6785.0,6469.0,Plasma Cell Enriched_Community
+7629.0,8672.0,Plasma Cell Enriched_Community
+6270.0,5510.0,Adaptive Immune Enriched_Community
+6600.0,6313.0,Adaptive Immune Enriched_Community
+6924.0,6475.0,Plasma Cell Enriched_Community
+7965.0,8388.0,Mature Epithelial_Community
+6740.0,5918.0,Plasma Cell Enriched_Community
+5044.0,504.0,Plasma Cell Enriched_Community
+4744.0,1155.0,Follicle_Community
+6445.0,3746.0,Plasma Cell Enriched_Community
+6759.0,4124.0,Plasma Cell Enriched_Community
+5384.0,2261.0,Plasma Cell Enriched_Community
+6859.0,5356.0,Plasma Cell Enriched_Community
+7343.0,6775.0,Plasma Cell Enriched_Community
+6232.0,3368.0,Plasma Cell Enriched_Community
+7620.0,8067.0,Plasma Cell Enriched_Community
+5760.0,2061.0,Plasma Cell Enriched_Community
+5475.0,863.0,Plasma Cell Enriched_Community
+6548.0,4986.0,Plasma Cell Enriched_Community
+6193.0,3573.0,Plasma Cell Enriched_Community
+7262.0,8710.0,Secretory Epithelial_Community
+7251.0,7825.0,Plasma Cell Enriched_Community
+5840.0,3468.0,Plasma Cell Enriched_Community
+6314.0,3512.0,Plasma Cell Enriched_Community
+7227.0,6867.0,Plasma Cell Enriched_Community
+6079.0,3852.0,Plasma Cell Enriched_Community
+6723.0,4579.0,Plasma Cell Enriched_Community
+6550.0,4259.0,Plasma Cell Enriched_Community
+5812.0,2338.0,Plasma Cell Enriched_Community
+5679.0,3434.0,Plasma Cell Enriched_Community
+7546.0,8567.0,Plasma Cell Enriched_Community
+7351.0,6838.0,Plasma Cell Enriched_Community
+4836.0,39.0,Plasma Cell Enriched_Community
+6067.0,3585.0,Plasma Cell Enriched_Community
+7370.0,8383.0,Plasma Cell Enriched_Community
+6543.0,4148.0,Plasma Cell Enriched_Community
+7040.0,6288.0,Plasma Cell Enriched_Community
+5431.0,912.0,Plasma Cell Enriched_Community
+7215.0,6847.0,Plasma Cell Enriched_Community
+6264.0,3364.0,Plasma Cell Enriched_Community
+5350.0,2430.0,Plasma Cell Enriched_Community
+4909.0,19.0,Plasma Cell Enriched_Community
+7560.0,8655.0,Plasma Cell Enriched_Community
+7173.0,7650.0,Plasma Cell Enriched_Community
+7172.0,7032.0,Plasma Cell Enriched_Community
+5215.0,1932.0,Plasma Cell Enriched_Community
+7721.0,8522.0,Plasma Cell Enriched_Community
+5916.0,2824.0,Plasma Cell Enriched_Community
+7535.0,7606.0,Plasma Cell Enriched_Community
+5288.0,1854.0,Plasma Cell Enriched_Community
+6839.0,6371.0,Plasma Cell Enriched_Community
+5213.0,803.0,Plasma Cell Enriched_Community
+5261.0,417.0,Plasma Cell Enriched_Community
+6537.0,5361.0,Plasma Cell Enriched_Community
+7518.0,7667.0,Plasma Cell Enriched_Community
+7595.0,8973.0,Plasma Cell Enriched_Community
+7150.0,7047.0,Plasma Cell Enriched_Community
+5896.0,2863.0,Plasma Cell Enriched_Community
+5208.0,2113.0,Plasma Cell Enriched_Community
+5610.0,2696.0,Plasma Cell Enriched_Community
+5265.0,1627.0,Plasma Cell Enriched_Community
+7295.0,7258.0,Plasma Cell Enriched_Community
+7541.0,8436.0,Plasma Cell Enriched_Community
+6749.0,6762.0,Plasma Cell Enriched_Community
+6839.0,5363.0,Plasma Cell Enriched_Community
+7116.0,5977.0,Plasma Cell Enriched_Community
+7494.0,7316.0,Plasma Cell Enriched_Community
+7405.0,7204.0,Plasma Cell Enriched_Community
+7609.0,8469.0,Plasma Cell Enriched_Community
+6415.0,4423.0,Plasma Cell Enriched_Community
+6837.0,6730.0,Plasma Cell Enriched_Community
+6547.0,5481.0,Plasma Cell Enriched_Community
+4854.0,1024.0,Plasma Cell Enriched_Community
+5301.0,1847.0,Plasma Cell Enriched_Community
+4926.0,1609.0,Adaptive Immune Enriched_Community
+6339.0,4220.0,Plasma Cell Enriched_Community
+4948.0,538.0,Plasma Cell Enriched_Community
+5367.0,2092.0,Plasma Cell Enriched_Community
+7190.0,7707.0,Plasma Cell Enriched_Community
+7326.0,7199.0,Plasma Cell Enriched_Community
+7620.0,8143.0,Plasma Cell Enriched_Community
+5036.0,539.0,Plasma Cell Enriched_Community
+7693.0,7737.0,Plasma Cell Enriched_Community
+5198.0,1439.0,Plasma Cell Enriched_Community
+7172.0,7458.0,Secretory Epithelial_Community
+6901.0,6198.0,Plasma Cell Enriched_Community
+7434.0,7198.0,Plasma Cell Enriched_Community
+7147.0,8897.0,CD8+ T Enriched IEL_Community
+7198.0,8067.0,Plasma Cell Enriched_Community
+6895.0,5109.0,Plasma Cell Enriched_Community
+5500.0,1048.0,Plasma Cell Enriched_Community
+7605.0,7712.0,Plasma Cell Enriched_Community
+6820.0,5122.0,Plasma Cell Enriched_Community
+7571.0,8496.0,Plasma Cell Enriched_Community
+7242.0,8135.0,Plasma Cell Enriched_Community
+5882.0,3316.0,Plasma Cell Enriched_Community
+6024.0,3582.0,Plasma Cell Enriched_Community
+6186.0,4141.0,Plasma Cell Enriched_Community
+4900.0,1033.0,Plasma Cell Enriched_Community
+7323.0,6844.0,Plasma Cell Enriched_Community
+7238.0,6814.0,Plasma Cell Enriched_Community
+6695.0,4618.0,Plasma Cell Enriched_Community
+5173.0,1608.0,Plasma Cell Enriched_Community
+6727.0,4229.0,Plasma Cell Enriched_Community
+5627.0,2277.0,Plasma Cell Enriched_Community
+7606.0,6798.0,Plasma Cell Enriched_Community
+5364.0,2545.0,Plasma Cell Enriched_Community
+7173.0,7050.0,Plasma Cell Enriched_Community
+6956.0,6224.0,Plasma Cell Enriched_Community
+7635.0,7999.0,Plasma Cell Enriched_Community
+5408.0,1124.0,Plasma Cell Enriched_Community
+7394.0,8698.0,Plasma Cell Enriched_Community
+5795.0,2004.0,Plasma Cell Enriched_Community
+6073.0,3550.0,Plasma Cell Enriched_Community
+5601.0,1350.0,Plasma Cell Enriched_Community
+6564.0,4278.0,Plasma Cell Enriched_Community
+7690.0,8465.0,Plasma Cell Enriched_Community
+7822.0,6772.0,Mature Epithelial_Community
+7531.0,8596.0,Plasma Cell Enriched_Community
+5611.0,2105.0,Plasma Cell Enriched_Community
+7618.0,7629.0,Plasma Cell Enriched_Community
+5346.0,814.0,Plasma Cell Enriched_Community
+6650.0,5735.0,Plasma Cell Enriched_Community
+7356.0,6470.0,Plasma Cell Enriched_Community
+7656.0,8621.0,Plasma Cell Enriched_Community
+7539.0,9061.0,Plasma Cell Enriched_Community
+6217.0,4220.0,Plasma Cell Enriched_Community
+5371.0,2188.0,Plasma Cell Enriched_Community
+6327.0,3859.0,Plasma Cell Enriched_Community
+6923.0,7079.0,Plasma Cell Enriched_Community
+7384.0,8514.0,Plasma Cell Enriched_Community
+7448.0,8681.0,Plasma Cell Enriched_Community
+6570.0,4129.0,Plasma Cell Enriched_Community
+5013.0,4.0,Plasma Cell Enriched_Community
+7539.0,8508.0,Plasma Cell Enriched_Community
+6802.0,5111.0,Plasma Cell Enriched_Community
+6937.0,6675.0,Plasma Cell Enriched_Community
+6107.0,4551.0,Adaptive Immune Enriched_Community
+7168.0,6492.0,Plasma Cell Enriched_Community
+6913.0,6089.0,Plasma Cell Enriched_Community
+7642.0,8076.0,Plasma Cell Enriched_Community
+7256.0,6455.0,Plasma Cell Enriched_Community
+4938.0,496.0,Plasma Cell Enriched_Community
+5266.0,787.0,Plasma Cell Enriched_Community
+7228.0,6418.0,Plasma Cell Enriched_Community
+5961.0,4330.0,Secretory Epithelial_Community
+5753.0,2207.0,Plasma Cell Enriched_Community
+7025.0,6076.0,Plasma Cell Enriched_Community
+4767.0,35.0,Plasma Cell Enriched_Community
+6440.0,3828.0,Plasma Cell Enriched_Community
+7042.0,6058.0,Plasma Cell Enriched_Community
+6094.0,3632.0,Plasma Cell Enriched_Community
+7285.0,6810.0,Plasma Cell Enriched_Community
+5046.0,477.0,Plasma Cell Enriched_Community
+7612.0,8936.0,Plasma Cell Enriched_Community
+4925.0,579.0,Plasma Cell Enriched_Community
+5812.0,3395.0,Plasma Cell Enriched_Community
+5975.0,2957.0,Plasma Cell Enriched_Community
+7484.0,6350.0,Plasma Cell Enriched_Community
+6392.0,4283.0,Plasma Cell Enriched_Community
+5501.0,2594.0,Plasma Cell Enriched_Community
+7351.0,7782.0,Plasma Cell Enriched_Community
+6208.0,4171.0,Plasma Cell Enriched_Community
+6519.0,5328.0,Plasma Cell Enriched_Community
+5500.0,2211.0,Plasma Cell Enriched_Community
+6777.0,5186.0,Plasma Cell Enriched_Community
+5219.0,2328.0,Plasma Cell Enriched_Community
+6246.0,3445.0,Plasma Cell Enriched_Community
+7276.0,6040.0,Plasma Cell Enriched_Community
+7476.0,8680.0,Plasma Cell Enriched_Community
+7106.0,5993.0,Plasma Cell Enriched_Community
+6580.0,4161.0,Plasma Cell Enriched_Community
+7126.0,7044.0,Plasma Cell Enriched_Community
+6046.0,4055.0,Plasma Cell Enriched_Community
+5425.0,889.0,Plasma Cell Enriched_Community
+7043.0,5656.0,Plasma Cell Enriched_Community
+6913.0,5109.0,Plasma Cell Enriched_Community
+7094.0,6006.0,Plasma Cell Enriched_Community
+7493.0,6802.0,Plasma Cell Enriched_Community
+7537.0,8409.0,Plasma Cell Enriched_Community
+5484.0,944.0,Plasma Cell Enriched_Community
+5785.0,3427.0,Plasma Cell Enriched_Community
+7603.0,8143.0,Plasma Cell Enriched_Community
+7263.0,6864.0,Plasma Cell Enriched_Community
+6312.0,4196.0,Plasma Cell Enriched_Community
+7555.0,7652.0,Plasma Cell Enriched_Community
+5625.0,2613.0,Plasma Cell Enriched_Community
+5038.0,397.0,Plasma Cell Enriched_Community
+7199.0,7090.0,Plasma Cell Enriched_Community
+5087.0,392.0,Plasma Cell Enriched_Community
+6072.0,3841.0,Plasma Cell Enriched_Community
+7352.0,8228.0,Plasma Cell Enriched_Community
+6810.0,5427.0,Plasma Cell Enriched_Community
+6481.0,4186.0,Plasma Cell Enriched_Community
+6399.0,3851.0,Plasma Cell Enriched_Community
+7147.0,4981.0,Innate Immune Enriched_Community
+6037.0,2958.0,Plasma Cell Enriched_Community
+6516.0,4615.0,CD8+ T Enriched IEL_Community
+6399.0,4301.0,Plasma Cell Enriched_Community
+7709.0,7729.0,Plasma Cell Enriched_Community
+6804.0,6491.0,Plasma Cell Enriched_Community
+7348.0,7823.0,Plasma Cell Enriched_Community
+6945.0,6651.0,Plasma Cell Enriched_Community
+6474.0,3804.0,Plasma Cell Enriched_Community
+4884.0,70.0,Plasma Cell Enriched_Community
+7094.0,7645.0,Plasma Cell Enriched_Community
+7036.0,5077.0,Plasma Cell Enriched_Community
+6985.0,5426.0,Plasma Cell Enriched_Community
+7006.0,6545.0,Plasma Cell Enriched_Community
+7364.0,7205.0,Plasma Cell Enriched_Community
+4688.0,294.0,Plasma Cell Enriched_Community
+7412.0,8681.0,Plasma Cell Enriched_Community
+5955.0,3712.0,Plasma Cell Enriched_Community
+6801.0,5388.0,Plasma Cell Enriched_Community
+7488.0,8929.0,Plasma Cell Enriched_Community
+5966.0,3846.0,Plasma Cell Enriched_Community
+267.0,8267.0,Smooth Muscle_Community
+7043.0,8545.0,Adaptive Immune Enriched_Community
+843.0,3268.0,Smooth Muscle_Community
+6252.0,4775.0,Adaptive Immune Enriched_Community
+4633.0,2113.0,Stroma_Community
+6052.0,5043.0,Adaptive Immune Enriched_Community
+3731.0,2277.0,Stroma_Community
+5236.0,4853.0,Smooth Muscle_Community
+7103.0,8033.0,Adaptive Immune Enriched_Community
+71.0,1001.0,Smooth Muscle_Community
+540.0,5570.0,Smooth Muscle_Community
+3952.0,1669.0,Stroma_Community
+361.0,8484.0,Smooth Muscle_Community
+2340.0,65.0,Stroma_Community
+6568.0,6385.0,Adaptive Immune Enriched_Community
+4632.0,1857.0,Stroma_Community
+893.0,8047.0,Stroma_Community
+6665.0,6200.0,Adaptive Immune Enriched_Community
+6282.0,5405.0,Adaptive Immune Enriched_Community
+7042.0,8522.0,Adaptive Immune Enriched_Community
+560.0,6607.0,Smooth Muscle_Community
+278.0,6405.0,Stroma_Community
+438.0,6423.0,Smooth Muscle_Community
+1034.0,7834.0,Stroma_Community
+6058.0,5052.0,Adaptive Immune Enriched_Community
+6846.0,7340.0,Adaptive Immune Enriched_Community
+5933.0,4506.0,Adaptive Immune Enriched_Community
+4636.0,454.0,Plasma Cell Enriched_Community
+1086.0,3384.0,Smooth Muscle_Community
+1268.0,3300.0,Smooth Muscle_Community
+5722.0,4549.0,Smooth Muscle_Community
+6716.0,6911.0,Adaptive Immune Enriched_Community
+6195.0,5198.0,Adaptive Immune Enriched_Community
+4614.0,983.0,Adaptive Immune Enriched_Community
+6212.0,5543.0,Adaptive Immune Enriched_Community
+3768.0,2874.0,Stroma_Community
+100.0,6726.0,Smooth Muscle_Community
+7422.0,4251.0,Mature Epithelial_Community
+4039.0,5747.0,Stroma_Community
+4516.0,645.0,Follicle_Community
+7073.0,4080.0,CD8+ T Enriched IEL_Community
+3994.0,4399.0,Stroma_Community
+67.0,8666.0,Smooth Muscle_Community
+260.0,1601.0,Stroma_Community
+217.0,6815.0,Smooth Muscle_Community
+589.0,7944.0,Smooth Muscle_Community
+89.0,7866.0,Smooth Muscle_Community
+518.0,2512.0,Smooth Muscle_Community
+5566.0,3521.0,Adaptive Immune Enriched_Community
+824.0,7430.0,Smooth Muscle_Community
+5386.0,2231.0,Plasma Cell Enriched_Community
+316.0,6485.0,Smooth Muscle_Community
+415.0,6661.0,Smooth Muscle_Community
+6153.0,5316.0,Smooth Muscle_Community
+10.0,6403.0,Stroma_Community
+812.0,2674.0,Smooth Muscle_Community
+31.0,4375.0,Smooth Muscle_Community
+451.0,1641.0,Stroma_Community
+4751.0,1861.0,Stroma_Community
+458.0,3865.0,Smooth Muscle_Community
+7682.0,9000.0,Plasma Cell Enriched_Community
+7508.0,6822.0,Plasma Cell Enriched_Community
+5854.0,2359.0,Innate Immune Enriched_Community
+6286.0,3158.0,Innate Immune Enriched_Community
+6032.0,1264.0,CD8+ T Enriched IEL_Community
+7279.0,4911.0,Innate Immune Enriched_Community
+6867.0,4106.0,CD8+ T Enriched IEL_Community
+5838.0,2376.0,Plasma Cell Enriched_Community
+6241.0,2537.0,CD8+ T Enriched IEL_Community
+7078.0,5720.0,Plasma Cell Enriched_Community
+5524.0,1397.0,Plasma Cell Enriched_Community
+5637.0,1041.0,Plasma Cell Enriched_Community
+5413.0,2756.0,CD8+ T Enriched IEL_Community
+6652.0,2892.0,Mature Epithelial_Community
+3616.0,8451.0,Stroma_Community
+4632.0,793.0,Adaptive Immune Enriched_Community
+4597.0,5755.0,Stroma_Community
+6198.0,2453.0,Innate Immune Enriched_Community
+6945.0,6330.0,Plasma Cell Enriched_Community
+5948.0,1816.0,Innate Immune Enriched_Community
+5450.0,6619.0,Stroma_Community
+5593.0,2983.0,CD8+ T Enriched IEL_Community
+4921.0,6515.0,Stroma_Community
+5292.0,235.0,Innate Immune Enriched_Community
+7229.0,4159.0,Mature Epithelial_Community
+3738.0,6482.0,Stroma_Community
+1774.0,367.0,Stroma_Community
+7487.0,8883.0,Plasma Cell Enriched_Community
+6983.0,6872.0,Secretory Epithelial_Community
+5174.0,2378.0,Adaptive Immune Enriched_Community
+8029.0,9030.0,Stroma_Community
+3619.0,5733.0,Stroma_Community
+6801.0,6456.0,Plasma Cell Enriched_Community
+7454.0,7316.0,Plasma Cell Enriched_Community
+6397.0,6608.0,Smooth Muscle_Community
+2304.0,420.0,Stroma_Community
+7319.0,4973.0,Innate Immune Enriched_Community
+6225.0,2422.0,Innate Immune Enriched_Community
+6749.0,6040.0,Plasma Cell Enriched_Community
+7268.0,7761.0,Plasma Cell Enriched_Community
+6960.0,6492.0,Plasma Cell Enriched_Community
+7241.0,7233.0,Plasma Cell Enriched_Community
+7011.0,5471.0,CD8+ T Enriched IEL_Community
+3514.0,8327.0,Stroma_Community
+5682.0,2082.0,Plasma Cell Enriched_Community
+1189.0,530.0,Stroma_Community
+6093.0,3907.0,Plasma Cell Enriched_Community
+7320.0,4665.0,Innate Immune Enriched_Community
+7166.0,4128.0,Mature Epithelial_Community
+2941.0,7057.0,Stroma_Community
+2227.0,143.0,Stroma_Community
+6296.0,3521.0,Plasma Cell Enriched_Community
+5735.0,2184.0,Plasma Cell Enriched_Community
+5505.0,2168.0,Plasma Cell Enriched_Community
+6115.0,4332.0,Plasma Cell Enriched_Community
+4396.0,269.0,Adaptive Immune Enriched_Community
+3356.0,8973.0,Stroma_Community
+4628.0,7286.0,Stroma_Community
+5563.0,7144.0,Stroma_Community
+4174.0,5794.0,Stroma_Community
+2081.0,8200.0,Stroma_Community
+4494.0,402.0,Adaptive Immune Enriched_Community
+5738.0,2217.0,Plasma Cell Enriched_Community
+3885.0,8841.0,Stroma_Community
+2430.0,4126.0,Stroma_Community
+5627.0,905.0,Plasma Cell Enriched_Community
+4662.0,2159.0,Stroma_Community
+7600.0,6325.0,Innate Immune Enriched_Community
+7571.0,5146.0,Innate Immune Enriched_Community
+2533.0,404.0,Stroma_Community
+7107.0,4028.0,Mature Epithelial_Community
+6343.0,3495.0,Plasma Cell Enriched_Community
+5992.0,5583.0,Smooth Muscle_Community
+4567.0,7083.0,Stroma_Community
+6158.0,3437.0,Plasma Cell Enriched_Community
+7814.0,7668.0,Innate Immune Enriched_Community
+6550.0,3824.0,Innate Immune Enriched_Community
+775.0,4115.0,Smooth Muscle_Community
+2386.0,7462.0,Stroma_Community
+7405.0,5020.0,Innate Immune Enriched_Community
+2254.0,159.0,Stroma_Community
+3296.0,7744.0,Stroma_Community
+3461.0,6657.0,Stroma_Community
+1973.0,48.0,Stroma_Community
+420.0,1977.0,Smooth Muscle_Community
+6010.0,2927.0,Plasma Cell Enriched_Community
+528.0,897.0,Smooth Muscle_Community
+3078.0,3149.0,Stroma_Community
+6312.0,3119.0,Innate Immune Enriched_Community
+1642.0,1698.0,Stroma_Community
+2857.0,3147.0,Stroma_Community
+4069.0,7465.0,Stroma_Community
+5670.0,2956.0,Plasma Cell Enriched_Community
+8114.0,8878.0,Innate Immune Enriched_Community
+3669.0,7602.0,Stroma_Community
+7457.0,7278.0,Plasma Cell Enriched_Community
+5687.0,784.0,Innate Immune Enriched_Community
+5797.0,2761.0,Plasma Cell Enriched_Community
+6684.0,3712.0,Innate Immune Enriched_Community
+852.0,5218.0,Smooth Muscle_Community
+3345.0,8745.0,Stroma_Community
+4133.0,734.0,Smooth Muscle_Community
+4381.0,699.0,Smooth Muscle_Community
+3348.0,2426.0,Stroma_Community
+7119.0,4097.0,CD8+ T Enriched IEL_Community
+5710.0,4271.0,Adaptive Immune Enriched_Community
+6000.0,3597.0,Plasma Cell Enriched_Community
+3044.0,1564.0,Stroma_Community
+2429.0,7043.0,Stroma_Community
+6009.0,1632.0,CD8+ T Enriched IEL_Community
+5674.0,2371.0,Plasma Cell Enriched_Community
+1059.0,1576.0,Stroma_Community
+3748.0,2263.0,Stroma_Community
+2726.0,8600.0,Stroma_Community
+7539.0,8987.0,Plasma Cell Enriched_Community
+5047.0,2727.0,Smooth Muscle_Community
+5207.0,380.0,Plasma Cell Enriched_Community
+3779.0,7752.0,Stroma_Community
+4819.0,128.0,Plasma Cell Enriched_Community
+648.0,3905.0,Smooth Muscle_Community
+1252.0,5083.0,Smooth Muscle_Community
+7689.0,5377.0,Stroma_Community
+5892.0,3029.0,Plasma Cell Enriched_Community
+5363.0,2329.0,Plasma Cell Enriched_Community
+8225.0,8892.0,Mature Epithelial_Community
+6352.0,8004.0,Stroma_Community
+5530.0,710.0,Innate Immune Enriched_Community
+5639.0,2044.0,Plasma Cell Enriched_Community
+7272.0,8223.0,Plasma Cell Enriched_Community
+317.0,993.0,Smooth Muscle_Community
+5370.0,237.0,Innate Immune Enriched_Community
+7257.0,6783.0,Plasma Cell Enriched_Community
+2379.0,311.0,Stroma_Community
+5717.0,955.0,Innate Immune Enriched_Community
+7308.0,5941.0,Plasma Cell Enriched_Community
+1118.0,6128.0,Smooth Muscle_Community
+5938.0,1891.0,Innate Immune Enriched_Community
+7669.0,4192.0,Mature Epithelial_Community
+33.0,8993.0,Smooth Muscle_Community
+5856.0,3293.0,Plasma Cell Enriched_Community
+1886.0,7800.0,Stroma_Community
+787.0,5502.0,Smooth Muscle_Community
+7769.0,6789.0,Plasma Cell Enriched_Community
+3062.0,8933.0,Stroma_Community
+2886.0,510.0,Stroma_Community
+6166.0,2567.0,CD8+ T Enriched IEL_Community
+801.0,4049.0,Smooth Muscle_Community
+4960.0,6814.0,Stroma_Community
+544.0,4808.0,Smooth Muscle_Community
+4807.0,2170.0,Adaptive Immune Enriched_Community
+6694.0,6715.0,Adaptive Immune Enriched_Community
+7304.0,8685.0,Plasma Cell Enriched_Community
+7373.0,5424.0,CD8+ T Enriched IEL_Community
+5763.0,4446.0,Adaptive Immune Enriched_Community
+4739.0,1415.0,Follicle_Community
+8388.0,5843.0,Mature Epithelial_Community
+7396.0,6814.0,Plasma Cell Enriched_Community
+4391.0,277.0,Adaptive Immune Enriched_Community
+3146.0,8045.0,Stroma_Community
+7369.0,7155.0,Plasma Cell Enriched_Community
+2893.0,8685.0,Stroma_Community
+4705.0,222.0,Plasma Cell Enriched_Community
+7036.0,1892.0,Mature Epithelial_Community
+5642.0,2383.0,Plasma Cell Enriched_Community
+7015.0,3101.0,Mature Epithelial_Community
+7229.0,3365.0,Mature Epithelial_Community
+8237.0,4754.0,Mature Epithelial_Community
+7015.0,3041.0,Mature Epithelial_Community
+9014.0,7435.0,Mature Epithelial_Community
+7150.0,3379.0,Mature Epithelial_Community
+8187.0,5307.0,Mature Epithelial_Community
+6794.0,516.0,CD66+ Mature Epithelial_Community
+7517.0,3134.0,Mature Epithelial_Community
+7595.0,3513.0,Mature Epithelial_Community
+7951.0,5250.0,Mature Epithelial_Community
+6530.0,880.0,Mature Epithelial_Community
+7019.0,3054.0,Mature Epithelial_Community
+8312.0,6092.0,Mature Epithelial_Community
+7878.0,3862.0,Mature Epithelial_Community
+7709.0,5575.0,Mature Epithelial_Community
+8542.0,6839.0,Mature Epithelial_Community
+7211.0,2672.0,CD8+ T Enriched IEL_Community
+7333.0,5209.0,CD8+ T Enriched IEL_Community
+7062.0,2670.0,Mature Epithelial_Community
+7861.0,6890.0,Mature Epithelial_Community
+6207.0,3223.0,Plasma Cell Enriched_Community
+6464.0,3708.0,Plasma Cell Enriched_Community
+6849.0,2036.0,Mature Epithelial_Community
+7799.0,6782.0,Innate Immune Enriched_Community
+7133.0,6517.0,Plasma Cell Enriched_Community
+7061.0,6465.0,Plasma Cell Enriched_Community
+6690.0,4092.0,Plasma Cell Enriched_Community
+7185.0,4996.0,Innate Immune Enriched_Community
+7294.0,4933.0,Innate Immune Enriched_Community
+3723.0,3395.0,Stroma_Community
+7270.0,4658.0,Mature Epithelial_Community
+5974.0,1265.0,CD8+ T Enriched IEL_Community
+7490.0,5048.0,Innate Immune Enriched_Community
+5437.0,60.0,Innate Immune Enriched_Community
+6649.0,4665.0,CD8+ T Enriched IEL_Community
+5925.0,4471.0,Adaptive Immune Enriched_Community
+6387.0,2928.0,CD8+ T Enriched IEL_Community
+7192.0,8753.0,Secretory Epithelial_Community
+6439.0,3978.0,Mature Epithelial_Community
+6658.0,6212.0,Adaptive Immune Enriched_Community
+7270.0,7014.0,Plasma Cell Enriched_Community
+7074.0,5305.0,Secretory Epithelial_Community
+7510.0,6645.0,Mature Epithelial_Community
+6708.0,4942.0,Plasma Cell Enriched_Community
+6540.0,3211.0,Mature Epithelial_Community
+6301.0,2448.0,Innate Immune Enriched_Community
+6279.0,4907.0,Adaptive Immune Enriched_Community
+6561.0,4297.0,Plasma Cell Enriched_Community
+6611.0,6540.0,Adaptive Immune Enriched_Community
+7316.0,4847.0,Innate Immune Enriched_Community
+6777.0,7488.0,Adaptive Immune Enriched_Community
+4806.0,1610.0,Adaptive Immune Enriched_Community
+5549.0,830.0,Plasma Cell Enriched_Community
+6553.0,4286.0,Plasma Cell Enriched_Community
+4999.0,1076.0,Plasma Cell Enriched_Community
+6740.0,3744.0,Innate Immune Enriched_Community
+5698.0,4317.0,Adaptive Immune Enriched_Community
+7201.0,8181.0,Plasma Cell Enriched_Community
+223.0,6265.0,Stroma_Community
+6726.0,5706.0,Plasma Cell Enriched_Community
+6161.0,3333.0,Plasma Cell Enriched_Community
+5107.0,2436.0,Adaptive Immune Enriched_Community
+3603.0,2299.0,Stroma_Community
+4713.0,167.0,Plasma Cell Enriched_Community
+6411.0,4748.0,CD8+ T Enriched IEL_Community
+7353.0,8496.0,Plasma Cell Enriched_Community
