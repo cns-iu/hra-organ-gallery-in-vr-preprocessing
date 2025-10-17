@@ -1,0 +1,41 @@
+# URLs for downloading cell population data
+urls:
+  anatomical_structure: "https://apps.humanatlas.io/api/grlc/hra-pop/cell_types_in_anatomical_structurescts_per_as.csv"
+  extraction_site: "https://apps.humanatlas.io/api/grlc/hra-pop/cell-types-per-extraction-site.csv"
+
+# Directory paths (relative to scripts folder)
+paths:
+  input_dir: "../input"
+  output_dir: "../output"
+
+# Output file names
+output_files:
+  anatomical_structure: "as-cell-summaries.yaml"
+  extraction_site: "es-cell-summaries.yaml"
+
+# CSV column names for validation
+columns:
+  anatomical_structure:
+    - organ
+    - as
+    - as_label
+    - sex
+    - tool
+    - modality
+    - cell_id
+    - cell_label
+    - cell_count
+    - cell_percentage
+    - dataset_count
+  
+  extraction_site:
+    - organ_id
+    - organ
+    - extraction_site
+    - sex
+    - tool
+    - modality
+    - cell_id
+    - cell_label
+    - cell_count
+    - cell_percentage

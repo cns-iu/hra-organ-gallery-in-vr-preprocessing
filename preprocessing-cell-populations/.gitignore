@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.venv/
+
+# Downloaded CSVs (can be regenerated)
+input/*.csv
+
+# Generated outputs (can be regenerated)
+output/*.yaml
+output/*.yml
+
+# MacOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.log
