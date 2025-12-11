@@ -44,6 +44,50 @@ Converts CSV files to YAML format and saves to the `output/` folder.
 ### ES (Extraction Site)
 - organ_id, organ, extraction_site, sex, tool, modality, cell_id, cell_label, cell_count, cell_percentage
 
+## Generating PNG Visualizations (RO3 - Heart)
+
+This section describes how to generate PNG visualizations for heart cell population data.
+
+### Prerequisites
+
+1. **Install dependencies:**
+   ```bash
+   cd RO3-preprocessing
+   pip install -r requirements.txt
+   ```
+
+### Step-by-Step Process
+
+1. **Download raw data:**
+   ```bash
+   cd scripts
+   python download_data.py
+   ```
+   Downloads the cell population CSV from the HRA API to `../input/as-cell-populations.csv`
+
+2. **Filter and process data:**
+   ```bash
+   python process_data.py
+   ```
+   Filters the data for heart organ only (azimuth/celltypist tools, male/female) and saves to `../input/heart_filtered.csv`
+
+3. **Generate PNG charts:**
+   ```bash
+   python generate_pngs.py
+   ```
+   Generates two sets of combined anatomical structure charts:
+   - **With legend/title**: Saved to `../output/pngs/with_legend/`
+   - **Without legend/title**: Saved to `../output/pngs/no_legend/`
+   
+   PNG files are named: `{ref_organ_id}--{organ_id}--{organ}--{tool}.png`
+   - Example: `3d-vh-m--UBERON_0000948--heart--azimuth.png`
+
+### Output
+
+- `input/heart_filtered.csv` - Filtered heart cell population data
+- `output/pngs/with_legend/*.png` - Charts with legend and titles
+- `output/pngs/no_legend/*.png` - Charts without legend and titles
+
 ## Notes
 
 - Input CSVs and output YAMLs are gitignored (can be regenerated)

@@ -33,3 +33,7 @@ output/*.yml
 # Temporary files
 *.tmp
 *.log
+
+# Output directories
+RO3-preprocessing/output/
+RO3-preprocessing/input/
