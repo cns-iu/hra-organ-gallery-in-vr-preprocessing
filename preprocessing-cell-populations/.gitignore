@@ -34,6 +34,5 @@ output/*.yml
 *.tmp
 *.log
 
-# Output directories
-RO3-preprocessing/output/
-RO3-preprocessing/input/
+# Input and output directories
+RO3-preprocessing/input/*.csv
