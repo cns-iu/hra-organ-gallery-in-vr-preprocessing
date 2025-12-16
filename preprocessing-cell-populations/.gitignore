@@ -33,3 +33,6 @@ output/*.yml
 # Temporary files
 *.tmp
 *.log
+
+# Input and output directories
+RO3-preprocessing/input/*.csv
