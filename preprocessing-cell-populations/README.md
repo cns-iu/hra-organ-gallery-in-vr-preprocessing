@@ -65,13 +65,14 @@ This section describes how to generate PNG visualizations for heart cell populat
    ```
    Downloads the cell population CSV from the HRA API to `../input/as-cell-populations.csv`
 
-2. **Filter and process data:**
+2. **Filter and process data:** DONT USE IF GENERATING FOR ALL ORGANS
    ```bash
    python process_data.py
    ```
-   Filters the data for heart organ only (azimuth/celltypist tools, male/female) and saves to `../input/heart_filtered.csv`
+   Filters the data for heart organ only (azimuth/celltypist tools, male/female) and saves to `../input/filtered_data.csv`
 
-3. **Generate PNG charts:**
+
+3. **Generate PNG charts:** IF GENERATING FOR PARTICULAR ORGANS - CHANGE load_csv_data in generate_png.py --> config.FILTERED_CSV
    ```bash
    python generate_pngs.py
    ```
@@ -79,8 +80,8 @@ This section describes how to generate PNG visualizations for heart cell populat
    - **With legend/title**: Saved to `../output/pngs/with_legend/`
    - **Without legend/title**: Saved to `../output/pngs/no_legend/`
    
-   PNG files are named: `{ref_organ_id}--{organ_id}--{organ}--{tool}.png`
-   - Example: `3d-vh-m--UBERON_0000948--heart--azimuth.png`
+   PNG files are named: `{ref_organ_id}-{organ_id}-{organ}-{tool}.png`
+   - Example: `m-UBERON_0000948-heart-azimuth.png`
 
 ### Output
 
