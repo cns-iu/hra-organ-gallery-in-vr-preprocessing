@@ -6,7 +6,7 @@ Configuration file for RO3 (Heart) preprocessing pipeline
 DATA_URL = "https://grlc.io/api-git/hubmapconsortium/ccf-grlc/subdir/hra-pop//cell_types_in_anatomical_structurescts_per_as.csv"
 
 # Filters for our specific use case
-ORGAN_FILTER = "heart"
+ORGAN_FILTER = None
 TOOLS_FILTER = ["azimuth", "celltypist"]
 SEX_FILTER = ["male", "female"]
 
@@ -15,17 +15,18 @@ INPUT_DIR = "../input"
 OUTPUT_DIR = "../output/pngs"
 
 # Output CSV (filtered data)
-FILTERED_CSV = "../input/heart_filtered.csv"
+FILTERED_CSV = "../input/filtered_data.csv"
+ORIGINAL_CSV = "../input/as-cell-populations.csv"
 
 # Reference organ ID prefix 
 REF_ORGAN_ID = {
-    "male": "3d-vh-m",
-    "female": "3d-vh-f"
+    "male": "m",
+    "female": "f"
 }
 ORGAN_NAME = "Heart"
 
 # Chart configuration
-
+LABEL_FONT_FAMILY = 'Metropolis, Arial, sans-serif'
 FONT_FAMILY = 'Nunito, Arial, sans-serif'
 CHART_WIDTH = 1240
 CHART_HEIGHT = 800

@@ -35,11 +35,18 @@ def load_and_filter_data():
     print(f"   Sex: {config.SEX_FILTER}")
     
     # Apply filters
-    df_filtered = df[
-        (df['organ'].str.lower() == config.ORGAN_FILTER.lower()) &
-        (df['tool'].str.lower().isin([t.lower() for t in config.TOOLS_FILTER])) &
-        (df['sex'].str.lower().isin([s.lower() for s in config.SEX_FILTER]))
-    ]
+    if config.ORGAN_FILTER:
+        df_filtered = df[
+            (df['organ'].str.lower() == config.ORGAN_FILTER.lower()) &
+            (df['tool'].str.lower().isin([t.lower() for t in config.TOOLS_FILTER])) &
+            (df['sex'].str.lower().isin([s.lower() for s in config.SEX_FILTER]))
+        ]
+    else:
+        # No organ filter - keep all organs
+        df_filtered = df[
+            (df['tool'].str.lower().isin([t.lower() for t in config.TOOLS_FILTER])) &
+            (df['sex'].str.lower().isin([s.lower() for s in config.SEX_FILTER]))
+        ]
     
     print(f"\n✅ Filtered rows: {len(df_filtered):,}")
     

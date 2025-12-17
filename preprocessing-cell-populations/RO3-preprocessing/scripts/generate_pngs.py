@@ -7,6 +7,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import os
 import sys
+from PIL import Image, ImageDraw
 
 # Import config
 import config
@@ -15,10 +16,10 @@ import config
 COLOR_MAPS = {}
 TOP_CELLS_PER_SEX = {}
 
-def load_filtered_data():
+def load_csv_data():
     """Load the filtered heart data"""
     print("📂 Loading filtered data...")
-    df = pd.read_csv(config.FILTERED_CSV)
+    df = pd.read_csv(config.ORIGINAL_CSV)
     print(f"   Loaded {len(df):,} rows")
     return df
 
@@ -36,7 +37,7 @@ def extract_organ_id(full_url):
 
 def get_ref_organ_id(sex):
     """Get reference organ ID based on sex"""
-    return config.REF_ORGAN_ID.get(sex.lower(), "3d-vh-m")
+    return config.REF_ORGAN_ID.get(sex.lower(), "m")
 
 def wrap_label(label, max_length=15):
     """Split long labels into multiple lines"""
@@ -125,6 +126,24 @@ def apply_chart_styling(fig, title):
     )
     
     return fig
+
+def round_image_corners(image_path, radius=20):
+    """Add rounded corners to a PNG image"""
+    img = Image.open(image_path).convert("RGBA")
+    
+    # Create a mask for rounded corners
+    mask = Image.new('L', img.size, 0)
+    draw = ImageDraw.Draw(mask)
+    draw.rounded_rectangle([(0, 0), img.size], radius=radius, fill=255)
+    
+    # Apply mask
+    output = Image.new('RGBA', img.size, (0, 0, 0, 0))
+    output.paste(img, (0, 0))
+    output.putalpha(mask)
+    
+    # Save with transparency
+    output.save(image_path, 'PNG')
+    return image_path
 
 # def create_single_as_chart(df, tool, sex, as_label, as_id, output_dir):
 #     """
@@ -332,10 +351,12 @@ def create_combined_as_chart(df, tool, sex, output_dir, show_legend_and_title=Tr
         'xaxis_tickangle': config.X_AXIS_ANGLE,
         'margin': dict(l=80, r=180, t=100, b=120) if show_legend_and_title else dict(l=80, r=80, t=20, b=120)
     }
+
+
+    layout_updates['xaxis_title'] = 'Anatomical Structure'
+    layout_updates['yaxis_title'] = 'Cell Count'
     
     if show_legend_and_title:
-        layout_updates['xaxis_title'] = 'Anatomical Structure'
-        layout_updates['yaxis_title'] = 'Cell Count'
         layout_updates['legend'] = dict(
             title=dict(text='Cell Type', font=dict(size=18, color=config.TEXT_COLOR)),
             orientation='v',
@@ -352,9 +373,8 @@ def create_combined_as_chart(df, tool, sex, output_dir, show_legend_and_title=Tr
         'linecolor': config.BAR_STROKE_COLOR,
         'zeroline': False,
         'tickangle': config.X_AXIS_ANGLE,
+        'titlefont': dict(size=20, color=config.TEXT_COLOR, family=config.LABEL_FONT_FAMILY)
     }
-    if show_legend_and_title:
-        xaxis_params['titlefont'] = dict(size=20, color=config.TEXT_COLOR, family=config.FONT_FAMILY)
     
     yaxis_params = {
         'tickfont': dict(size=16, color=config.TEXT_COLOR, family=config.FONT_FAMILY),
@@ -363,97 +383,105 @@ def create_combined_as_chart(df, tool, sex, output_dir, show_legend_and_title=Tr
         'gridwidth': 1,
         'linecolor': config.BAR_STROKE_COLOR,
         'zeroline': False,
+        'titlefont': dict(size=20, color=config.TEXT_COLOR, family=config.LABEL_FONT_FAMILY)
     }
-    if show_legend_and_title:
-        yaxis_params['titlefont'] = dict(size=20, color=config.TEXT_COLOR, family=config.FONT_FAMILY)
     
     fig.update_xaxes(**xaxis_params)
     fig.update_yaxes(**yaxis_params)
     
     fig.update_layout(**layout_updates)
     
-    # Generate filename: {ref_organ_id}--{organ_id}--{organ}--{tool}
+    # Generate filename: {ref_organ_id}-{organ_id}-{organ}-{tool}
     ref_organ_id = get_ref_organ_id(sex)
-    filename = f"{ref_organ_id}--{organ_id}--{organ}--{tool}.png"
+    filename = f"{ref_organ_id}-{organ_id}-{organ}-{tool}.png"
     filepath = os.path.join(output_dir, filename)
     
     fig.write_image(filepath, scale=2)
+    round_image_corners(filepath, radius=32)
     print(f"   ✅ {filename}")
     
     return filepath
 
 def main():
-    global COLOR_MAPS, TOP_CELLS_PER_SEX
+    df = load_csv_data()
+    organs = df['organ'].unique()
+    print(f"   Found {len(organs)} organs: {organs}")
+
+    for organ in organs:
+        print(f"\n{'='*60}")
+        print(f"Processing organ: {organ}")
+        print(f"{'='*60}")
+        global COLOR_MAPS, TOP_CELLS_PER_SEX
+        
+        print("=" * 60)
+        print("📊 GENERATING PNG VISUALIZATIONS")
+        print("=" * 60)
+        
+        df_organ = df[df['organ'] == organ]
     
-    print("=" * 60)
-    print("📊 GENERATING PNG VISUALIZATIONS")
-    print("=" * 60)
-    
-    df = load_filtered_data()
-    
-    # Build color maps PER SEX
-    COLOR_MAPS, TOP_CELLS_PER_SEX = build_color_maps_per_sex(df)
-    
-    # Create output directories
-    output_dir_with_legend = os.path.join(config.OUTPUT_DIR, "with_legend")
-    output_dir_no_legend = os.path.join(config.OUTPUT_DIR, "no_legend")
-    
-    os.makedirs(output_dir_with_legend, exist_ok=True)
-    os.makedirs(output_dir_no_legend, exist_ok=True)
-    
-    print(f"\n📁 Output directories:")
-    print(f"   With legend/title: {output_dir_with_legend}")
-    print(f"   Without legend/title: {output_dir_no_legend}")
-    
-    tools = df['tool'].unique()
-    sexes = df['sex'].unique()
-    as_info = df.groupby('as_label')['as'].first().apply(extract_as_id).to_dict()
-    
-    print(f"\n🔧 Configuration:")
-    print(f"   Tools: {tools.tolist()}")
-    print(f"   Sexes: {sexes.tolist()}")
-    print(f"   Anatomical Structures: {len(as_info)}")
-    
-    generated_files = []
-    
-    # Commented out single AS charts
-    # print(f"\n" + "=" * 60)
-    # print("📈 SINGLE ANATOMICAL STRUCTURE CHARTS")
-    # print("=" * 60)
-    # 
-    # for tool in tools:
-    #     for sex in sexes:
-    #         print(f"\n   {tool} / {sex}:")
-    #         for as_label, as_id in as_info.items():
-    #             filepath = create_single_as_chart(df, tool, sex, as_label, as_id, config.OUTPUT_DIR)
-    #             if filepath:
-    #                 generated_files.append(filepath)
-    
-    print(f"\n" + "=" * 60)
-    print("📈 COMBINED ANATOMICAL STRUCTURE CHARTS (WITH LEGEND/TITLE)")
-    print("=" * 60)
-    
-    for tool in tools:
-        for sex in sexes:
-            print(f"\n   {tool} / {sex}:")
-            filepath = create_combined_as_chart(df, tool, sex, output_dir_with_legend, show_legend_and_title=True)
-            if filepath:
-                generated_files.append(filepath)
-    
-    print(f"\n" + "=" * 60)
-    print("📈 COMBINED ANATOMICAL STRUCTURE CHARTS (NO LEGEND/TITLE)")
-    print("=" * 60)
-    
-    for tool in tools:
-        for sex in sexes:
-            print(f"\n   {tool} / {sex}:")
-            filepath = create_combined_as_chart(df, tool, sex, output_dir_no_legend, show_legend_and_title=False)
-            if filepath:
-                generated_files.append(filepath)
-    
-    print("\n" + "=" * 60)
-    print(f"✅ COMPLETE! Generated {len(generated_files)} PNG files")
-    print("=" * 60)
+        # Build color maps PER SEX
+        COLOR_MAPS, TOP_CELLS_PER_SEX = build_color_maps_per_sex(df_organ)
+        
+        # Create output directories
+        output_dir_with_legend = os.path.join(config.OUTPUT_DIR, "with_legend")
+        output_dir_no_legend = os.path.join(config.OUTPUT_DIR, "no_legend")
+        
+        os.makedirs(output_dir_with_legend, exist_ok=True)
+        os.makedirs(output_dir_no_legend, exist_ok=True)
+        
+        print(f"\n📁 Output directories:")
+        print(f"   With legend/title: {output_dir_with_legend}")
+        print(f"   Without legend/title: {output_dir_no_legend}")
+        
+        tools = df_organ['tool'].unique()
+        sexes = df_organ['sex'].unique()
+        as_info = df_organ.groupby('as_label')['as'].first().apply(extract_as_id).to_dict()
+        
+        print(f"\n🔧 Configuration:")
+        print(f"   Tools: {tools.tolist()}")
+        print(f"   Sexes: {sexes.tolist()}")
+        print(f"   Anatomical Structures: {len(as_info)}")
+        
+        generated_files = []
+        
+        # Commented out single AS charts
+        # print(f"\n" + "=" * 60)
+        # print("📈 SINGLE ANATOMICAL STRUCTURE CHARTS")
+        # print("=" * 60)
+        # 
+        # for tool in tools:
+        #     for sex in sexes:
+        #         print(f"\n   {tool} / {sex}:")
+        #         for as_label, as_id in as_info.items():
+        #             filepath = create_single_as_chart(df, tool, sex, as_label, as_id, config.OUTPUT_DIR)
+        #             if filepath:
+        #                 generated_files.append(filepath)
+        
+        print(f"\n" + "=" * 60)
+        print("📈 COMBINED ANATOMICAL STRUCTURE CHARTS (WITH LEGEND/TITLE)")
+        print("=" * 60)
+        
+        for tool in tools:
+            for sex in sexes:
+                print(f"\n   {tool} / {sex}:")
+                filepath = create_combined_as_chart(df_organ, tool, sex, output_dir_with_legend, show_legend_and_title=True)
+                if filepath:
+                    generated_files.append(filepath)
+        
+        print(f"\n" + "=" * 60)
+        print("📈 COMBINED ANATOMICAL STRUCTURE CHARTS (NO LEGEND/TITLE)")
+        print("=" * 60)
+        
+        for tool in tools:
+            for sex in sexes:
+                print(f"\n   {tool} / {sex}:")
+                filepath = create_combined_as_chart(df_organ, tool, sex, output_dir_no_legend, show_legend_and_title=False)
+                if filepath:
+                    generated_files.append(filepath)
+        
+        print("\n" + "=" * 60)
+        print(f"✅ COMPLETE! Generated {len(generated_files)} PNG files")
+        print("=" * 60)
 
 if __name__ == "__main__":
     main()
