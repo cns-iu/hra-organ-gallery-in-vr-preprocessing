@@ -145,6 +145,24 @@ def round_image_corners(image_path, radius=20):
     output.save(image_path, 'PNG')
     return image_path
 
+def export_color_scheme_txt(color_map, sex, organ, organ_id, output_dir):
+    """
+    Export color scheme to TXT file for Unity consumption
+    (one file per organ per sex)
+    """
+    sex_lower = sex.lower()
+    organ_lower = organ.lower().replace(" ", "_")
+    filename = f"{organ_lower}_{sex_lower}.txt"  # Changed: removed _{tool}
+    filepath = os.path.join(output_dir, filename)
+    
+    with open(filepath, 'w') as f:
+        f.write("CellType,HexColor\n")
+        for cell_type, hex_color in color_map.items():
+            f.write(f"{cell_type},{hex_color}\n")
+    
+    print(f"   📝 {filename}")
+    return filepath
+
 # def create_single_as_chart(df, tool, sex, as_label, as_id, output_dir):
 #     """
 #     Create a VERTICAL bar chart for ONE anatomical structure
@@ -418,10 +436,38 @@ def main():
         print("=" * 60)
         
         df_organ = df[df['organ'] == organ]
-    
+        # Extract organ_id early so we can use it for TXT export
+        organ_id_url = df_organ['organ_id'].iloc[0]
+        organ_id = extract_organ_id(organ_id_url)
         # Build color maps PER SEX
         COLOR_MAPS, TOP_CELLS_PER_SEX = build_color_maps_per_sex(df_organ)
         
+        # ========== NEW: EXPORT COLOR SCHEME TXT FILES ==========
+        print(f"\n{'='*60}")
+        print("📝 EXPORTING COLOR SCHEME TXT FILES")
+        print(f"{'='*60}")
+
+        txt_output_dir = os.path.join(config.OUTPUT_DIR, "color_schemes")
+        os.makedirs(txt_output_dir, exist_ok=True)
+
+        sexes = df_organ['sex'].unique()
+
+        exported_txt_files = []
+        for sex in sexes:
+            color_map = COLOR_MAPS[sex]
+            print(f"\n   {sex}:")
+            filepath = export_color_scheme_txt(
+                color_map=color_map,
+                sex=sex,
+                organ=organ,
+                organ_id=organ_id,
+                output_dir=txt_output_dir
+            )
+            exported_txt_files.append(filepath)
+
+        print(f"\n✅ Exported {len(exported_txt_files)} TXT files to: {txt_output_dir}")    
+        # ========================================================
+
         # Create output directories
         output_dir_with_legend = os.path.join(config.OUTPUT_DIR, "with_legend")
         output_dir_no_legend = os.path.join(config.OUTPUT_DIR, "no_legend")
