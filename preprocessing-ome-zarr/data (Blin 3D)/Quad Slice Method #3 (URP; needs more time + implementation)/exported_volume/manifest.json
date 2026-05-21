@@ -1,0 +1,54 @@
+{
+  "source_url": "https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0062A/6001240.zarr",
+  "shape_czyx": [
+    2,
+    236,
+    275,
+    271
+  ],
+  "stacks": [
+    {
+      "key": "z",
+      "name": "axial",
+      "plane": "xy",
+      "stack_axis": "z",
+      "folder": "stacks/z"
+    },
+    {
+      "key": "y",
+      "name": "coronal",
+      "plane": "xz",
+      "stack_axis": "y",
+      "folder": "stacks/y"
+    },
+    {
+      "key": "x",
+      "name": "sagittal",
+      "plane": "yz",
+      "stack_axis": "x",
+      "folder": "stacks/x"
+    }
+  ],
+  "channels": [
+    {
+      "channel_index": 0,
+      "dtype": "uint8",
+      "normalized": true,
+      "paths": {
+        "z": "stacks/z/c0",
+        "y": "stacks/y/c0",
+        "x": "stacks/x/c0"
+      }
+    },
+    {
+      "channel_index": 1,
+      "dtype": "uint8",
+      "normalized": true,
+      "paths": {
+        "z": "stacks/z/c1",
+        "y": "stacks/y/c1",
+        "x": "stacks/x/c1"
+      }
+    }
+  ]
+}

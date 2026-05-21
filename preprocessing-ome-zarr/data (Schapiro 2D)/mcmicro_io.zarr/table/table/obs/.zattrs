@@ -1,0 +1,16 @@
+{
+    "_index": "_index",
+    "column-order": [
+        "CellID",
+        "Area",
+        "MajorAxisLength",
+        "MinorAxisLength",
+        "Eccentricity",
+        "Solidity",
+        "Extent",
+        "Orientation",
+        "region"
+    ],
+    "encoding-type": "dataframe",
+    "encoding-version": "0.2.0"
+}

@@ -1,0 +1,9 @@
+{
+    "encoding-type": "anndata",
+    "encoding-version": "0.1.0",
+    "instance_key": "CellID",
+    "region": "exemplar-001_cells",
+    "region_key": "region",
+    "spatialdata-encoding-type": "ngff:regions_table",
+    "version": "0.1"
+}

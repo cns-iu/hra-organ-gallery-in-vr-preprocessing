@@ -1,0 +1,15 @@
+{
+  "source": "https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0062A/6001240.zarr",
+  "shape": [
+    236,
+    275,
+    271
+  ],
+  "dtype": "uint16",
+  "axis_order": [
+    "z",
+    "y",
+    "x"
+  ],
+  "channel_index": 1
+}

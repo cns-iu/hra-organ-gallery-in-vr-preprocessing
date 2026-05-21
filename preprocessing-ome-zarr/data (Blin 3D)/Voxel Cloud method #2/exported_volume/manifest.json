@@ -1,0 +1,68 @@
+{
+  "source_url": "https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0062A/6001240.zarr",
+  "levels": [
+    {
+      "level_index": 0,
+      "shape": [
+        2,
+        236,
+        275,
+        271
+      ],
+      "channels": [
+        {
+          "channel_index": 0,
+          "raw_file": "c0.raw",
+          "json_file": "c0.json"
+        },
+        {
+          "channel_index": 1,
+          "raw_file": "c1.raw",
+          "json_file": "c1.json"
+        }
+      ]
+    },
+    {
+      "level_index": 1,
+      "shape": [
+        2,
+        236,
+        137,
+        135
+      ],
+      "channels": [
+        {
+          "channel_index": 0,
+          "raw_file": "c0.raw",
+          "json_file": "c0.json"
+        },
+        {
+          "channel_index": 1,
+          "raw_file": "c1.raw",
+          "json_file": "c1.json"
+        }
+      ]
+    },
+    {
+      "level_index": 2,
+      "shape": [
+        2,
+        236,
+        68,
+        67
+      ],
+      "channels": [
+        {
+          "channel_index": 0,
+          "raw_file": "c0.raw",
+          "json_file": "c0.json"
+        },
+        {
+          "channel_index": 1,
+          "raw_file": "c1.raw",
+          "json_file": "c1.json"
+        }
+      ]
+    }
+  ]
+}
