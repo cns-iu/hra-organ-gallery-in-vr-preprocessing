@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "organ": "heart",
+    "sex": "female",
+    "tool": "celltypist",
+    "glb_filename": "3d-vh-f-heart.glb",
+    "generated_at": "2026-06-12T17:29:18.205442Z"
+  },
+  "organ_total_cell_count": {
+    "organ": "heart",
+    "total_cells": 2000000000,
+    "notes": "Estimated 2 billion cells in the adult human heart.",
+    "source": "Bergmann et al., 2015",
+    "doi": "10.1126/science.aaa8697"
+  },
+  "cell_type_color_key": {
+    "top_labels": [
+      "PC1_vent",
+      "vCM1",
+      "EC1_cap",
+      "FB1",
+      "vCM4",
+      "LYVE1+IGF1+MP",
+      "EC5_art",
+      "SMC1_basic",
+      "FB3"
+    ],
+    "colors": {
+      "PC1_vent": "#51E1E9",
+      "vCM1": "#CD8490",
+      "EC1_cap": "#75D68A",
+      "FB1": "#F4A42C",
+      "vCM4": "#507AED",
+      "LYVE1+IGF1+MP": "#E154D8",
+      "EC5_art": "#E5E368",
+      "SMC1_basic": "#8B68EB",
+      "FB3": "#DF4B40"
+    },
+    "others_label": "All other cell types",
+    "others_color": "#9192BA"
+  },
+  "anatomical_structures": [
+    {
+      "name": "right cardiac atrium",
+      "glb_node": [
+        "VH_F_right_cardiac_atrium"
+      ],
+      "hra_pop_cell_count": 14996,
+      "allocated_markers": 340,
+      "plotted": 323
+    },
+    {
+      "name": "left cardiac atrium",
+      "glb_node": [
+        "VH_F_left_cardiac_atrium"
+      ],
+      "hra_pop_cell_count": 18090,
+      "allocated_markers": 410,
+      "plotted": 392
+    },
+    {
+      "name": "heart right ventricle",
+      "glb_node": [
+        "VH_F_right_ventricle"
+      ],
+      "hra_pop_cell_count": 40676,
+      "allocated_markers": 921,
+      "plotted": 907
+    },
+    {
+      "name": "heart left ventricle",
+      "glb_node": [
+        "VH_F_left_ventricle"
+      ],
+      "hra_pop_cell_count": 337052,
+      "allocated_markers": 7632,
+      "plotted": 7614
+    },
+    {
+      "name": "interventricular septum",
+      "glb_node": [
+        "VH_F_interventricular_septum"
+      ],
+      "hra_pop_cell_count": 30804,
+      "allocated_markers": 697,
+      "plotted": 680
+    }
+  ],
+  "cell_count_comparison": {
+    "total_plotted": 9916,
+    "total_requested": 10000,
+    "real_cells_per_marker": 201694,
+    "note": "Markers are a representative sample. Each marker represents approximately 201,694 real cells."
+  },
+  "size_reference": {
+    "assumed_cell_size_um": 10.0,
+    "note": "All cell types assumed to be 10 µm in diameter for this pipeline."
+  }
+}

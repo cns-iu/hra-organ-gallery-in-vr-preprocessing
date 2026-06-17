@@ -1,2 +1,0 @@
-If you want raw cache CSVs later, explicitly pass paths:
-python hra_to_heart.py --download-hra-pop-csv "10_organs/amended_organs/hra_pop_raw.csv" --api-generated-cell-csv-output "10_organs/amended_organs/hra_3d_cells_raw.csv"
