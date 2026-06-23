@@ -22,7 +22,7 @@ from typing import Dict, List, Optional, Tuple
 # Top-9 colors for the most prevalent cell types across all anatomical structures.
 # OTHERS is used for all remaining cell types.
 
-PALETTE: List[str] = [
+'''PALETTE: List[str] = [
     "#51E1E9",  # teal
     "#CD8490",  # pink
     "#75D68A",  # green
@@ -34,9 +34,22 @@ PALETTE: List[str] = [
     "#DF4B40",  # coral/red
 ]
 
-OTHERS: str = "#9192BA"  # grey — all cell types beyond the top 9
+OTHERS: str = "#9192BA"  # grey — all cell types beyond the top 9'''
 
+PALETTE: List[str] = [
+"#70A5A8",
+"#8DC599",
+"#F9CE8D",
+"#E97B74",
+"#CD8490",
+"#A294C9",
+"#637597",
+"#EDB8AC",
+"#D6B6D7"
 
+]
+
+OTHERS: str = "#95CBCF"  # grey — all cell types beyond the top 9
 # =============================================================================
 # Hex color helpers
 # =============================================================================

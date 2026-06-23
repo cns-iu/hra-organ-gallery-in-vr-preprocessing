@@ -6,9 +6,9 @@
 
 # ── Organ ─────────────────────────────────────────────────────────────────────
 organ:
-  name: heart                        # organ name used for HRApop filtering
-  sex: female                          # female | male
-  side:                         # left | right | leave blank for unpaired organs
+  name: kidney                        # organ name used for HRApop filtering
+  sex: male                          # female | male
+  side: left                        # left | right | leave blank for unpaired organs
   glb_filename:                       # leave blank to auto-resolve from name/sex/side
 
 # ── API endpoints ─────────────────────────────────────────────────────────────
@@ -19,7 +19,7 @@ apis:
 
 # ── Cell distribution filters ─────────────────────────────────────────────────
 filters:
-  tool: Azimuth                        
+  tool: Azimuth                       
   modality: ""                         # leave blank for no filter
 
 # ── Cell markers ──────────────────────────────────────────────────────────────

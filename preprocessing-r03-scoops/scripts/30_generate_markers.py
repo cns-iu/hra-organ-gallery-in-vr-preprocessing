@@ -6,8 +6,8 @@ of the organ GLB using the HRA 3D Cell Generation API, then export the enriched 
 Reads:  config.yaml
         Outputs/annotated_organs/<organ>/json/<stem>_distribution.json  (from script 20)
         Outputs/downloaded_organs/<glb_filename>                        (from script 10)
-Writes: Outputs/annotated_organs/<organ>/glb/<stem>-all-as-<tool>-<shape>-hra-pop.glb
-        Outputs/annotated_organs/<organ>/csv/<stem>-all-as-<tool>-<shape>-hra-pop.csv
+Writes: Outputs/annotated_organs/<organ>/glb/<stem>-<uberon>-all-as-<tool>-<shape>-hra-pop.glb
+        Outputs/annotated_organs/<organ>/csv/<stem>-<uberon>-all-as-<tool>-<shape>-hra-pop.csv
 """
 
 from __future__ import annotations
@@ -39,6 +39,22 @@ from shared import (
 
 
 # =============================================================================
+# Filename helper
+# =============================================================================
+
+def build_output_stem(stem: str, uberon_id: str, tool_slug: str, shape: str) -> str:
+    """
+    Build the output filename stem including UBERON ID and tool.
+    e.g. 3d-vh-f-heart-UBERON_0000948-all-as-azimuth-sphere-hra-pop
+    """
+    parts = [stem]
+    if uberon_id:
+        parts.append(uberon_id)
+    parts += ["all-as", tool_slug, shape, "hra-pop"]
+    return "-".join(parts)
+
+
+# =============================================================================
 # GLB loading
 # =============================================================================
 
@@ -57,7 +73,6 @@ def find_mesh_node(
     scene: trimesh.Scene,
     node_name: str,
 ) -> Tuple[str, str, trimesh.Trimesh]:
-    """Find an exact GLB node by name and return (node_name, geometry_name, transformed_mesh)."""
     for n in scene.graph.nodes_geometry:
         if n == node_name:
             transform, geometry_name = scene.graph[n]
@@ -201,8 +216,6 @@ def build_color_map(
     all_cell_types: List[str],
     global_top_labels: List[str],
 ) -> Dict[str, str]:
-    """Map each cell type label to a hex color string.
-    Top-9 get PALETTE colors; everything else gets OTHERS."""
     top_set = {normalize_cell_label_key(l) for l in global_top_labels}
     color_map: Dict[str, str] = {}
 
@@ -281,12 +294,6 @@ def restructure_glb_hierarchy(
     as_to_glb_node: Dict[str, List[str]],
     stem: str,
 ) -> None:
-    """
-    Post-process the exported GLB using pygltflib to attach cell markers
-    directly under their corresponding GLB mesh nodes:
-
-        VH_F_heart -> VH_F_right_ventricle -> cells/ -> cell_000001 ...
-    """
     try:
         from pygltflib import GLTF2, Node
     except ImportError:
@@ -321,10 +328,7 @@ def restructure_glb_hierarchy(
             continue
 
         cells_node_idx = len(gltf.nodes)
-        gltf.nodes.append(Node(
-            name="cells",
-            children=cell_indices,
-        ))
+        gltf.nodes.append(Node(name="cells", children=cell_indices))
 
         target_node = gltf.nodes[target_idx]
         if target_node.children is None:
@@ -352,22 +356,24 @@ def write_nodes_csv(
     color_map: Dict[str, str],
     shape: str,
     cell_id_map: Dict[str, str],
+    organ_cell_counts: Dict[str, float],
 ) -> None:
     """
     Write the per-marker CSV with coordinates, cell type, cell ID,
-    percentage of that cell type across the whole organ, and hex color.
+    organ-wide percentage, organ-wide raw cell count, and hex color.
     """
-    # Organ-wide cell type counts for percentage calculation
-    organ_cell_type_counts: Dict[str, int] = {}
+    # Organ-wide marker counts for percentage calculation
+    organ_marker_counts: Dict[str, int] = {}
     for cell_type in all_cell_types:
-        organ_cell_type_counts[cell_type] = organ_cell_type_counts.get(cell_type, 0) + 1
+        organ_marker_counts[cell_type] = organ_marker_counts.get(cell_type, 0) + 1
     organ_total = len(all_cell_types)
 
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "index", "as_label", "cell_type", "cell_id", "organ_percentage",
+            "index", "as_label", "cell_type", "cell_id",
+            "organ_percentage", "cell_count",
             "x", "y", "z",
             "hex_color",
             "marker_shape",
@@ -377,11 +383,13 @@ def write_nodes_csv(
         ):
             hex_color = color_map.get(cell_type, OTHERS)
             cell_id = cell_id_map.get(normalize_cell_label_key(cell_type), "")
-            ct_count = organ_cell_type_counts.get(cell_type, 0)
-            organ_pct = round((ct_count / organ_total) * 100, 4) if organ_total > 0 else 0.0
+            ct_marker_count = organ_marker_counts.get(cell_type, 0)
+            organ_pct = round((ct_marker_count / organ_total) * 100, 4) if organ_total > 0 else 0.0
+            raw_count = int(organ_cell_counts.get(cell_type, 0))
 
             writer.writerow([
-                i, as_label, cell_type, cell_id, organ_pct,
+                i, as_label, cell_type, cell_id,
+                organ_pct, raw_count,
                 float(point[0]), float(point[1]), float(point[2]),
                 hex_color,
                 shape,
@@ -441,6 +449,11 @@ def main() -> None:
     per_as_normalized: Dict[str, Dict[str, float]] = dist_data["per_as_normalized"]
     node_allocation: Dict[str, int] = dist_data["node_allocation"]
     cell_id_map: Dict[str, str] = dist_data.get("cell_id_map", {})
+    organ_cell_counts: Dict[str, float] = dist_data.get("organ_cell_counts", {})
+    uberon_id: str = dist_data.get("uberon_id", "")
+
+    # Build output filename stem with UBERON ID
+    output_name = build_output_stem(stem, uberon_id, tool_slug, shape)
 
     print(f"Loading GLB: {input_glb}")
     scene = load_glb_as_scene(input_glb)
@@ -455,6 +468,8 @@ def main() -> None:
     per_as_points: Dict[str, List[np.ndarray]] = {}
     per_as_cell_types: Dict[str, List[str]] = {}
 
+    MIN_NODES_PER_CALL = 10
+
     for as_label in as_labels:
         glb_nodes = as_to_glb_node.get(as_label)
         total_nodes_for_as = node_allocation.get(as_label, 0)
@@ -467,7 +482,11 @@ def main() -> None:
         if isinstance(glb_nodes, str):
             glb_nodes = [glb_nodes]
 
-        nodes_per_mesh = max(1, total_nodes_for_as // len(glb_nodes))
+        # If splitting would give too few per node, use only the first node
+        if total_nodes_for_as // len(glb_nodes) < MIN_NODES_PER_CALL:
+            glb_nodes = [glb_nodes[0]]
+
+        nodes_per_mesh = total_nodes_for_as // len(glb_nodes)
         remainder = total_nodes_for_as % len(glb_nodes)
 
         per_as_points[as_label] = []
@@ -535,9 +554,8 @@ def main() -> None:
             per_as_cell_node_names[as_label].append(cell_node)
             cell_counter += 1
 
-    # Output filenames include tool
-    output_glb = glb_folder / f"{stem}-all-as-{tool_slug}-{shape}-hra-pop.glb"
-    output_csv = csv_folder / f"{stem}-all-as-{tool_slug}-{shape}-hra-pop.csv"
+    output_glb = glb_folder / f"{output_name}.glb"
+    output_csv = csv_folder / f"{output_name}.csv"
 
     export_glb(scene, output_glb)
     print(f"Exported GLB: {output_glb}")
@@ -558,6 +576,7 @@ def main() -> None:
         color_map=color_map,
         shape=shape,
         cell_id_map=cell_id_map,
+        organ_cell_counts=organ_cell_counts,
     )
     print(f"Exported CSV: {output_csv}")
 

@@ -16,7 +16,6 @@ import csv
 import json
 import sys
 import urllib.request
-from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -94,6 +93,36 @@ def get_glb_node_names(glb_path: Path) -> List[str]:
 
 
 # =============================================================================
+# UBERON / organ ID extraction
+# =============================================================================
+
+def extract_organ_uberon_id(
+    rows: List[Dict[str, str]],
+    organ: str,
+    tool: str,
+    sex: str,
+) -> str:
+    """
+    Extract the UBERON/FMA ID for the organ from the raw HRApop rows.
+    Returns e.g. 'UBERON_0000948'. Falls back to '' if not found.
+    """
+    for row in rows:
+        if not values_match_filter(row.get("organ", ""), organ):
+            continue
+        if not values_match_filter(row.get("tool", ""), tool):
+            continue
+        if not values_match_filter(row.get("sex", ""), sex):
+            continue
+        raw_id = str(row.get("organ_id", "")).strip()
+        if raw_id:
+            # Extract last path component and normalise separators
+            tail = raw_id.rstrip("/").split("/")[-1]
+            # Replace colon with underscore: UBERON:0000948 → UBERON_0000948
+            return tail.replace(":", "_")
+    return ""
+
+
+# =============================================================================
 # Per-AS distribution building
 # =============================================================================
 
@@ -148,7 +177,7 @@ def build_distribution_for_as(rows: List[Dict[str, str]]) -> Dict[str, float]:
             continue
         pct = parse_float(row.get("cell_percentage", ""))
         count = parse_float(row.get("cell_count", ""))
-        weight = pct if pct > 0 else count  # prefer percentage
+        weight = pct if pct > 0 else count
         if weight > 0:
             distribution[label] = distribution.get(label, 0.0) + weight
     return distribution
@@ -165,7 +194,35 @@ def get_total_cell_count_for_as(rows: List[Dict[str, str]]) -> float:
     return sum(parse_float(row.get("cell_count", "")) for row in rows)
 
 
+def build_organ_cell_counts(
+    rows: List[Dict[str, str]],
+    organ: str,
+    tool: str,
+    sex: str,
+    modality: str,
+    matched_as_labels: List[str],
+) -> Dict[str, float]:
+    """
+    Build organ-wide raw cell counts per cell type, summed across all matched AS.
+    Returns e.g. {'Fibroblast': 45231.0, 'Cardiomyocyte': 123456.0, ...}
+    """
+    organ_counts: Dict[str, float] = {}
+    for as_label in matched_as_labels:
+        as_rows = filter_rows_for_as(rows, organ, as_label, tool, sex, modality)
+        for row in as_rows:
+            label = str(row.get("cell_label", "")).strip()
+            if not label:
+                continue
+            count = parse_float(row.get("cell_count", ""))
+            if count > 0:
+                organ_counts[label] = organ_counts.get(label, 0.0) + count
+    return organ_counts
+
+
 def build_cell_id_map(rows: List[Dict[str, str]]) -> Dict[str, str]:
+    """
+    Build a map of normalized cell label key -> ontology ID (e.g. CL:0000057).
+    """
     cell_id_map: Dict[str, str] = {}
     for row in rows:
         label = str(row.get("cell_label", "")).strip()
@@ -276,7 +333,11 @@ def main() -> None:
         cache_path.write_bytes(raw)
         print(f"Saved raw HRApop CSV to: {cache_path}")
 
-    # Get all AS labels for this organ/tool/sex
+    # Extract UBERON ID
+    uberon_id = extract_organ_uberon_id(rows, organ_name, tool, organ_sex)
+    print(f"\nOrgan UBERON ID: {uberon_id or '(not found)'}")
+
+    # Get all AS labels
     as_labels = get_all_as_labels(rows, organ_name, tool, organ_sex, modality)
     print(f"\nHRApop AS labels found: {len(as_labels)}")
     for label in as_labels:
@@ -325,11 +386,17 @@ def main() -> None:
     for label in global_top_labels:
         print(f"  {label}")
 
+    # Organ-wide cell counts per cell type
+    organ_cell_counts = build_organ_cell_counts(
+        rows, organ_name, tool, organ_sex, modality, matched_as_labels
+    )
+    print(f"\nOrgan-wide cell type count entries: {len(organ_cell_counts)}")
+
     # Cell ID map
     cell_id_map = build_cell_id_map(rows)
-    print(f"\nCell ID map entries: {len(cell_id_map)}")
+    print(f"Cell ID map entries: {len(cell_id_map)}")
 
-    # Proportional node allocation
+    # Node allocation
     node_allocation = allocate_nodes(as_total_counts, total_nodes)
     print(f"\nNode allocation (total={total_nodes}):")
     for as_label, n in node_allocation.items():
@@ -343,6 +410,7 @@ def main() -> None:
         "sex": organ_sex,
         "tool": tool,
         "modality": modality,
+        "uberon_id": uberon_id,
         "top_cell_type_count": top_n,
         "global_top_labels": global_top_labels,
         "as_labels": matched_as_labels,
@@ -353,6 +421,7 @@ def main() -> None:
         "per_as_normalized": per_as_normalized,
         "as_total_counts": as_total_counts,
         "node_allocation": node_allocation,
+        "organ_cell_counts": organ_cell_counts,
         "cell_id_map": cell_id_map,
     }
 
