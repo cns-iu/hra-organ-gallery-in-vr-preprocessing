@@ -22,22 +22,19 @@ from typing import Dict, List
 sys.path.insert(0, str(Path(__file__).parent))
 from shared import (
     load_config,
-    normalize_cell_label_key,
     PALETTE,
-    OTHERS,
     ORGAN_CELL_COUNTS,
     resolve_glb_filename,
 )
 
 REAL_CELL_SIZE_UM = 10.0
 
-
-def get_color_for_label(label: str, global_top_labels: List[str]) -> str:
-    key = normalize_cell_label_key(label)
-    for i, top_label in enumerate(global_top_labels):
-        if normalize_cell_label_key(top_label) == key:
-            return PALETTE[i] if i < len(PALETTE) else OTHERS
-    return OTHERS
+def build_output_stem(stem: str, uberon_id: str, tool_slug: str, shape: str) -> str:
+    parts = [stem]
+    if uberon_id:
+        parts.append(uberon_id)
+    parts += ["all-as", tool_slug, shape, "hra-pop"]
+    return "-".join(parts)
 
 
 def load_distribution(path: Path) -> dict:
@@ -58,25 +55,18 @@ def get_plotted_counts_by_as(rows: List[Dict[str, str]]) -> Dict[str, int]:
     return counts
 
 
-def build_output_stem(stem: str, uberon_id: str, tool_slug: str, shape: str) -> str:
-    parts = [stem]
-    if uberon_id:
-        parts.append(uberon_id)
-    parts += ["all-as", tool_slug, shape, "hra-pop"]
-    return "-".join(parts)
-
-
 def generate_html(
     organ: str,
     sex: str,
     tool: str,
     glb_filename: str,
-    global_top_labels: List[str],
+    cell_type_color_order: List[str],
     as_labels: List[str],
     as_total_counts: Dict[str, float],
     node_allocation: Dict[str, int],
     plotted_by_as: Dict[str, int],
     total_nodes_requested: int,
+    organ_total_cells: int,
     sphere_radius: float,
 ) -> str:
     total_plotted = sum(plotted_by_as.values())
@@ -87,27 +77,20 @@ def generate_html(
     marker_pct = (log_cell - log_min) / (log_max - log_min) * 100
 
     color_key_rows = ""
-    for i, label in enumerate(global_top_labels):
-        hex_color = PALETTE[i] if i < len(PALETTE) else OTHERS
+    for i, cell in enumerate(cell_type_color_order):
+        hex_color = PALETTE[i] if i < len(PALETTE) else PALETTE[-1]
         color_key_rows += f"""
         <tr>
             <td><span class="swatch" style="background:{hex_color}"></span></td>
-            <td class="label">{label}</td>
+            <td class="label">{cell}</td>
             <td class="mono">{hex_color}</td>
-        </tr>"""
-
-    color_key_rows += f"""
-        <tr>
-            <td><span class="swatch" style="background:{OTHERS}"></span></td>
-            <td class="label" style="color:#888">All other cell types</td>
-            <td class="mono" style="color:#888">{OTHERS}</td>
         </tr>"""
 
     as_rows_html = ""
     for as_label in as_labels:
         hra_count = int(as_total_counts.get(as_label, 0))
         allocated = node_allocation.get(as_label, 0)
-        plotted = plotted_by_as.get(as_label, 0)
+        plotted   = plotted_by_as.get(as_label, 0)
         as_rows_html += f"""
         <tr>
             <td class="label">{as_label}</td>
@@ -170,13 +153,13 @@ def generate_html(
     </style>
 </head>
 <body>
-    <h1>{organ.title()} — All Anatomical Structures</h1>
+    <h1>{organ.title()} </h1>
     <p class="subtitle">{sex.title()} &nbsp;·&nbsp; {tool} &nbsp;·&nbsp; Source: {glb_filename}</p>
 
     <div class="section">
-        <h2>Cell Type Color Key</h2>
+        <h2>Cell Type Colour Key</h2>
         <table>
-            <thead><tr><th style="width:28px"></th><th>Cell Type (Top {len(global_top_labels)})</th><th>Hex Color</th></tr></thead>
+            <thead><tr><th style="width:28px"></th><th>Cell type ({len(cell_type_color_order)} total)</th><th>Hex Color</th></tr></thead>
             <tbody>{color_key_rows}</tbody>
         </table>
     </div>
@@ -201,9 +184,9 @@ def generate_html(
         <div class="meta-grid">
             <div class="meta-item"><div class="key">Total Plotted</div><div class="value">{total_plotted:,}</div></div>
             <div class="meta-item"><div class="key">Total Requested</div><div class="value">{total_nodes_requested:,}</div></div>
-            <div class="meta-item"><div class="key">Real Cells per Marker</div><div class="value">~{2_000_000_000 // max(total_plotted, 1):,}</div></div>
+            <div class="meta-item"><div class="key">Real Cells per Marker</div><div class="value">~{organ_total_cells // max(total_plotted, 1):,}</div></div>
         </div>
-        <p class="size-note">Markers are a representative sample. Each marker represents roughly {2_000_000_000 // max(total_plotted, 1):,} real cells.</p>
+        <p class="size-note">Markers are a representative sample. Each marker represents roughly {organ_total_cells // max(total_plotted, 1):,} real cells.</p>
     </div>
 
     <div class="section">
@@ -232,19 +215,19 @@ def generate_html(
 def main() -> None:
     config = load_config(Path(__file__).parent.parent / "config.yaml")
 
-    organ_name = config["organ"]["name"]
-    organ_sex = config["organ"]["sex"]
-    tool = config["filters"]["tool"]
+    organ_name  = config["organ"]["name"]
+    organ_sex   = config["organ"]["sex"]
+    tool        = config["filters"]["tool"]
     total_nodes_requested = config["markers"]["num_nodes"]
     sphere_radius = config["markers"]["sphere_radius"]
-    shape = config["markers"]["shape"]
+    shape         = config["markers"]["shape"]
 
     glb_filename = (config["organ"].get("glb_filename") or "").strip()
-    organ_side = (config["organ"].get("side") or "").strip()
+    organ_side   = (config["organ"].get("side") or "").strip()
     if not glb_filename:
         glb_filename = resolve_glb_filename(organ_name, organ_sex, organ_side)
 
-    stem = Path(glb_filename).stem
+    stem      = Path(glb_filename).stem
     tool_slug = tool.lower()
 
     base_folder = Path(config["output"]["amended_folder"]) / organ_name.lower()
@@ -258,8 +241,8 @@ def main() -> None:
     if not distribution_path.exists():
         raise FileNotFoundError(f"Distribution JSON not found: {distribution_path}.")
 
-    dist_data = load_distribution(distribution_path)
-    uberon_id = dist_data.get("uberon_id", "")
+    dist_data  = load_distribution(distribution_path)
+    uberon_id  = dist_data.get("uberon_id", "")
     output_name = build_output_stem(stem, uberon_id, tool_slug, shape)
 
     nodes_csv_path = csv_folder  / f"{output_name}.csv"
@@ -269,28 +252,31 @@ def main() -> None:
     if not nodes_csv_path.exists():
         raise FileNotFoundError(f"Nodes CSV not found: {nodes_csv_path}.")
 
-    nodes_rows = load_nodes_csv(nodes_csv_path)
-    plotted_by_as = get_plotted_counts_by_as(nodes_rows)
+    nodes_rows     = load_nodes_csv(nodes_csv_path)
+    plotted_by_as  = get_plotted_counts_by_as(nodes_rows)
+    cell_type_color_order: List[str] = dist_data["cell_type_color_order"]
+    organ_info = ORGAN_CELL_COUNTS.get(organ_name.lower(), {})
+    organ_total_cells = organ_info.get("total_cells", 1)
 
     html = generate_html(
         organ=organ_name,
         sex=organ_sex,
         tool=tool,
         glb_filename=glb_filename,
-        global_top_labels=dist_data["global_top_labels"],
+        cell_type_color_order=cell_type_color_order,
         as_labels=dist_data["as_labels"],
         as_total_counts=dist_data["as_total_counts"],
         node_allocation=dist_data["node_allocation"],
         plotted_by_as=plotted_by_as,
         total_nodes_requested=total_nodes_requested,
         sphere_radius=sphere_radius,
+        organ_total_cells = organ_total_cells,
     )
 
     output_html.write_text(html, encoding="utf-8")
     print(f"Legend HTML saved to: {output_html}")
 
     total_plotted = sum(plotted_by_as.values())
-    organ_info = ORGAN_CELL_COUNTS.get(organ_name.lower(), {})
 
     legend_json = {
         "metadata": {
@@ -299,35 +285,33 @@ def main() -> None:
             "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
         },
         "organ_total_cell_count": {
-            "organ": organ_name,
+            "organ":       organ_name,
             "total_cells": organ_info.get("total_cells", "unknown"),
-            "notes": organ_info.get("notes", ""),
-            "source": organ_info.get("source", ""),
-            "doi": organ_info.get("doi", ""),
+            "notes":       organ_info.get("notes", ""),
+            "source":      organ_info.get("source", ""),
+            "doi":         organ_info.get("doi", ""),
         },
         "cell_type_color_key": {
-            "top_labels": dist_data["global_top_labels"],
+            "cell type": cell_type_color_order,
             "colors": {
-                label: PALETTE[i] if i < len(PALETTE) else OTHERS
-                for i, label in enumerate(dist_data["global_top_labels"])
+                cell: PALETTE[i] if i < len(PALETTE) else PALETTE[-1]
+                for i, cell in enumerate(cell_type_color_order)
             },
-            "others_label": "All other cell types",
-            "others_color": OTHERS,
         },
         "anatomical_structures": [
             {
-                "name": as_label,
-                "glb_node": dist_data["as_to_glb_node"].get(as_label, ""),
+                "name":              as_label,
+                "glb_node":          dist_data["as_to_glb_node"].get(as_label, ""),
                 "hra_pop_cell_count": int(dist_data["as_total_counts"].get(as_label, 0)),
                 "allocated_markers": dist_data["node_allocation"].get(as_label, 0),
-                "plotted": plotted_by_as.get(as_label, 0),
+                "plotted":           plotted_by_as.get(as_label, 0),
             }
             for as_label in dist_data["as_labels"]
         ],
         "cell_count_comparison": {
-            "total_plotted": total_plotted,
-            "total_requested": total_nodes_requested,
-            "real_cells_per_marker": 2_000_000_000 // max(total_plotted, 1),
+            "total_plotted":       total_plotted,
+            "total_requested":     total_nodes_requested,
+            "real_cells_per_marker": organ_total_cells // max(total_plotted, 1),
         },
         "size_reference": {
             "assumed_cell_size_um": REAL_CELL_SIZE_UM,

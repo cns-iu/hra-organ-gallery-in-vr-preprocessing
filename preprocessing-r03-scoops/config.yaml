@@ -1,46 +1,42 @@
 # =============================================================================
 # HRA 3D Cell Population Pipeline — Configuration
 # =============================================================================
-# Edit this file to control which organ is processed, how cells are placed,
-# and what the output looks like. No code changes needed.
 
 # ── Organ ─────────────────────────────────────────────────────────────────────
 organ:
-  name: kidney                        # organ name used for HRApop filtering
-  sex: male                          # female | male
-  side: left                        # left | right | leave blank for unpaired organs
-  glb_filename:                       # leave blank to auto-resolve from name/sex/side
+  name: heart
+  sex: male
+  side:
+  glb_filename:
 
 # ── API endpoints ─────────────────────────────────────────────────────────────
 apis:
   reference_organs: https://apps.humanatlas.io/api--staging/v1/reference-organs
   hra_pop: https://apps.humanatlas.io/api/grlc/hra-pop/cell_types_in_anatomical_structurescts_per_as
   cell_generation: https://apps.humanatlas.io/api/v1/mesh-3d-cell-population
+  cell_hierarchy: https://docs.google.com/spreadsheets/d/10kV3beiTLrMFoDHN0pGYyJ2GounIF1Du7LaaP3PHqdo/export?format=csv&gid=1351060716
 
 # ── Cell distribution filters ─────────────────────────────────────────────────
 filters:
-  tool: Azimuth                       
-  modality: ""                         # leave blank for no filter
+  tool: azimuth
+  modality: ""
 
 # ── Cell markers ──────────────────────────────────────────────────────────────
 markers:
-  num_nodes: 10000                     # total markers across ALL anatomical structures
-  shape: sphere                        # sphere | cube | triangle
+  num_nodes: 10000
+  shape: sphere
   sphere_radius: 0.00025
   sphere_subdivisions: 1
-  size: null                           # overrides sphere_radius if set
-  top_cell_type_count: 9               
+  size: null
+  top_cell_type_count: 11
 
 # ── Visualization ─────────────────────────────────────────────────────────────
 visualization:
-  organ_alpha: 25                      # organ mesh transparency: 0 (invisible) – 255 (opaque)
+  organ_alpha: 25
 
 # ── Output ────────────────────────────────────────────────────────────────────
 output:
   organs_folder: Outputs/downloaded_organs
   amended_folder: Outputs/annotated_organs
-  save_hra_pop_csv: false             # save raw HRApop API response as CSV
-  save_cell_api_csv: false            # save raw 3D Cell API response as CSV
-
-
-
+  save_hra_pop_csv: false
+  save_cell_api_csv: false

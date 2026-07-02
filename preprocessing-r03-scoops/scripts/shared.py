@@ -4,52 +4,42 @@ shared.py — Single source of truth for constants and shared utilities.
 
 Imports from here:
     resolve_glb_filename, load_config, normalize_match_text,
-    normalize_cell_label_key, safe_name,
-    hex_to_rgb, hex_to_float,
-    PALETTE, OTHERS, CELL_TYPE_FULL_NAMES, ORGAN_CELL_COUNTS
+    normalize_cell_label_key, compact_ontology_id, parse_float,
+    safe_name, values_match_filter, auto_match_as_to_glb_nodes,
+    hex_to_rgb, hex_to_float, load_supertree,
+    PALETTE, CELL_TYPE_FULL_NAMES, ORGAN_CELL_COUNTS
 """
 
 from __future__ import annotations
 
+import csv
 import re
 import yaml
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+import pandas as pd
 
 # =============================================================================
 # Color palette (hex strings — single source of truth)
 # =============================================================================
-# Top-9 colors for the most prevalent cell types across all anatomical structures.
-# OTHERS is used for all remaining cell types.
-
-'''PALETTE: List[str] = [
-    "#51E1E9",  # teal
-    "#CD8490",  # pink
-    "#75D68A",  # green
-    "#F4A42C",  # orange
-    "#507AED",  # blue
-    "#E154D8",  # magenta
-    "#E5E368",  # yellow
-    "#8B68EB",  # purple
-    "#DF4B40",  # coral/red
-]
-
-OTHERS: str = "#9192BA"  # grey — all cell types beyond the top 9'''
+# 11 colors, one per supertree cell type, ranked from most to least prevalent.
+# PALETTE[0] → highest cell-count cell type, PALETTE[10] → lowest.
 
 PALETTE: List[str] = [
-"#70A5A8",
-"#8DC599",
-"#F9CE8D",
-"#E97B74",
-"#CD8490",
-"#A294C9",
-"#637597",
-"#EDB8AC",
-"#D6B6D7"
-
+    "#70A5A8",  # 1 — most prevalent cell type
+    "#8DC599",  # 2
+    "#F9CE8D",  # 3
+    "#E97B74",  # 4
+    "#CD8490",  # 5
+    "#A294C9",  # 6
+    "#637597",  # 7
+    "#EDB8AC",  # 8
+    "#D6B6D7",  # 9
+    "#95CBCF",  # 10
+    "#8C3C41",  # 11 — least prevalent cell type
 ]
 
-OTHERS: str = "#95CBCF"  # grey — all cell types beyond the top 9
+
 # =============================================================================
 # Hex color helpers
 # =============================================================================
@@ -67,9 +57,71 @@ def hex_to_float(hex_color: str) -> Tuple[float, float, float]:
 
 
 # =============================================================================
+# Supertree loading
+# =============================================================================
+
+def load_supertree(path: str) -> Tuple[Dict[str, str], Dict[str, str]]:
+    """
+    Load Bruce's supertree CSV (local path or Google Sheets export URL) and return
+    two mappings:
+        cell_to_label: CL:XXXXXXX (leaf cell ID) → supertree label (AS/2/LABEL or AS/3/LABEL fallback)
+        cell_to_id:    CL:XXXXXXX (leaf cell ID) → supertree CL ID (AS/2/ID or AS/3/ID fallback)
+
+    Filters to azimuth, celltypist, and popv sources only.
+    Skips the root 'cell' row (CL:0000000 with no AS/2 or AS/3).
+    For rows with an AS/2/LABEL but no AS/2/ID, generates ASCTB-TEMP-<label>.
+    """
+    sources = {"azimuth", "celltypist", "popv"}
+    cell_to_label: Dict[str, str] = {}
+    cell_to_id:    Dict[str, str] = {}
+
+    df = pd.read_csv(path, encoding="utf-8-sig")
+
+    for _, row in df.iterrows():
+        source = str(row.get("CT/1 - Sources", "")).strip().lower()
+        if source not in sources:
+            continue
+
+        # Resolve leaf cell ID — deepest non-null AS/n/ID
+        leaf_id = None
+        for i in range(12, 0, -1):
+            v = str(row.get(f"AS/{i}/ID", "")).strip()
+            if v and v.lower() != "nan":
+                leaf_id = compact_ontology_id(v)
+                break
+        if not leaf_id:
+            continue
+
+        # Resolve label and ID — AS/2 first, then AS/3 fallback
+        as2_label = str(row.get("AS/2/LABEL", "")).strip()
+        as2_id    = str(row.get("AS/2/ID",    "")).strip()
+        as3_label = str(row.get("AS/3/LABEL", "")).strip()
+        as3_id    = str(row.get("AS/3/ID",    "")).strip()
+
+        as2_label = "" if as2_label.lower() == "nan" else as2_label
+        as2_id    = "" if as2_id.lower()    == "nan" else as2_id
+        as3_label = "" if as3_label.lower() == "nan" else as3_label
+        as3_id    = "" if as3_id.lower()    == "nan" else as3_id
+
+        if as2_label:
+            level_label = as2_label
+            level_id    = compact_ontology_id(as2_id) if as2_id else f"ASCTB-TEMP-{as2_label}"
+        elif as3_label:
+            level_label = as3_label
+            level_id    = compact_ontology_id(as3_id) if as3_id else f"ASCTB-TEMP-{as3_label}"
+        else:
+            continue
+
+        if leaf_id not in cell_to_label:
+            cell_to_label[leaf_id] = level_label
+            cell_to_id[leaf_id]    = level_id
+
+    return cell_to_label, cell_to_id
+
+
+# =============================================================================
 # Cell type display names
 # =============================================================================
-# Maps normalized cell label keys → human-readable full names for the legend.
 
 CELL_TYPE_FULL_NAMES: Dict[str, str] = {
     "fibroblast":                       "Fibroblast",
@@ -98,10 +150,10 @@ CELL_TYPE_FULL_NAMES: Dict[str, str] = {
 
 ORGAN_CELL_COUNTS: Dict[str, Dict] = {
     "heart": {
-        "total_cells":  2_000_000_000,
-        "notes":        "Estimated 2 billion cells in the adult human heart.",
-        "source":       "Bergmann et al., 2015",
-        "doi":          "10.1126/science.aaa8697",
+        "total_cells":  7_500_000_000,
+        "notes":        "The human heart contains an estimated 2-3 billion cardiac muscle cells, but these account for less than a third of the total cell number in the heart.",
+        "source":       "Cell Communications in the Heart",
+        "doi":          "10.1161/CIRCULATIONAHA.108.847731",
     },
     "kidney": {
         "total_cells":  1_500_000_000,
@@ -114,12 +166,11 @@ ORGAN_CELL_COUNTS: Dict[str, Dict] = {
 # =============================================================================
 # Manual AS label → GLB node overrides
 # =============================================================================
-# Used when fuzzy matching fails due to abbreviations or naming mismatches.
-# Key: lowercased HRApop AS label, Value: GLB node name
 
 AS_LABEL_OVERRIDES: Dict[str, List[str]] = {
     "posteromedial head of posterior papillary muscle of left ventricle": [
-        "VH_F_papillary_muscle_of_heart_posmed"
+        "VH_F_papillary_muscle_of_heart_posmed",
+        "VH_M_papillary_muscle_of_heart_posmed",
     ],
 }
 
@@ -128,17 +179,9 @@ AS_LABEL_OVERRIDES: Dict[str, List[str]] = {
 # =============================================================================
 
 def resolve_glb_filename(organ_name: str, organ_sex: str, side: str = "") -> str:
-    """
-    Auto-resolve a GLB filename from organ name, sex, and optional side.
-
-    Examples:
-        heart,  female, ""      → 3d-vh-f-heart.glb
-        kidney, female, "left"  → 3d-vh-f-kidney-l.glb
-        eye,    male,   "right" → 3d-vh-m-eye-r.glb
-    """
-    sex_code = "f" if organ_sex.lower() == "female" else "m"
+    sex_code  = "f" if organ_sex.lower() == "female" else "m"
     name_slug = organ_name.lower().strip().replace(" ", "-")
-    side = (side or "").strip().lower()
+    side      = (side or "").strip().lower()
     side_code = {"left": "-l", "right": "-r"}.get(side, "")
     return f"3d-vh-{sex_code}-{name_slug}{side_code}.glb"
 
@@ -157,10 +200,6 @@ def load_config(config_path: Path) -> dict:
 # =============================================================================
 
 def normalize_match_text(text: str) -> str:
-    """
-    Normalise a string for fuzzy AS label → GLB node matching.
-    Lowercases, strips punctuation, collapses whitespace.
-    """
     text = text.lower()
     text = re.sub(r"[^a-z0-9\s]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
@@ -168,23 +207,15 @@ def normalize_match_text(text: str) -> str:
 
 
 def normalize_cell_label_key(label: str) -> str:
-    """
-    Normalise a cell type label to a dict key.
-    Lowercases and replaces spaces/hyphens with underscores.
-    """
     return re.sub(r"[\s\-]+", "_", label.strip().lower())
 
 
 def safe_name(text: str) -> str:
-    """
-    Convert arbitrary text to a safe GLB node / material name.
-    Replaces non-alphanumeric characters with underscores.
-    """
     return re.sub(r"[^a-zA-Z0-9_]", "_", text)
 
 
 # =============================================================================
-# Ontology / data helpers (used by 20_fetch_cell_distribution.py)
+# Ontology / data helpers
 # =============================================================================
 
 def compact_ontology_id(url_or_id: str) -> str:
@@ -193,13 +224,10 @@ def compact_ontology_id(url_or_id: str) -> str:
 
     Examples:
         http://purl.obolibrary.org/obo/CL_0000057  →  CL:0000057
-        https://purl.org/sig/ont/fma/fma7088       →  FMA:7088
-        CL_0000057                                  →  CL:0000057  (already short)
+        CL_0000057                                  →  CL:0000057
     """
     s = (url_or_id or "").strip()
-    # Extract the final path component
     tail = s.rstrip("/").split("/")[-1]
-    # Replace underscore separator with colon (CL_0000057 → CL:0000057)
     match = re.match(r"^([A-Za-z]+)[_:](\d+)$", tail)
     if match:
         return f"{match.group(1).upper()}:{match.group(2)}"
@@ -207,7 +235,6 @@ def compact_ontology_id(url_or_id: str) -> str:
 
 
 def parse_float(value) -> float:
-    """Safely parse a value to float; return 0.0 on failure."""
     try:
         return float(value)
     except (TypeError, ValueError):
@@ -215,10 +242,6 @@ def parse_float(value) -> float:
 
 
 def values_match_filter(value: str, filter_value: str) -> bool:
-    """
-    Case-insensitive substring filter.
-    Returns True if filter_value is empty or is contained in value.
-    """
     if not filter_value:
         return True
     return filter_value.lower() in value.lower()
@@ -244,7 +267,6 @@ def auto_match_as_to_glb_nodes(
     result: Dict[str, Optional[List[str]]] = {}
 
     for as_label in as_labels:
-        # Pass 0: manual override
         if as_label.lower() in AS_LABEL_OVERRIDES:
             result[as_label] = AS_LABEL_OVERRIDES[as_label.lower()]
             print(f"  ✓  '{as_label}' → {result[as_label]} (manual override)")
@@ -258,18 +280,15 @@ def auto_match_as_to_glb_nodes(
 
         matches: List[str] = []
 
-        # Pass 1: exact normalised match
         for norm_node, original in norm_to_glb.items():
             if norm_as == norm_node:
                 matches.append(original)
 
-        # Pass 2: substring match
         if not matches:
             for norm_node, original in norm_to_glb.items():
                 if norm_as in norm_node or norm_node in norm_as:
                     matches.append(original)
 
-        # Pass 3: token overlap
         if not matches:
             as_tokens = set(norm_as.split())
             for norm_node, original in norm_to_glb.items():

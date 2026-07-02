@@ -2,43 +2,37 @@
   "metadata": {
     "organ": "heart",
     "sex": "female",
-    "tool": "Celltypist",
+    "tool": "celltypist",
     "uberon_id": "UBERON_0000948",
     "glb_filename": "3d-vh-f-heart.glb",
-    "generated_at": "2026-06-23T22:53:52.956164Z"
+    "generated_at": "2026-07-02T21:48:36.766718Z"
   },
   "organ_total_cell_count": {
     "organ": "heart",
-    "total_cells": 2000000000,
-    "notes": "Estimated 2 billion cells in the adult human heart.",
-    "source": "Bergmann et al., 2015",
-    "doi": "10.1126/science.aaa8697"
+    "total_cells": 7500000000,
+    "notes": "The human heart contains an estimated 2-3 billion cardiac muscle cells, but these account for less than a third of the total cell number in the heart.",
+    "source": "Cell Communications in the Heart",
+    "doi": "10.1161/CIRCULATIONAHA.108.847731"
   },
   "cell_type_color_key": {
-    "top_labels": [
-      "PC1_vent",
-      "vCM1",
-      "FB1",
-      "vCM4",
-      "aCM4",
-      "EC2_cap",
-      "FB2",
-      "EC1_cap",
-      "aCM3"
+    "cell type": [
+      "connective tissue cell",
+      "muscle cell",
+      "endothelial cell",
+      "hematopoietic cell",
+      "neural cell",
+      "epithelial cell",
+      "other-organ-specific"
     ],
     "colors": {
-      "PC1_vent": "#70A5A8",
-      "vCM1": "#8DC599",
-      "FB1": "#F9CE8D",
-      "vCM4": "#E97B74",
-      "aCM4": "#CD8490",
-      "EC2_cap": "#A294C9",
-      "FB2": "#637597",
-      "EC1_cap": "#EDB8AC",
-      "aCM3": "#D6B6D7"
-    },
-    "others_label": "All other cell types",
-    "others_color": "#95CBCF"
+      "connective tissue cell": "#70A5A8",
+      "muscle cell": "#8DC599",
+      "endothelial cell": "#F9CE8D",
+      "hematopoietic cell": "#E97B74",
+      "neural cell": "#CD8490",
+      "epithelial cell": "#A294C9",
+      "other-organ-specific": "#637597"
+    }
   },
   "anatomical_structures": [
     {
@@ -46,9 +40,9 @@
       "glb_node": [
         "VH_F_right_cardiac_atrium"
       ],
-      "hra_pop_cell_count": 14996,
-      "allocated_markers": 337,
-      "plotted": 321
+      "hra_pop_cell_count": 14535,
+      "allocated_markers": 328,
+      "plotted": 312
     },
     {
       "name": "left cardiac atrium",
@@ -56,8 +50,8 @@
         "VH_F_left_cardiac_atrium"
       ],
       "hra_pop_cell_count": 18090,
-      "allocated_markers": 406,
-      "plotted": 390
+      "allocated_markers": 408,
+      "plotted": 391
     },
     {
       "name": "heart right ventricle",
@@ -65,15 +59,15 @@
         "VH_F_right_ventricle"
       ],
       "hra_pop_cell_count": 40676,
-      "allocated_markers": 914,
-      "plotted": 899
+      "allocated_markers": 918,
+      "plotted": 902
     },
     {
       "name": "heart left ventricle",
       "glb_node": [
         "VH_F_left_ventricle"
       ],
-      "hra_pop_cell_count": 337052,
+      "hra_pop_cell_count": 335664,
       "allocated_markers": 7573,
       "plotted": 7554
     },
@@ -83,23 +77,24 @@
         "VH_F_interventricular_septum"
       ],
       "hra_pop_cell_count": 30804,
-      "allocated_markers": 692,
-      "plotted": 674
+      "allocated_markers": 695,
+      "plotted": 678
     },
     {
       "name": "Posteromedial head of posterior papillary muscle of left ventricle",
       "glb_node": [
-        "VH_F_papillary_muscle_of_heart_posmed"
+        "VH_F_papillary_muscle_of_heart_posmed",
+        "VH_M_papillary_muscle_of_heart_posmed"
       ],
       "hra_pop_cell_count": 3464,
       "allocated_markers": 78,
-      "plotted": 68
+      "plotted": 31
     }
   ],
   "cell_count_comparison": {
-    "total_plotted": 9906,
+    "total_plotted": 9868,
     "total_requested": 10000,
-    "real_cells_per_marker": 201897
+    "real_cells_per_marker": 760032
   },
   "size_reference": {
     "assumed_cell_size_um": 10.0,

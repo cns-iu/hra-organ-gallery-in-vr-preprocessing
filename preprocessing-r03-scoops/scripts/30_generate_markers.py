@@ -33,8 +33,8 @@ from shared import (
     safe_name,
     hex_to_rgb,
     hex_to_float,
+    load_supertree,
     PALETTE,
-    OTHERS,
 )
 
 
@@ -43,10 +43,6 @@ from shared import (
 # =============================================================================
 
 def build_output_stem(stem: str, uberon_id: str, tool_slug: str, shape: str) -> str:
-    """
-    Build the output filename stem including UBERON ID and tool.
-    e.g. 3d-vh-f-heart-UBERON_0000948-all-as-azimuth-sphere-hra-pop
-    """
     parts = [stem]
     if uberon_id:
         parts.append(uberon_id)
@@ -203,33 +199,39 @@ def call_cell_api(
     if not {"x", "y", "z"}.issubset(actual_cols):
         raise ValueError(f"Missing coordinate columns. Columns: {sorted(actual_cols)}")
 
-    points = np.array([[float(r["x"]), float(r["y"]), float(r["z"])] for r in rows])
+    points     = np.array([[float(r["x"]), float(r["y"]), float(r["z"])] for r in rows])
     cell_types = [str(r[cell_type_col]) for r in rows]
     return points, cell_types
 
 
 # =============================================================================
-# Color map — Dict[str, str] (hex strings)
+# Color map — supertree based
 # =============================================================================
 
 def build_color_map(
     all_cell_types: List[str],
-    global_top_labels: List[str],
+    cell_id_map: Dict[str, str],
+    supertree: Dict[str, str],
+    cell_type_color_order: List[str],
 ) -> Dict[str, str]:
-    top_set = {normalize_cell_label_key(l) for l in global_top_labels}
-    color_map: Dict[str, str] = {}
+    """
+    Map each cell type label.
 
-    for label in sorted(set(all_cell_types)):
-        key = normalize_cell_label_key(label)
-        if key in top_set:
-            idx = next(
-                (i for i, l in enumerate(global_top_labels)
-                 if normalize_cell_label_key(l) == key),
-                None,
-            )
-            color_map[label] = PALETTE[idx] if idx is not None and idx < len(PALETTE) else OTHERS
-        else:
-            color_map[label] = OTHERS
+    1. Look up the cell type's CL ID from cell_id_map.
+    2. Look up its supertree level from supertree (CL ID → level label).
+    3. Assign PALETTE color by level's rank in cell_type_color_order.
+    4. Fall back to PALETTE[-1] for any unmapped cell type.
+    """
+    cell_type_color_order: Dict[str, str] = {
+        level: PALETTE[i] if i < len(PALETTE) else PALETTE[-1]
+        for i, level in enumerate(cell_type_color_order)
+    }
+
+    color_map: Dict[str, str] = {}
+    for label in set(all_cell_types):
+        cl_id  = cell_id_map.get(normalize_cell_label_key(label), "")
+        level = supertree.get(cl_id, "")
+        color_map[label] = cell_type_color_order.get(level, PALETTE[-1])
 
     return color_map
 
@@ -261,8 +263,8 @@ def make_marker_mesh(
 
     mesh.apply_translation(center)
 
-    hex_color = color_map.get(cell_type, OTHERS)
-    r, g, b = hex_to_float(hex_color)
+    hex_color = color_map.get(cell_type, PALETTE[-1])
+    r, g, b   = hex_to_float(hex_color)
 
     material = PBRMaterial(
         name=f"generated_cell_material_{safe_name(shape)}_{safe_name(cell_type)}",
@@ -301,8 +303,8 @@ def restructure_glb_hierarchy(
         return
 
     gltf = GLTF2().load(str(output_path))
-    name_to_idx = {node.name: i for i, node in enumerate(gltf.nodes)}
-    scene_root_idx = gltf.scenes[gltf.scene].nodes[0] if gltf.scenes and gltf.scene is not None else 0
+    name_to_idx     = {node.name: i for i, node in enumerate(gltf.nodes)}
+    scene_root_idx  = gltf.scenes[gltf.scene].nodes[0] if gltf.scenes and gltf.scene is not None else 0
 
     all_cell_indices: set = set()
     attached_count = 0
@@ -357,12 +359,9 @@ def write_nodes_csv(
     shape: str,
     cell_id_map: Dict[str, str],
     organ_cell_counts: Dict[str, float],
+    supertree: Dict[str, str],
+    supertree_ids: Dict[str, str],
 ) -> None:
-    """
-    Write the per-marker CSV with coordinates, cell type, cell ID,
-    organ-wide percentage, organ-wide raw cell count, and hex color.
-    """
-    # Organ-wide marker counts for percentage calculation
     organ_marker_counts: Dict[str, int] = {}
     for cell_type in all_cell_types:
         organ_marker_counts[cell_type] = organ_marker_counts.get(cell_type, 0) + 1
@@ -372,27 +371,31 @@ def write_nodes_csv(
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "index", "as_label", "cell_type", "cell_id",
+            "index", "as_label",
+            "cell_label_granular", "cell_id_granular",
+            "cell_label_supertree", "cell_id_supertree",
             "organ_percentage", "cell_count",
             "x", "y", "z",
-            "hex_color",
-            "marker_shape",
+            "hex_color", "marker_shape",
         ])
-        for i, (point, cell_type, as_label) in enumerate(
+        for i, (point, cell_label_granular, as_label) in enumerate(
             zip(all_points, all_cell_types, all_as_labels)
         ):
-            hex_color = color_map.get(cell_type, OTHERS)
-            cell_id = cell_id_map.get(normalize_cell_label_key(cell_type), "")
-            ct_marker_count = organ_marker_counts.get(cell_type, 0)
-            organ_pct = round((ct_marker_count / organ_total) * 100, 4) if organ_total > 0 else 0.0
-            raw_count = int(organ_cell_counts.get(cell_type, 0))
+            cell_id_granular    = cell_id_map.get(normalize_cell_label_key(cell_label_granular), "")
+            cell_label_supertree = supertree.get(cell_id_granular, "")
+            cell_id_supertree   = supertree_ids.get(cell_id_granular, "")
+            hex_color           = color_map.get(cell_label_granular, PALETTE[-1])
+            ct_marker_count     = organ_marker_counts.get(cell_label_granular, 0)
+            organ_pct           = round((ct_marker_count / organ_total) * 100, 4) if organ_total > 0 else 0.0
+            raw_count           = int(organ_cell_counts.get(cell_label_granular, 0))
 
             writer.writerow([
-                i, as_label, cell_type, cell_id,
+                i, as_label,
+                cell_label_granular, cell_id_granular,
+                cell_label_supertree, cell_id_supertree,
                 organ_pct, raw_count,
                 float(point[0]), float(point[1]), float(point[2]),
-                hex_color,
-                shape,
+                hex_color, shape,
             ])
 
 
@@ -403,11 +406,12 @@ def write_nodes_csv(
 def main() -> None:
     config = load_config(Path(__file__).parent.parent / "config.yaml")
 
-    organs_folder = Path(config["output"]["organs_folder"])
-    organ_name = config["organ"]["name"]
-    organ_sex = config["organ"]["sex"]
-    organ_side = (config["organ"].get("side") or "").strip()
-    glb_filename = (config["organ"].get("glb_filename") or "").strip()
+    organs_folder    = Path(config["output"]["organs_folder"])
+    organ_name       = config["organ"]["name"]
+    organ_sex        = config["organ"]["sex"]
+    organ_side       = (config["organ"].get("side") or "").strip()
+    glb_filename     = (config["organ"].get("glb_filename") or "").strip()
+    supertree_path   = config["apis"]["cell_hierarchy"]
 
     if not glb_filename:
         glb_filename = resolve_glb_filename(organ_name, organ_sex, organ_side)
@@ -419,7 +423,6 @@ def main() -> None:
 
     stem = input_glb.stem
 
-    # Output folders
     base_folder = Path(config["output"]["amended_folder"]) / organ_name.lower()
     json_folder = base_folder / "json"
     glb_folder  = base_folder / "glb"
@@ -429,31 +432,36 @@ def main() -> None:
 
     distribution_path = json_folder / f"{stem}_distribution.json"
     if not distribution_path.exists():
-        raise FileNotFoundError(f"Distribution JSON not found: {distribution_path}. Run 20_fetch_cell_distribution.py first.")
+        raise FileNotFoundError(
+            f"Distribution JSON not found: {distribution_path}. Run 20_fetch_cell_distribution.py first."
+        )
 
     with distribution_path.open("r", encoding="utf-8") as f:
         dist_data = json.load(f)
 
-    shape = config["markers"]["shape"]
-    sphere_radius = config["markers"]["sphere_radius"]
+    shape              = config["markers"]["shape"]
+    sphere_radius      = config["markers"]["sphere_radius"]
     sphere_subdivisions = config["markers"]["sphere_subdivisions"]
-    marker_size = config["markers"].get("size")
-    organ_alpha = config["visualization"]["organ_alpha"]
-    cell_api_url = config["apis"]["cell_generation"]
+    marker_size        = config["markers"].get("size")
+    organ_alpha        = config["visualization"]["organ_alpha"]
+    cell_api_url       = config["apis"]["cell_generation"]
     reference_organs_api_url = config["apis"]["reference_organs"]
-    tool_slug = config["filters"]["tool"].lower()
+    tool_slug          = config["filters"]["tool"].lower()
 
-    global_top_labels: List[str] = dist_data["global_top_labels"]
-    as_labels: List[str] = dist_data["as_labels"]
-    as_to_glb_node: Dict[str, List[str]] = dist_data["as_to_glb_node"]
-    per_as_normalized: Dict[str, Dict[str, float]] = dist_data["per_as_normalized"]
-    node_allocation: Dict[str, int] = dist_data["node_allocation"]
-    cell_id_map: Dict[str, str] = dist_data.get("cell_id_map", {})
-    organ_cell_counts: Dict[str, float] = dist_data.get("organ_cell_counts", {})
-    uberon_id: str = dist_data.get("uberon_id", "")
+    cell_type_color_order: List[str]              = dist_data["cell_type_color_order"]
+    as_labels:          List[str]              = dist_data["as_labels"]
+    as_to_glb_node:     Dict[str, List[str]]   = dist_data["as_to_glb_node"]
+    per_as_normalized:  Dict[str, Dict[str, float]] = dist_data["per_as_normalized"]
+    node_allocation:    Dict[str, int]         = dist_data["node_allocation"]
+    cell_id_map:        Dict[str, str]         = dist_data.get("cell_id_map", {})
+    organ_cell_counts:  Dict[str, float]       = dist_data.get("organ_cell_counts", {})
+    uberon_id:          str                    = dist_data.get("uberon_id", "")
 
-    # Build output filename stem with UBERON ID
     output_name = build_output_stem(stem, uberon_id, tool_slug, shape)
+
+    # Load supertree for color mapping
+    print(f"Loading supertree from: {supertree_path}")
+    supertree, supertree_ids = load_supertree(supertree_path)
 
     print(f"Loading GLB: {input_glb}")
     scene = load_glb_as_scene(input_glb)
@@ -461,19 +469,19 @@ def main() -> None:
 
     hra_glb_url = resolve_reference_organ_glb_url(glb_filename, reference_organs_api_url)
 
-    all_points: List[np.ndarray] = []
-    all_cell_types: List[str] = []
-    all_as_labels_flat: List[str] = []
+    all_points:         List[np.ndarray] = []
+    all_cell_types:     List[str]        = []
+    all_as_labels_flat: List[str]        = []
 
-    per_as_points: Dict[str, List[np.ndarray]] = {}
-    per_as_cell_types: Dict[str, List[str]] = {}
+    per_as_points:      Dict[str, List[np.ndarray]] = {}
+    per_as_cell_types:  Dict[str, List[str]]        = {}
 
     MIN_NODES_PER_CALL = 10
 
     for as_label in as_labels:
-        glb_nodes = as_to_glb_node.get(as_label)
+        glb_nodes          = as_to_glb_node.get(as_label)
         total_nodes_for_as = node_allocation.get(as_label, 0)
-        normalized_dist = per_as_normalized.get(as_label, {})
+        normalized_dist    = per_as_normalized.get(as_label, {})
 
         if total_nodes_for_as <= 0 or not normalized_dist or not glb_nodes:
             print(f"Skipping {as_label} — no nodes or empty distribution.")
@@ -482,14 +490,13 @@ def main() -> None:
         if isinstance(glb_nodes, str):
             glb_nodes = [glb_nodes]
 
-        # If splitting would give too few per node, use only the first node
         if total_nodes_for_as // len(glb_nodes) < MIN_NODES_PER_CALL:
             glb_nodes = [glb_nodes[0]]
 
         nodes_per_mesh = total_nodes_for_as // len(glb_nodes)
-        remainder = total_nodes_for_as % len(glb_nodes)
+        remainder      = total_nodes_for_as % len(glb_nodes)
 
-        per_as_points[as_label] = []
+        per_as_points[as_label]     = []
         per_as_cell_types[as_label] = []
 
         for mesh_idx, glb_node in enumerate(glb_nodes):
@@ -520,7 +527,7 @@ def main() -> None:
 
     print(f"\nTotal markers placed: {len(all_points)}")
 
-    color_map = build_color_map(all_cell_types, global_top_labels)
+    color_map = build_color_map(all_cell_types, cell_id_map, supertree, cell_type_color_order)
 
     print("Adding markers to scene...")
     per_as_cell_node_names: Dict[str, List[str]] = {
@@ -569,14 +576,16 @@ def main() -> None:
     )
 
     write_nodes_csv(
-        csv_path=output_csv,
-        all_points=all_points,
-        all_cell_types=all_cell_types,
-        all_as_labels=all_as_labels_flat,
-        color_map=color_map,
-        shape=shape,
-        cell_id_map=cell_id_map,
-        organ_cell_counts=organ_cell_counts,
+    csv_path=output_csv,
+    all_points=all_points,
+    all_cell_types=all_cell_types,
+    all_as_labels=all_as_labels_flat,
+    color_map=color_map,
+    shape=shape,
+    cell_id_map=cell_id_map,
+    organ_cell_counts=organ_cell_counts,
+    supertree=supertree,
+    supertree_ids=supertree_ids,
     )
     print(f"Exported CSV: {output_csv}")
 
