@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend — Kidney (Female)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0f1117; color: #e8eaf0;
+            padding: 2rem; line-height: 1.5;
+        }
+        h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.25rem; color: #ffffff; }
+        .subtitle { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
+        .section {
+            background: #1a1d27; border: 1px solid #2a2d3a;
+            border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;
+        }
+        .section h2 {
+            font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 0.08em; color: #6c7aff; margin-bottom: 1rem;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+        thead th {
+            text-align: left; font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.06em; color: #666;
+            padding: 0 0.75rem 0.5rem 0; border-bottom: 1px solid #2a2d3a;
+        }
+        tbody tr:hover { background: #20232f; }
+        td {
+            padding: 0.5rem 0.75rem 0.5rem 0;
+            border-bottom: 1px solid #1f2230; vertical-align: middle;
+        }
+        td.num { text-align: right; font-variant-numeric: tabular-nums; color: #ccc; }
+        td.mono { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.8rem; color: #aaa; }
+        td.label { font-weight: 500; }
+        .swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; }
+        .meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+        .meta-item { background: #12141e; border-radius: 8px; padding: 0.75rem 1rem; }
+        .meta-item .key {
+            font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.06em; color: #666; margin-bottom: 0.25rem;
+        }
+        .meta-item .value { font-size: 0.95rem; font-weight: 600; color: #e8eaf0; }
+        .size-note {
+            font-size: 0.8rem; color: #888; margin-top: 0.75rem;
+            padding: 0.6rem 0.75rem; background: #12141e;
+            border-radius: 6px; border-left: 3px solid #6c7aff;
+        }
+        .footer { font-size: 0.75rem; color: #444; margin-top: 2rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Kidney — All Anatomical Structures</h1>
+    <p class="subtitle">Female &nbsp;·&nbsp; Azimuth &nbsp;·&nbsp; Source: 3d-vh-f-kidney-r.glb</p>
+
+    <div class="section">
+        <h2>Cell Type Color Key</h2>
+        <table>
+            <thead><tr><th style="width:28px"></th><th>Cell Type (Top 9)</th><th>Hex Color</th></tr></thead>
+            <tbody>
+        <tr>
+            <td><span class="swatch" style="background:#70A5A8"></span></td>
+            <td class="label">Inner Medullary Collecting Duct</td>
+            <td class="mono">#70A5A8</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#8DC599"></span></td>
+            <td class="label">Descending Thin Limb Type 1</td>
+            <td class="mono">#8DC599</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#F9CE8D"></span></td>
+            <td class="label">Connecting Tubule</td>
+            <td class="mono">#F9CE8D</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#E97B74"></span></td>
+            <td class="label">Distal Convoluted Tubule Type 1</td>
+            <td class="mono">#E97B74</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#CD8490"></span></td>
+            <td class="label">Ascending Thin Limb</td>
+            <td class="mono">#CD8490</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#A294C9"></span></td>
+            <td class="label">Proximal Tubule Epithelial Segment 1</td>
+            <td class="mono">#A294C9</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#637597"></span></td>
+            <td class="label">Medullary Thick Ascending Limb</td>
+            <td class="mono">#637597</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#EDB8AC"></span></td>
+            <td class="label">Cortical Thick Ascending Limb</td>
+            <td class="mono">#EDB8AC</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#D6B6D7"></span></td>
+            <td class="label">Medullary Fibroblast</td>
+            <td class="mono">#D6B6D7</td>
+        </tr>
+        <tr>
+            <td><span class="swatch" style="background:#95CBCF"></span></td>
+            <td class="label" style="color:#888">All other cell types</td>
+            <td class="mono" style="color:#888">#95CBCF</td>
+        </tr></tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Anatomical Structures</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Anatomical Structure</th>
+                    <th style="text-align:right">HRApop Cell Count</th>
+                    <th style="text-align:right">Allocated Markers</th>
+                    <th style="text-align:right">Plotted</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr>
+            <td class="label">renal papilla</td>
+            <td class="num">8,217</td>
+            <td class="num">16</td>
+            <td class="num">8</td>
+        </tr>
+        <tr>
+            <td class="label">renal column</td>
+            <td class="num">51,575</td>
+            <td class="num">102</td>
+            <td class="num">86</td>
+        </tr>
+        <tr>
+            <td class="label">kidney capsule</td>
+            <td class="num">99,511</td>
+            <td class="num">197</td>
+            <td class="num">182</td>
+        </tr>
+        <tr>
+            <td class="label">outer cortex of kidney</td>
+            <td class="num">984,815</td>
+            <td class="num">1,949</td>
+            <td class="num">1,927</td>
+        </tr>
+        <tr>
+            <td class="label">renal pyramid</td>
+            <td class="num">3,910,043</td>
+            <td class="num">7,736</td>
+            <td class="num">7,545</td>
+        </tr></tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Cell Count Comparison</h2>
+        <div class="meta-grid">
+            <div class="meta-item"><div class="key">Total Plotted</div><div class="value">9,748</div></div>
+            <div class="meta-item"><div class="key">Total Requested</div><div class="value">10,000</div></div>
+            <div class="meta-item"><div class="key">Real Cells per Marker</div><div class="value">~205,170</div></div>
+        </div>
+        <p class="size-note">Markers are a representative sample. Each marker represents roughly 205,170 real cells.</p>
+    </div>
+
+    <div class="section">
+        <h2>Size Reference</h2>
+        <p style="font-size:0.8rem;color:#888;margin-bottom:1.5rem;">
+            Biological scale from 1 nm to 1 mm. Cell markers represent
+            <strong style="color:#e8eaf0">10 µm</strong> in diameter.
+        </p>
+        <div style="position:relative;margin:2.5rem 0 1rem 0;">
+            <div style="position:relative;height:8px;background:linear-gradient(to right,#1a1d27,#3a3d8a,#6c7aff,#a0aaff,#e8eaf0);border-radius:4px;"></div>
+            <div style="position:absolute;left:66.67%;top:-28px;transform:translateX(-50%);">
+                <div style="text-align:center;font-size:0.75rem;font-weight:600;color:#ffd700;white-space:nowrap;margin-bottom:2px;">10 µm</div>
+                <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #ffd700;margin:0 auto;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:0.65rem;color:#555;">
+                <span>1 nm</span><span>10 nm</span><span>100 nm</span><span>1 µm</span><span>10 µm</span><span>100 µm</span><span>1 mm</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="footer">Generated by HRA 3D Cell Population Pipeline &nbsp;·&nbsp; Human Reference Atlas &nbsp;·&nbsp; humanatlas.io</p>
+</body>
+</html>

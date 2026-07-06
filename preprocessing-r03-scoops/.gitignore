@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Raw cache files
+Outputs/downloaded_organs/
+Outputs/annotated_organs/heart/json/hra_pop_raw.csv
+Outputs/annotated_organs/kidney/json/hra_pop_raw.csv
+
+# macOS
+.DS_Store

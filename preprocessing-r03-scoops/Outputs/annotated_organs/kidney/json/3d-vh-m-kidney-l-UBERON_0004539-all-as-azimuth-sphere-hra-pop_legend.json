@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "organ": "kidney",
+    "sex": "male",
+    "tool": "Azimuth",
+    "uberon_id": "UBERON_0004539",
+    "glb_filename": "3d-vh-m-kidney-l.glb",
+    "generated_at": "2026-06-23T23:00:11.654698Z"
+  },
+  "organ_total_cell_count": {
+    "organ": "kidney",
+    "total_cells": 1500000000,
+    "notes": "Estimated 1.5 billion cells per kidney.",
+    "source": "Lote, 2012",
+    "doi": ""
+  },
+  "cell_type_color_key": {
+    "top_labels": [
+      "Inner Medullary Collecting Duct",
+      "Cortical Thick Ascending Limb",
+      "Medullary Thick Ascending Limb",
+      "Medullary Fibroblast",
+      "Descending Thin Limb Type 1",
+      "Connecting Tubule",
+      "Ascending Thin Limb",
+      "Distal Convoluted Tubule Type 1",
+      "Proximal Tubule Epithelial Segment 1"
+    ],
+    "colors": {
+      "Inner Medullary Collecting Duct": "#70A5A8",
+      "Cortical Thick Ascending Limb": "#8DC599",
+      "Medullary Thick Ascending Limb": "#F9CE8D",
+      "Medullary Fibroblast": "#E97B74",
+      "Descending Thin Limb Type 1": "#CD8490",
+      "Connecting Tubule": "#A294C9",
+      "Ascending Thin Limb": "#637597",
+      "Distal Convoluted Tubule Type 1": "#EDB8AC",
+      "Proximal Tubule Epithelial Segment 1": "#D6B6D7"
+    },
+    "others_label": "All other cell types",
+    "others_color": "#95CBCF"
+  },
+  "anatomical_structures": [
+    {
+      "name": "renal papilla",
+      "glb_node": [
+        "VH_M_renal_papilla_L_i",
+        "VH_M_renal_papilla_L_h",
+        "VH_M_renal_papilla_L_g",
+        "VH_M_renal_papilla_L_f",
+        "VH_M_renal_papilla_L_e",
+        "VH_M_renal_papilla_L_d",
+        "VH_M_renal_papilla_L_c",
+        "VH_M_renal_papilla_L_b",
+        "VH_M_renal_papilla_L_a"
+      ],
+      "hra_pop_cell_count": 23453,
+      "allocated_markers": 20,
+      "plotted": 15
+    },
+    {
+      "name": "renal column",
+      "glb_node": [
+        "VH_M_renal_column_L"
+      ],
+      "hra_pop_cell_count": 66557,
+      "allocated_markers": 56,
+      "plotted": 42
+    },
+    {
+      "name": "kidney capsule",
+      "glb_node": [
+        "VH_M_kidney_capsule_L"
+      ],
+      "hra_pop_cell_count": 102368,
+      "allocated_markers": 87,
+      "plotted": 72
+    },
+    {
+      "name": "outer cortex of kidney",
+      "glb_node": [
+        "VH_M_outer_cortex_of_kidney_L"
+      ],
+      "hra_pop_cell_count": 6783962,
+      "allocated_markers": 5739,
+      "plotted": 5716
+    },
+    {
+      "name": "renal pyramid",
+      "glb_node": [
+        "VH_M_renal_pyramid_L_i",
+        "VH_M_renal_pyramid_L_h",
+        "VH_M_renal_pyramid_L_g",
+        "VH_M_renal_pyramid_L_f",
+        "VH_M_renal_pyramid_L_e",
+        "VH_M_renal_pyramid_L_d",
+        "VH_M_renal_pyramid_L_c",
+        "VH_M_renal_pyramid_L_b",
+        "VH_M_renal_pyramid_L_a"
+      ],
+      "hra_pop_cell_count": 4833604,
+      "allocated_markers": 4089,
+      "plotted": 3909
+    },
+    {
+      "name": "hilum of kidney",
+      "glb_node": [
+        "VH_M_hilum_of_kidney_L"
+      ],
+      "hra_pop_cell_count": 11044,
+      "allocated_markers": 9,
+      "plotted": 4
+    }
+  ],
+  "cell_count_comparison": {
+    "total_plotted": 9758,
+    "total_requested": 10000,
+    "real_cells_per_marker": 204960
+  },
+  "size_reference": {
+    "assumed_cell_size_um": 10.0,
+    "note": "All cell types assumed to be 10 µm in diameter."
+  }
+}

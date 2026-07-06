@@ -1,0 +1,42 @@
+# =============================================================================
+# HRA 3D Cell Population Pipeline — Configuration
+# =============================================================================
+
+# ── Organ ─────────────────────────────────────────────────────────────────────
+organ:
+  name: heart
+  sex: male
+  side:
+  glb_filename:
+
+# ── API endpoints ─────────────────────────────────────────────────────────────
+apis:
+  reference_organs: https://apps.humanatlas.io/api--staging/v1/reference-organs
+  hra_pop: https://apps.humanatlas.io/api/grlc/hra-pop/cell_types_in_anatomical_structurescts_per_as
+  cell_generation: https://apps.humanatlas.io/api/v1/mesh-3d-cell-population
+  cell_hierarchy: https://docs.google.com/spreadsheets/d/10kV3beiTLrMFoDHN0pGYyJ2GounIF1Du7LaaP3PHqdo/export?format=csv&gid=1351060716
+
+# ── Cell distribution filters ─────────────────────────────────────────────────
+filters:
+  tool: azimuth
+  modality: ""
+
+# ── Cell markers ──────────────────────────────────────────────────────────────
+markers:
+  num_nodes: 10000
+  shape: sphere
+  sphere_radius: 0.00025
+  sphere_subdivisions: 1
+  size: null
+  top_cell_type_count: 11
+
+# ── Visualization ─────────────────────────────────────────────────────────────
+visualization:
+  organ_alpha: 25
+
+# ── Output ────────────────────────────────────────────────────────────────────
+output:
+  organs_folder: Outputs/downloaded_organs
+  amended_folder: Outputs/annotated_organs
+  save_hra_pop_csv: false
+  save_cell_api_csv: false

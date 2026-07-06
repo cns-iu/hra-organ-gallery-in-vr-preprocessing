@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "organ": "heart",
+    "sex": "male",
+    "tool": "azimuth",
+    "uberon_id": "UBERON_0000948",
+    "glb_filename": "3d-vh-m-heart.glb",
+    "generated_at": "2026-07-02T22:14:34.030843Z"
+  },
+  "organ_total_cell_count": {
+    "organ": "heart",
+    "total_cells": 7500000000,
+    "notes": "The human heart contains an estimated 2-3 billion cardiac muscle cells, but these account for less than a third of the total cell number in the heart.",
+    "source": "Cell Communications in the Heart",
+    "doi": "10.1161/CIRCULATIONAHA.108.847731"
+  },
+  "cell_type_color_key": {
+    "cell type": [
+      "connective tissue cell",
+      "muscle cell",
+      "endothelial cell",
+      "hematopoietic cell",
+      "epithelial cell",
+      "neural cell",
+      "precursor cell",
+      "melanocyte"
+    ],
+    "colors": {
+      "connective tissue cell": "#70A5A8",
+      "muscle cell": "#8DC599",
+      "endothelial cell": "#F9CE8D",
+      "hematopoietic cell": "#E97B74",
+      "epithelial cell": "#CD8490",
+      "neural cell": "#A294C9",
+      "precursor cell": "#637597",
+      "melanocyte": "#EDB8AC"
+    }
+  },
+  "anatomical_structures": [
+    {
+      "name": "right cardiac atrium",
+      "glb_node": [
+        "VH_M_right_cardiac_atrium"
+      ],
+      "hra_pop_cell_count": 85173,
+      "allocated_markers": 459,
+      "plotted": 437
+    },
+    {
+      "name": "left cardiac atrium",
+      "glb_node": [
+        "VH_M_left_cardiac_atrium"
+      ],
+      "hra_pop_cell_count": 122558,
+      "allocated_markers": 661,
+      "plotted": 635
+    },
+    {
+      "name": "heart right ventricle",
+      "glb_node": [
+        "VH_M_heart_right_ventricle"
+      ],
+      "hra_pop_cell_count": 203214,
+      "allocated_markers": 1096,
+      "plotted": 1077
+    },
+    {
+      "name": "heart left ventricle",
+      "glb_node": [
+        "VH_M_heart_left_ventricle"
+      ],
+      "hra_pop_cell_count": 1310319,
+      "allocated_markers": 7066,
+      "plotted": 7033
+    },
+    {
+      "name": "interventricular septum",
+      "glb_node": [
+        "VH_M_interventricular_septum"
+      ],
+      "hra_pop_cell_count": 126419,
+      "allocated_markers": 682,
+      "plotted": 662
+    },
+    {
+      "name": "Posteromedial head of posterior papillary muscle of left ventricle",
+      "glb_node": [
+        "VH_F_papillary_muscle_of_heart_posmed",
+        "VH_M_papillary_muscle_of_heart_posmed"
+      ],
+      "hra_pop_cell_count": 6794,
+      "allocated_markers": 36,
+      "plotted": 0
+    }
+  ],
+  "cell_count_comparison": {
+    "total_plotted": 9844,
+    "total_requested": 10000,
+    "real_cells_per_marker": 761885
+  },
+  "size_reference": {
+    "assumed_cell_size_um": 10.0,
+    "note": "All cell types assumed to be 10 µm in diameter."
+  }
+}
