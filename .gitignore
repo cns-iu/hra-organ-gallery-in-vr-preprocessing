@@ -4,5 +4,5 @@
 # Large and/or not needed files
 preprocessing-miao/data/23_09_CODEX_HuBMAP_alldata_Dryad_merged.csv
 
-# 3D model files
-# *.glb
+# Ignore organ GLBs
+downloaded_organs
