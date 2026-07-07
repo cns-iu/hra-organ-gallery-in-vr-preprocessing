@@ -6,3 +6,5 @@ preprocessing-miao/data/23_09_CODEX_HuBMAP_alldata_Dryad_merged.csv
 
 # Ignore organ GLBs
 downloaded_organs
+
+*.keystore
