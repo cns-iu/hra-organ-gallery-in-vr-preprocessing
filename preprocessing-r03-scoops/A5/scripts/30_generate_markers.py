@@ -38,7 +38,7 @@ from shared import (
     build_top9_granular_color_scheme,
     canonicalize_cell_label,
 )
-from palette import LEVEL2_TOP9_COLORS, OTHER_COLOR
+from palette import LEVEL2_TOP9_COLORS, OTHER_COLOR, BG_MODE
 
 
 # =============================================================================
@@ -207,6 +207,58 @@ def call_cell_api(
     return points, cell_types
 
 
+# Below this many requested nodes, the API's per-cell-type proportional
+# split can round every type down to zero and come back with an empty
+# CSV ("no rows") — most likely for anatomical structures with a tiny
+# node_allocation (thin/small structures like a kidney capsule) spread
+# across several cell types. Flooring num_nodes gives that rounding room
+# to land on at least one marker.
+#
+# We've only confirmed two data points against the live API: 4 nodes
+# failed ("no rows"), 10 nodes succeeded. We don't know the real safe
+# threshold in between, so this floor is a judgment call, not a verified
+# minimum — 10 gives 2.5x margin over the known failure. If "no rows"
+# starts showing up again in the logs at this value, the retry-to-
+# RETRY_API_NODES below will catch it automatically, but that's a sign
+# this floor needs to go back up.
+MIN_API_NODES   = 10
+# If even the floor comes back empty (truly degenerate geometry, not just
+# a rounding edge), retry once at a higher count before giving up on that
+# mesh. Only retried for the specific "no rows" case — other failures
+# (HTTP errors, timeouts, malformed responses) propagate immediately,
+# since more nodes wouldn't fix those.
+RETRY_API_NODES = 50
+
+
+def call_cell_api_with_floor(
+    api_url: str,
+    file: str,
+    scene_node: str,
+    num_nodes: int,
+    node_distribution: Dict[str, float],
+) -> Tuple[np.ndarray, List[str], int]:
+    """Wraps call_cell_api() with a minimum-node floor and one retry at a
+    higher count if the API still returns nothing. Returns
+    (points, cell_types, actual_num_nodes_sent) so the caller can log
+    when the requested count got bumped."""
+    actual_num_nodes = max(num_nodes, MIN_API_NODES)
+    try:
+        points, cell_types = call_cell_api(
+            api_url=api_url, file=file, scene_node=scene_node,
+            num_nodes=actual_num_nodes, node_distribution=node_distribution,
+        )
+        return points, cell_types, actual_num_nodes
+    except ValueError as e:
+        if "no rows" not in str(e) or actual_num_nodes >= RETRY_API_NODES:
+            raise
+        print(f"    {actual_num_nodes} nodes returned nothing; retrying at {RETRY_API_NODES}...")
+        points, cell_types = call_cell_api(
+            api_url=api_url, file=file, scene_node=scene_node,
+            num_nodes=RETRY_API_NODES, node_distribution=node_distribution,
+        )
+        return points, cell_types, RETRY_API_NODES
+
+
 # =============================================================================
 # Color map — top9-granular + Other
 # =============================================================================
@@ -224,6 +276,7 @@ def build_color_map(
         supertree=supertree,
         palette=LEVEL2_TOP9_COLORS,
         other_color=OTHER_COLOR,
+        bg_mode=BG_MODE,
     )
     return color_map
 
@@ -255,8 +308,6 @@ def make_marker_mesh(
 
     mesh.apply_translation(center)
 
-    # color_map's keys are canonical labels; cell_type from the API may
-    # still be an un-merged spelling variant.
     hex_color = color_map.get(canonicalize_cell_label(cell_type), OTHER_COLOR)
     r, g, b   = hex_to_float(hex_color)
 
@@ -471,8 +522,6 @@ def main() -> None:
     per_as_points:      Dict[str, List[np.ndarray]] = {}
     per_as_cell_types:  Dict[str, List[str]]        = {}
 
-    MIN_NODES_PER_CALL = 10
-
     for as_label in as_labels:
         glb_nodes          = as_to_glb_node.get(as_label)
         total_nodes_for_as = node_allocation.get(as_label, 0)
@@ -485,9 +534,9 @@ def main() -> None:
         if isinstance(glb_nodes, str):
             glb_nodes = [glb_nodes]
 
-        if total_nodes_for_as // len(glb_nodes) < MIN_NODES_PER_CALL:
-            glb_nodes = [glb_nodes[0]]
-
+        # Every sub-mesh gets its own API call so markers spread across all
+        # of an AS's physical parts (e.g. renal papilla's ~10 sub-meshes)
+        # instead of collapsing onto just the first one. 
         nodes_per_mesh = total_nodes_for_as // len(glb_nodes)
         remainder      = total_nodes_for_as % len(glb_nodes)
 
@@ -499,13 +548,15 @@ def main() -> None:
             print(f"\nProcessing: {as_label} → {glb_node} ({num_nodes} nodes)")
 
             try:
-                points, cell_types = call_cell_api(
+                points, cell_types, actual_num_nodes = call_cell_api_with_floor(
                     api_url=cell_api_url,
                     file=hra_glb_url,
                     scene_node=glb_node,
                     num_nodes=num_nodes,
                     node_distribution=normalized_dist,
                 )
+                if actual_num_nodes != num_nodes:
+                    print(f"  (requested {num_nodes}, sent {actual_num_nodes} to clear the API's rounding floor)")
             except Exception as e:
                 print(f"  API call failed for {as_label} / {glb_node}: {e}")
                 continue

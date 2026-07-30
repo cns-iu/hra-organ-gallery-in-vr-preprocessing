@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """
-setup_and_run.py — Run the full A5 pipeline (10 -> 20 -> 30 -> 40 -> 50 -> 51)
+setup_and_run.py — Run the full A5 pipeline (10 -> 20 -> 30 -> 40 -> 50 -> 51 -> 60)
 in order, against this folder's own config.yaml.
 
 50 (PNG) is kept alongside 51 (SVG) for quick-preview/testing purposes,
 even though 51 is the actual print deliverable.
 
+Stage 60 is different from the rest: it isn't scoped to the single organ
+config.yaml points at. It rescans every distribution JSON already on disk
+(one per organ/sex/tool previously run through this pipeline) and rebuilds
+the full cumulative Supertree color spreadsheet from scratch, so it always
+reflects every organ processed so far, not just the one from this run.
+
 Chdirs into its own directory first, so config.yaml's relative output
 paths always resolve under A5/ regardless of invocation directory.
 
 If any stage raises, the pipeline stops there — the traceback shows
-which of the six stages failed.
+which of the seven stages failed.
 """
 
 from __future__ import annotations
@@ -23,8 +29,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 
-# Filenames start with a digit, so each is loaded from its file path via
-# importlib rather than a plain `import 10_download_organs`.
+
 STAGES = [
     "10_download_organs",
     "20_fetch_cell_distribution",
@@ -32,6 +37,7 @@ STAGES = [
     "40_generate_legend",
     "50_generate_pngs",
     "51_generate_svgs",
+    "60_generate_color_spreadsheet",
 ]
 
 

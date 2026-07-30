@@ -3,8 +3,11 @@
 50_generate_pngs.py — Generate grouped horizontal bar chart PNGs showing
 cell type distributions across all anatomical structures.
 
-Sibling: 51_generate_svgs.py generates the same chart as SVG (with
-embedded Benton Sans). Only export format and output folder differ.
+Each AS gets one bar per nonzero cell type bucket (small multiples), not
+a single stacked bar — this makes it possible to see how many distinct
+cell types are present in a given AS. Bars show raw cell counts (no
+percentages) against one shared axis with visible gridlines. The AS name
+and its total cell count sit to the left of its bars.
 
 Color scheme: top-9-granular + Other, from
 shared.build_top9_granular_color_scheme() — level-2 parent categories
@@ -40,7 +43,7 @@ from shared import (
     build_top9_granular_color_scheme,
     canonicalize_cell_label,
 )
-from palette import LEVEL2_TOP9_COLORS, OTHER_COLOR
+from palette import LEVEL2_TOP9_COLORS, OTHER_COLOR, BG_MODE
 
 try:
     import plotly.graph_objects as go
@@ -92,7 +95,9 @@ MARGIN_BOTTOM_NO_LEGEND = 90  # with-legend margin is computed in make_figure()
 # Custom legend grid, built from annotations — Plotly's native legend
 # didn't reliably wrap into multiple columns in kaleido's static export.
 LEGEND_NUM_COLUMNS   = 3
-LEGEND_ROW_HEIGHT    = 38
+LEGEND_ROW_HEIGHT    = 38   # px, height of a single-line legend row
+LEGEND_LINE_HEIGHT_PX = 26  # px, extra height added per wrapped line beyond the first
+LEGEND_SWATCH_RESERVED_PX = 34  # px, width the "■  " swatch prefix takes before label text
 LEGEND_COL_START_PX  = 40
 LEGEND_COL_WIDTH_PX  = (CHART_WIDTH - 2 * LEGEND_COL_START_PX) / LEGEND_NUM_COLUMNS
 LEGEND_BOTTOM_PAD    = 30
@@ -124,42 +129,45 @@ def build_output_stem(stem: str, uberon_id: str, tool_slug: str, shape: str) -> 
     return "-".join(parts)
 
 
-# Pixel-measured word-wrap instead of a char-count heuristic (greedy wrap
-# is a step function of word width, so an average-char-width guess can
-# land on the wrong side of that step). Tries the real Benton Sans file
-# first, then common system-font paths, then falls back to the average
-# heuristic if PIL/none of those paths are available.
 try:
     from PIL import ImageFont as _ImageFont
-    _MEASURE_FONT = None
-    for _font_candidate in (
-        str(FONT_BOOK_PATH),
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "/System/Library/Fonts/Supplemental/Arial.ttf",  # macOS
-        "/Library/Fonts/Arial.ttf",  # macOS (older/alt location)
-        "C:\\Windows\\Fonts\\arial.ttf",  # Windows
-    ):
-        if Path(_font_candidate).exists():
-            _MEASURE_FONT = _ImageFont.truetype(_font_candidate, LABEL_FONT_SIZE)
-            break
+
+    def _load_measure_font(size: int):
+        for _font_candidate in (
+            str(FONT_BOOK_PATH),
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/System/Library/Fonts/Supplemental/Arial.ttf",  # macOS
+            "/Library/Fonts/Arial.ttf",  # macOS (older/alt location)
+            "C:\\Windows\\Fonts\\arial.ttf",  # Windows
+        ):
+            if Path(_font_candidate).exists():
+                return _ImageFont.truetype(_font_candidate, size)
+        return None
+
+    _MEASURE_FONT = _load_measure_font(LABEL_FONT_SIZE)
+    _LEGEND_MEASURE_FONT = _load_measure_font(LEGEND_FONT_SIZE)
 except ImportError:
     _MEASURE_FONT = None
+    _LEGEND_MEASURE_FONT = None
 
 
-def _text_width_px(text: str) -> float:
-    if _MEASURE_FONT is not None:
-        bbox = _MEASURE_FONT.getbbox(text)
+def _text_width_px(text: str, font=None) -> float:
+    font = font or _MEASURE_FONT
+    if font is not None:
+        bbox = font.getbbox(text)
         return bbox[2] - bbox[0]
     return len(text) * LABEL_FONT_SIZE * AVG_CHAR_WIDTH_RATIO
 
 
-def wrap_label(text: str, max_width_px: float = LABEL_AVAILABLE_PX) -> str:
+def wrap_label(text: str, max_width_px: float = LABEL_AVAILABLE_PX, font=None) -> str:
+    """font lets legend callers pass _LEGEND_MEASURE_FONT so wrapping
+    matches that smaller font size instead of the AS-label font."""
     words = text.split()
     lines, current = [], ""
     for word in words:
         candidate = f"{current} {word}".strip()
-        if current and _text_width_px(candidate) > max_width_px:
+        if current and _text_width_px(candidate, font) > max_width_px:
             lines.append(current)
             current = word
         else:
@@ -350,26 +358,51 @@ def make_figure(
         f"</span>"
     )
 
-    legend_rows = math.ceil(len(legend_entries) / LEGEND_NUM_COLUMNS) if show_legend else 0
+    # Wrap long legend labels (granular cell type names can run long,
+    # e.g. kidney's "kidney loop of Henle long descending thin limb outer
+    # medulla epithelial cell") to the column width instead of letting
+    # them overflow into the next column. Row height then grows to fit
+    # whichever entry in that row wrapped to the most lines.
+    legend_label_max_width = LEGEND_COL_WIDTH_PX - LEGEND_SWATCH_RESERVED_PX
+    wrapped_legend = []
+    for label, hexcolor, _lvl2, _count in legend_entries:
+        wrapped = wrap_label(label, max_width_px=legend_label_max_width, font=_LEGEND_MEASURE_FONT)
+        n_lines = wrapped.count("<br>") + 1
+        # Soft-indent continuation lines so they don't start flush under
+        # the swatch icon.
+        wrapped_display = wrapped.replace("<br>", "<br>&nbsp;&nbsp;&nbsp;&nbsp;")
+        wrapped_legend.append((label, hexcolor, wrapped_display, n_lines))
+
+    n_legend_rows = math.ceil(len(legend_entries) / LEGEND_NUM_COLUMNS) if show_legend else 0
+    row_heights: List[float] = []
+    for row in range(n_legend_rows):
+        row_entries = wrapped_legend[row * LEGEND_NUM_COLUMNS:(row + 1) * LEGEND_NUM_COLUMNS]
+        max_lines = max((n for _l, _h, _w, n in row_entries), default=1)
+        row_heights.append(LEGEND_ROW_HEIGHT + max(0, max_lines - 1) * LEGEND_LINE_HEIGHT_PX)
+    row_offsets = [0.0]
+    for h in row_heights:
+        row_offsets.append(row_offsets[-1] + h)
+    legend_total_height = row_offsets[-1] if row_heights else 0.0
+
     margin_bottom = (
-        AXIS_TITLE_BAND + legend_rows * LEGEND_ROW_HEIGHT + LEGEND_BOTTOM_PAD
+        AXIS_TITLE_BAND + legend_total_height + LEGEND_BOTTOM_PAD
         if show_legend else MARGIN_BOTTOM_NO_LEGEND
     )
 
     total_height = max(CHART_HEIGHT_MIN, content_height + MARGIN_TOP + margin_bottom)
 
     if show_legend:
-        for i, (label, hexcolor, _lvl2, _count) in enumerate(legend_entries):
+        for i, (label, hexcolor, wrapped_display, _n_lines) in enumerate(wrapped_legend):
             col = i % LEGEND_NUM_COLUMNS
             row = i // LEGEND_NUM_COLUMNS
             x_px = LEGEND_COL_START_PX + col * LEGEND_COL_WIDTH_PX
-            d = AXIS_TITLE_BAND + row * LEGEND_ROW_HEIGHT + LEGEND_ROW_HEIGHT / 2
+            d = AXIS_TITLE_BAND + row_offsets[row] + row_heights[row] / 2
             annotations.append(dict(
                 x=(x_px - MARGIN_LEFT) / PLOT_WIDTH,
                 y=-d / content_height,
                 xref="paper",
                 yref="paper",
-                text=f"<span style='color:{hexcolor}'>&#9632;</span>&nbsp;&nbsp;{label}",
+                text=f"<span style='color:{hexcolor}'>&#9632;</span>&nbsp;&nbsp;{wrapped_display}",
                 xanchor="left",
                 yanchor="middle",
                 align="left",
@@ -490,6 +523,7 @@ def main() -> None:
         supertree=supertree,
         palette=LEVEL2_TOP9_COLORS,
         other_color=OTHER_COLOR,
+        bg_mode=BG_MODE,
     )
     top9_labels = [label for label, _hex, _lvl2, _count in legend_entries if label != "Other"]
     print(f"\nTop-9 granular color scheme ({len(legend_entries)} legend entries):")

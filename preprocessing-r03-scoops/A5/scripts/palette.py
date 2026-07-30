@@ -2,10 +2,13 @@
 """
 palette.py — A5's colors for the top-9-granular + Other scheme.
 
-Split out of shared.py so A5 and HRA can each supply their own colors to
-the same shared.build_top9_granular_color_scheme() algorithm. A5 renders
-on a light background (#FAF8F5), hence these saturated ColorBrewer
-"Paired" values.
+The 9 base hues (LEVEL2_TOP9_COLORS) are now shared.BASE_HUES, not
+A5-specific — a given supertree category means the same color family in
+A5 and HRA. What A5 supplies
+locally is OTHER_COLOR (the aggregate "Other" bucket) and BG_MODE, which
+tells shared.build_top9_granular_color_scheme() to shade those hues for a
+light background (#FAF8F5): the wide 0.20-0.88 lightness range gives
+genuinely dark shades, since they still contrast fine on paper/on light.
 
 Imported by 30, 40, 50, 51 — all four pass these into
 build_top9_granular_color_scheme() so GLB markers, the CSV hex_color
@@ -14,18 +17,15 @@ column, the HTML/JSON legend, and the chart legend all match.
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
 from typing import List
 
-LEVEL2_TOP9_COLORS: List[str] = [
-    "#1f78b4",
-    "#33a02c",
-    "#e31a1c",
-    "#ff7f00",
-    "#6a3d9a",
-    "#ffff99",
-    "#a6cee3",
-    "#b2df8a",
-    "#fb9a99",
-]
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "shared scripts"))
+from shared import BASE_HUES
+
+LEVEL2_TOP9_COLORS: List[str] = BASE_HUES
 
 OTHER_COLOR: str = "#b15928"
+
+BG_MODE: str = "light"

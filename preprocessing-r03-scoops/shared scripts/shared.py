@@ -2,10 +2,14 @@
 """
 shared.py — Constants and utilities shared across projects (A5, HRA, ...).
 
-Project-agnostic: no palette, no fonts, no layout opinions live here.
+Mostly project-agnostic: no fonts, no layout opinions live here.
 build_top9_granular_color_scheme() takes a palette argument so each
-project supplies its own colors (see each project's palette.py) while
-sharing the same ranking/grouping/shading algorithm.
+project supplies its own OTHER_COLOR/BG_MODE (see each project's
+palette.py) while sharing the same ranking/grouping/shading algorithm.
+The one exception is BASE_HUES below — the 9 base colors are meant to be
+identical across every project (so "muscle cell" is the same color
+family in A5 and HRA), so that list lives here rather than being
+duplicated per project.
 """
 
 from __future__ import annotations
@@ -23,6 +27,19 @@ import pandas as pd
 # =============================================================================
 # Hex color helpers
 # =============================================================================
+
+BASE_HUES: List[str] = [
+    "#1f78b4",
+    "#33a02c",
+    "#e31a1c",
+    "#ff7f00",
+    "#6a3d9a",
+    "#ffff99",
+    "#a6cee3",
+    "#b2df8a",
+    "#fb9a99",
+]
+
 
 def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
     h = hex_color.lstrip("#")
@@ -46,16 +63,78 @@ def _hls_to_hex(h: float, l: float, s: float) -> str:
     )
 
 
-def _shades_for_group(base_hex: str, n: int) -> List[str]:
-    """n evenly-spaced HSL-lightness shades of base_hex, darkest first."""
-    if n <= 1:
-        return [base_hex]
+MIN_LIGHTNESS_DELTA = 0.05  # minimum lightness gap a shade must keep from
+                            # its group's unshaded base color (see below)
+
+# Both projects share one canonical set of 9 base hues (see each project's
+# palette.py) so "muscle cell" etc. means the same color family everywhere
+# in the atlas. What differs per project is how those hues get shaded into
+# per-cell-type variants: A5 renders on a light background and can use
+# genuinely dark shades for contrast, HRA renders in VR on a near-black
+# background, where a shade dark enough to read well on paper would all but
+# disappear. bg_mode shifts the whole lightness range brighter for "dark"
+# without changing the hue/saturation, so it's still recognizably the same
+# base color family, just legible on either background.
+BG_LIGHTNESS_RANGES: Dict[str, Tuple[float, float]] = {
+    "light": (0.20, 0.88),
+    "dark":  (0.45, 0.92),
+}
+
+
+def _shades_for_group(base_hex: str, n: int, bg_mode: str = "light") -> List[str]:
+    """n evenly-spaced HSL-lightness shades of base_hex, darkest first,
+    within the lightness floor/ceiling for bg_mode ("light" or "dark").
+
+    Guaranteed to never return base_hex itself — a granular cell type
+    sharing its supertree parent's exact color would be visually
+    indistinguishable from "just show the category color", defeating the
+    point of a granular-level legend. Two cases previously let this slip
+    through: a group with only one top-9 member (nothing to shade against,
+    so the base was returned unchanged), and a group with an odd member
+    count, where symmetric lightness spacing put the middle-ranked member
+    exactly back on the base lightness by construction. Both are now
+    nudged at least MIN_LIGHTNESS_DELTA away from the base.
+    """
     h, l0, s = _hex_to_hls(base_hex)
-    lo, hi = max(0.20, l0 - 0.28), min(0.88, l0 + 0.28)
+    floor, ceiling = BG_LIGHTNESS_RANGES.get(bg_mode, BG_LIGHTNESS_RANGES["light"])
+
+    def _clamp(l: float) -> float:
+        return min(ceiling, max(floor, l))
+
+    def _push_off_base(l: float) -> float:
+        # Keep l on whichever side of l0 it already landed on, but widen
+        # the gap to at least MIN_LIGHTNESS_DELTA if it's too close. (An
+        # earlier version of this pushed *toward* l0 instead of away from
+        # it — l - DELTA when l >= l0 moves a lighter shade down toward
+        # the base rather than further from it — which could round back
+        # to base_hex's exact rgb after hex quantization.)
+        if l >= l0 and l - l0 < MIN_LIGHTNESS_DELTA:
+            l = l0 + MIN_LIGHTNESS_DELTA
+        elif l < l0 and l0 - l < MIN_LIGHTNESS_DELTA:
+            l = l0 - MIN_LIGHTNESS_DELTA
+        return _clamp(l)
+
+    if n <= 1:
+        midpoint = (floor + ceiling) / 2
+        l = l0 + MIN_LIGHTNESS_DELTA if l0 <= midpoint else l0 - MIN_LIGHTNESS_DELTA
+        return [_hls_to_hex(h, _clamp(l), s)]
+
+    lo, hi = max(floor, l0 - 0.28), min(ceiling, l0 + 0.28)
     if hi <= lo:
-        lo, hi = 0.25, 0.80
+        lo, hi = floor + 0.05, ceiling - 0.05
     step = (hi - lo) / (n - 1)
-    return [_hls_to_hex(h, lo + i * step, s) for i in range(n)]
+    ls = [_push_off_base(lo + i * step) for i in range(n)]
+
+    # The push-off-base nudge above can shove a shade into its neighbor
+    # (rare — needs a large n bunched near a clamp boundary, e.g. every
+    # top-9 slot in one supertree category). Enforce a minimum gap between
+    # consecutive shades too, sweeping darkest-to-lightest.
+    MIN_STEP = 0.015
+    for i in range(1, len(ls)):
+        if ls[i] - ls[i - 1] < MIN_STEP:
+            ls[i] = min(ceiling, ls[i - 1] + MIN_STEP)
+
+    return [_hls_to_hex(h, l, s) for l in ls]
 
 
 # =============================================================================
@@ -85,6 +164,7 @@ def build_top9_granular_color_scheme(
     supertree: Dict[str, str],
     palette: List[str],
     other_color: str,
+    bg_mode: str = "light",
 ) -> Tuple[Dict[str, str], List[Tuple[str, str, str, float]]]:
     """
     Build the top-9-granular + Other color scheme for one organ.
@@ -93,8 +173,15 @@ def build_top9_granular_color_scheme(
         organ_cell_counts: cell_label -> organ-wide raw cell count.
         cell_id_map:       normalized cell_label key -> compact CL ID.
         supertree:         compact CL ID -> level-2 supertree label.
-        palette:           one color per level-2 parent category.
+        palette:           one color per level-2 parent category. Pass the
+                            same canonical 9 hues for every project so a
+                            given category means the same color family
+                            everywhere — use bg_mode to adapt legibility
+                            instead of swapping in different hues.
         other_color:       color for the aggregate "Other" bucket.
+        bg_mode:           "light" or "dark" — see BG_LIGHTNESS_RANGES;
+                            controls how far shades range from each base
+                            hue so they stay legible on that background.
 
     Returns:
         color_map: cell_label -> hex color.
@@ -144,7 +231,7 @@ def build_top9_granular_color_scheme(
 
     for lvl2 in ordered_lvl2:
         members = sorted(groups[lvl2], key=lambda x: x[1], reverse=True)
-        shades = _shades_for_group(lvl2_color[lvl2], len(members))
+        shades = _shades_for_group(lvl2_color[lvl2], len(members), bg_mode=bg_mode)
         for (label, count), shade in zip(members, shades):
             color_map[label] = shade
             legend_entries.append((label, shade, lvl2, count))

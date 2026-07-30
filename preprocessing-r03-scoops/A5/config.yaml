@@ -5,7 +5,7 @@
 organ:
   name: heart
   sex: female
-  side:
+  side: 
   glb_filename:
 
 apis:

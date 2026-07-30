@@ -30,7 +30,7 @@ from shared import (
     load_supertree,
     build_top9_granular_color_scheme,
 )
-from palette import LEVEL2_TOP9_COLORS, OTHER_COLOR
+from palette import LEVEL2_TOP9_COLORS, OTHER_COLOR, BG_MODE
 
 REAL_CELL_SIZE_UM = 10.0
 
@@ -81,8 +81,6 @@ def generate_html(
     log_cell = math.log10(cell_size_m)
     marker_pct = (log_cell - log_min) / (log_max - log_min) * 100
 
-    # legend_entries: (label, hex, level2_label, count) — same top9 +
-    # Other entries the chart (50/51) and GLB/CSV colors (30) use.
     color_key_rows = ""
     for label, hex_color, _lvl2, _count in legend_entries:
         color_key_rows += f"""
@@ -273,6 +271,7 @@ def main() -> None:
         supertree=supertree,
         palette=LEVEL2_TOP9_COLORS,
         other_color=OTHER_COLOR,
+        bg_mode=BG_MODE,
     )
 
     html = generate_html(
