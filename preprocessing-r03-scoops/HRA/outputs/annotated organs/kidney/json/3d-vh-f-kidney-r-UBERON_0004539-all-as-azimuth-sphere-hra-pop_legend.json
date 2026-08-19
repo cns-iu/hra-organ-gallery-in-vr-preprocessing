@@ -5,7 +5,7 @@
     "tool": "azimuth",
     "uberon_id": "UBERON_0004539",
     "glb_filename": "3d-vh-f-kidney-r.glb",
-    "generated_at": "2026-07-28T16:04:27.460521Z"
+    "generated_at": "2026-08-19T19:42:59.134162Z"
   },
   "organ_total_cell_count": {
     "organ": "kidney",
@@ -28,15 +28,15 @@
       "Other"
     ],
     "colors": {
-      "kidney inner medulla collecting duct epithelial cell": "#2387ca",
-      "kidney loop of Henle cortical thick ascending limb epithelial cell": "#248bd1",
-      "kidney loop of Henle short descending thin limb epithelial cell": "#2a93da",
-      "epithelial cell of early distal convoluted tubule": "#379add",
-      "kidney connecting tubule epithelial cell": "#45a1df",
-      "kidney loop of Henle medullary thick ascending limb epithelial cell": "#52a8e1",
-      "kidney loop of Henle long descending thin limb outer medulla epithelial cell": "#5faee3",
-      "kidney loop of Henle thin ascending limb epithelial cell": "#6cb5e6",
-      "kidney cortex collecting duct principal cell": "#7abce8",
+      "kidney inner medulla collecting duct epithelial cell": "#e67200",
+      "kidney loop of Henle cortical thick ascending limb epithelial cell": "#ed7600",
+      "kidney loop of Henle short descending thin limb epithelial cell": "#ff8c1a",
+      "epithelial cell of early distal convoluted tubule": "#ff9226",
+      "kidney connecting tubule epithelial cell": "#ff9c3b",
+      "kidney loop of Henle medullary thick ascending limb epithelial cell": "#ffa750",
+      "kidney loop of Henle long descending thin limb outer medulla epithelial cell": "#ffb265",
+      "kidney loop of Henle thin ascending limb epithelial cell": "#ffbc7a",
+      "kidney cortex collecting duct principal cell": "#ffc78f",
       "Other": "#C08552"
     }
   },
