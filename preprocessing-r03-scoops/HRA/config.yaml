@@ -35,5 +35,5 @@ visualization:
 output:
   organs_folder: outputs/downloaded organs
   amended_folder: outputs/annotated organs
-  save_hra_pop_csv: false
+  save_hra_pop_csv: true
   save_cell_api_csv: false

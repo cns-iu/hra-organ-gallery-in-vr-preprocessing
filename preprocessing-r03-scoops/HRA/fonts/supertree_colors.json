@@ -1,0 +1,77 @@
+{
+  "$schema_note": "Fixed AS/2 supertree category colors. Source: CT Colors.xlsx (ColorBrewer Paired, n=10). Granular cell types are HSL-lightness shades of these base hues (see shared.py _shades_for_group) and must never reuse the base hex directly.",
+  "categories": [
+    {
+      "ct": "connective tissue cell",
+      "ct_id": "CL:0002320",
+      "hex": "#1f78b4",
+      "color_name": "dark blue"
+    },
+    {
+      "ct": "endothelial cell",
+      "ct_id": "CL:0000115",
+      "hex": "#e31a1c",
+      "color_name": "dark red"
+    },
+    {
+      "ct": "epithelial cell",
+      "ct_id": "CL:0000066",
+      "hex": "#ff7f00",
+      "color_name": "dark orange"
+    },
+    {
+      "ct": "germ line cell",
+      "ct_id": "CL:0000039",
+      "hex": "#6a3d9a",
+      "color_name": "dark purple"
+    },
+    {
+      "ct": "hematopoietic cell",
+      "ct_id": "CL:0000988",
+      "hex": "#fb9a99",
+      "color_name": "light red"
+    },
+    {
+      "ct": "mesenchymal cell",
+      "ct_id": "CL:0008019",
+      "hex": "#a6cee3",
+      "color_name": "light blue"
+    },
+    {
+      "ct": "neural cell",
+      "ct_id": "CL:0002319",
+      "hex": "#33a02c",
+      "color_name": "dark green"
+    },
+    {
+      "ct": "melanocyte",
+      "ct_id": "CL:0000148",
+      "hex": "#cab2d6",
+      "color_name": "light purple"
+    },
+    {
+      "ct": "muscle cell",
+      "ct_id": "CL:0000187",
+      "hex": "#afabab",
+      "color_name": "gray"
+    },
+    {
+      "ct": "precursor cell",
+      "ct_id": "CL:0011115",
+      "hex": "#b2df8a",
+      "color_name": "light green"
+    }
+  ],
+  "hex_by_label": {
+    "connective tissue cell": "#1f78b4",
+    "endothelial cell": "#e31a1c",
+    "epithelial cell": "#ff7f00",
+    "germ line cell": "#6a3d9a",
+    "hematopoietic cell": "#fb9a99",
+    "mesenchymal cell": "#a6cee3",
+    "neural cell": "#33a02c",
+    "melanocyte": "#cab2d6",
+    "muscle cell": "#afabab",
+    "precursor cell": "#b2df8a"
+  }
+}

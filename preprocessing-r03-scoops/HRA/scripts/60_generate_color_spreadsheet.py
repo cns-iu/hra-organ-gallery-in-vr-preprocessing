@@ -50,7 +50,7 @@ def find_distribution_files(amended_folder: Path) -> List[Path]:
 def build_rows_for_distribution(
     dist_path: Path,
     supertree: Dict[str, str],
-) -> List[Tuple]:
+) -> Tuple[List[Tuple], List[Tuple]]:
     dist_data = json.loads(dist_path.read_text(encoding="utf-8"))
     organ = dist_data.get("organ", "")
     sex   = dist_data.get("sex", "")
@@ -60,7 +60,7 @@ def build_rows_for_distribution(
 
     if not organ_cell_counts:
         print(f"  Skipping {dist_path.name} — no organ_cell_counts in file.")
-        return []
+        return [], []
 
     _color_map, legend_entries = build_top9_granular_color_scheme(
         organ_cell_counts=organ_cell_counts,
@@ -72,96 +72,63 @@ def build_rows_for_distribution(
     )
 
     # legend_entries is (label, hex, level2_label, count), count-descending
-    # with "Other" (level2_label == "") pinned last. Reconstruct which base
-    # hue (LEVEL2_TOP9_COLORS[i]) each level-2 parent got, in the same
-    # first-appearance order build_top9_granular_color_scheme() itself used
-    # internally — that order is preserved by the final count-descending
-    # sort since the input was already count-ranked before grouping.
-    ordered_lvl2: List[str] = []
-    for _label, _hex, lvl2, _count in legend_entries:
-        if lvl2 and lvl2 not in ordered_lvl2:
-            ordered_lvl2.append(lvl2)
-    lvl2_base = {
-        lvl2: LEVEL2_TOP9_COLORS[i] if i < len(LEVEL2_TOP9_COLORS) else OTHER_COLOR
-        for i, lvl2 in enumerate(ordered_lvl2)
-    }
-
-    rows = []
+    # with "Other" pinned last. LEVEL2_TOP9_COLORS (CT_COLORS) is now a
+    # fixed name -> hex dict, so Base Color is a direct lookup — no more
+    # reconstructing "which slot of a positional palette did this category
+    # land in for this block", which was the actual bug behind the same
+    # category getting different colors in different organ/sex/tool
+    # blocks. "Other" and a top-9 member with no supertree match both
+    # have level2_label == "" and so both get a blank Base Color; they're
+    # told apart by Hex Color — "Other" always has OTHER_COLOR, an
+    # unmatched member has hex_color == "" (see shared.py) and gets
+    # listed in `unmatched` below for the review tab instead of guessing.
+    rows: List[Tuple] = []
+    unmatched: List[Tuple] = []
     for rank, (label, hex_color, lvl2, count) in enumerate(legend_entries, start=1):
-        base_color = lvl2_base.get(lvl2, "") if lvl2 else ""
+        base_color = LEVEL2_TOP9_COLORS.get(lvl2, "") if lvl2 else ""
         rows.append((organ, sex, tool, rank, label, lvl2, base_color, hex_color, count))
-    return rows
+        if label != "Other" and not hex_color:
+            unmatched.append((organ, sex, tool, rank, label, count))
+    return rows, unmatched
 
 
 # =============================================================================
-# xlsx output
+# xlsx output — same styling as the manually-built reference spreadsheet
 # =============================================================================
 
-def write_xlsx(blocks: List[List[Tuple]], out_path: Path) -> None:
+def write_xlsx(
+    blocks: List[List[Tuple]],
+    out_path: Path,
+    unmatched: Optional[List[Tuple]] = None,
+) -> None:
     """blocks: one list of row-tuples per (Organ, Sex, Tool) distribution
-    file, in the order they should appear. A blank row separates each
-    block, and the Organ column is merged into one cell spanning every
-    block that shares the same organ (including the blank separator rows
-    between those same-organ blocks — the merge only breaks where the
-    organ actually changes)."""
+    file, in the order they should appear. Matches the reference
+    spreadsheet's own layout exactly: no title/subtitle banner — row 1 is
+    blank, row 2 is the header (bold, no fill), data starts row 3. A blank
+    row separates each block, and the Organ column is merged per block
+    (one merge per organ/sex/tool group, not spanning across multiple
+    blocks of the same organ — every block repeats its own organ name)."""
     wb = Workbook()
     ws = wb.active
     ws.title = "Sheet1"
 
-    thin   = Side(style="thin", color="FFB7B7B7")
+    thin   = Side(style="thin", color="FFA8A8A8")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
-    TITLE_FONT     = Font(name="Arial", size=14, bold=True, color="FF000000")
-    SUBTITLE_FONT  = Font(name="Arial", size=11, color="FF535353")
-    HEADER_FONT    = Font(name="Arial", size=12, bold=True, color="FFFFFFFF")
-    HEADER_FILL    = PatternFill("solid", fgColor="FF666666")
-    BODY_FONT      = Font(name="Arial", size=11, color="FF000000")
-    WHITE_FILL     = PatternFill("solid", fgColor="FFFFFFFF")
-    CENTER         = Alignment(horizontal="center", vertical="center")
-    ORGAN_ALIGN    = Alignment(horizontal="left", vertical="center")
+    HEADER_FONT = Font(name="Arial", size=11, bold=True, color="FF000000")
+    BODY_FONT   = Font(name="Arial", size=11, color="FF000000")
+    CENTER      = Alignment(horizontal="center", vertical="center")
 
-    N_COLS = 9
-
-    def _banner_row(row: int, text: str, font: Font) -> None:
-        ws.cell(row=row, column=1, value=text).font = font
-        for c in range(1, N_COLS + 1):
-            ws.cell(row=row, column=c).fill = WHITE_FILL
-            ws.cell(row=row, column=c).border = border
-
-    _banner_row(3, (
-        f"Top-9 granular cell types + Other, by organ / sex / tool "
-        f"(organ-wide ranking, colored by supertree level-2 parent) — {PROJECT_LABEL} palette"
-    ), TITLE_FONT)
-    _banner_row(4, (
-        'Rank 1-9 = top granular cell types by organ-wide cell count; rank 10 = "Other" '
-        "(everything else, aggregate count)."
-    ), SUBTITLE_FONT)
-    _banner_row(5, (
-        f"Auto-generated by 60_generate_color_spreadsheet.py against {PROJECT_LABEL}'s current "
-        f"{BG_MODE_LABEL} palette/shading (shared.py's BASE_HUES + _shades_for_group, "
-        f'bg_mode="{BG_MODE}"). "Base Color" = the unshaded supertree level-2 color; blank for '
-        '"Other" rows, which aren\'t tied to a single level-2 parent. Regenerate this stage after '
-        "processing a new organ to add its block below."
-    ), SUBTITLE_FONT)
-    for c in range(1, N_COLS + 1):
-        ws.cell(row=6, column=c).fill = WHITE_FILL
-        ws.cell(row=6, column=c).border = border
-
-    headers = ["Organ", "Sex", "Tool", "Rank", "Supertree Label", "Base Color",
+    # Column order: Organ, Sex, Tool, Rank, Supertree Label, Base Color,
+    # Cell Type, Hex Color, Cell Count. Row 1 is intentionally left blank.
+    headers = ["Organ", "Sex", "Tool", "Rank", "Supertree label", "Base Color",
                "Cell Type", "Hex Color", "Cell Count"]
     for c, h in enumerate(headers, start=1):
-        cell = ws.cell(row=7, column=c, value=h)
+        cell = ws.cell(row=2, column=c, value=h)
         cell.font = HEADER_FONT
-        cell.fill = HEADER_FILL
-        cell.border = border
         cell.alignment = CENTER
 
-    r = 8
-    organ_merges: List[Tuple[str, int, int]] = []  # (organ, first_row, last_row)
-    current_organ: Optional[str] = None
-    current_organ_start = None
-    prev_block_end = None
-
+    r = 3
     for block_idx, block_rows in enumerate(blocks):
         if not block_rows:
             continue
@@ -169,47 +136,69 @@ def write_xlsx(blocks: List[List[Tuple]], out_path: Path) -> None:
         if block_idx > 0:
             r += 1  # blank separator row between every block, left unstyled
 
-        organ = block_rows[0][0]
-        if organ != current_organ:
-            if current_organ is not None:
-                organ_merges.append((current_organ, current_organ_start, prev_block_end))
-            current_organ = organ
-            current_organ_start = r
-
-        for organ_v, sex, tool, rank, cell_type, lvl2, base_color, hex_color, count in block_rows:
+        block_start = r
+        for organ, sex, tool, rank, cell_type, lvl2, base_color, hex_color, count in block_rows:
+            # Column 1 (Organ) is intentionally left blank here — it's
+            # filled in once per merged range below.
             values = [None, sex, tool, rank, lvl2, base_color, cell_type, hex_color, count]
             for c, v in enumerate(values, start=1):
                 cell = ws.cell(row=r, column=c, value=v)
                 cell.font = BODY_FONT
                 cell.border = border
-                cell.fill = WHITE_FILL
 
-            ws.cell(row=r, column=4).alignment = CENTER  
+            ws.cell(row=r, column=4).alignment = CENTER  # Rank, centered
+
             if base_color:
                 ws.cell(row=r, column=6).fill = PatternFill("solid", fgColor="FF" + base_color.lstrip("#"))
             if hex_color:
                 ws.cell(row=r, column=8).fill = PatternFill("solid", fgColor="FF" + hex_color.lstrip("#"))
 
             r += 1
+        block_end = r - 1
 
-        prev_block_end = r - 1
-
-    if current_organ is not None:
-        organ_merges.append((current_organ, current_organ_start, prev_block_end))
-
-    for organ_name, start_row, end_row in organ_merges:
-        if end_row > start_row:
-            ws.merge_cells(start_row=start_row, start_column=1, end_row=end_row, end_column=1)
-        top_cell = ws.cell(row=start_row, column=1, value=organ_name)
+        organ_name = block_rows[0][0]
+        if block_end > block_start:
+            ws.merge_cells(start_row=block_start, start_column=1, end_row=block_end, end_column=1)
+        top_cell = ws.cell(row=block_start, column=1, value=organ_name)
         top_cell.font = BODY_FONT
         top_cell.border = border
-        top_cell.fill = WHITE_FILL
-        top_cell.alignment = ORGAN_ALIGN
 
-    widths = {"A": 19.25, "B": 10.63, "C": 19.5, "D": 9.25, "E": 19.75,
-              "F": 13.5, "G": 57.75, "H": 14.75, "I": 13.5}
+    widths = {"A": 19.75, "B": 9.38, "C": 20.38, "D": 9.25, "E": 18.75,
+              "F": 15.13, "G": 63.0, "H": 14.75, "I": 14.63}
     for col, w in widths.items():
         ws.column_dimensions[col].width = w
+    ws.freeze_panes = "A3"
+
+    if unmatched:
+        ws2 = wb.create_sheet("Unclassified — Review")
+        ws2_headers = ["Organ", "Sex", "Tool", "Rank", "Cell Type", "Cell Count"]
+        for c, h in enumerate(ws2_headers, start=1):
+            cell = ws2.cell(row=1, column=c, value=h)
+            cell.font = HEADER_FONT
+            cell.alignment = CENTER
+        note = ws2.cell(
+            row=2, column=1,
+            value=(
+                "These are top-9-by-count granular cell types whose supertree lookup found no "
+                "AS/2 category at all under the current supertree — not folded into \"Other\" "
+                "(which is a different, deliberate bucket for everything ranked below the top 9) "
+                "and not auto-colored. They need either a supertree fix or a manual color call."
+            ),
+        )
+        note.font = Font(name="Arial", size=10, italic=True, color="FF535353")
+        ws2.merge_cells(start_row=2, start_column=1, end_row=2, end_column=len(ws2_headers))
+        r2 = 3
+        for organ, sex, tool, rank, label, count in unmatched:
+            values = [organ, sex, tool, rank, label, count]
+            for c, v in enumerate(values, start=1):
+                cell = ws2.cell(row=r2, column=c, value=v)
+                cell.font = BODY_FONT
+            ws2.cell(row=r2, column=4).alignment = CENTER
+            r2 += 1
+        for col, w in {"A": 19.75, "B": 9.38, "C": 20.38, "D": 9.25,
+                        "E": 45, "F": 14.63}.items():
+            ws2.column_dimensions[col].width = w
+        ws2.freeze_panes = "A3"
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out_path)
@@ -235,11 +224,13 @@ def main() -> None:
     supertree, _ = load_supertree(supertree_path)
 
     blocks: List[List[Tuple]] = []
+    all_unmatched: List[Tuple] = []
     for dist_path in dist_files:
         print(f"Processing: {dist_path}")
-        rows = build_rows_for_distribution(dist_path, supertree)
+        rows, unmatched = build_rows_for_distribution(dist_path, supertree)
         if rows:
             blocks.append(rows)
+        all_unmatched.extend(unmatched)
 
     if not blocks:
         print("No rows produced — nothing to write.")
@@ -249,9 +240,12 @@ def main() -> None:
     # cell), sub-sorted by sex/tool for a stable, readable layout.
     blocks.sort(key=lambda rows: (rows[0][0].lower(), rows[0][1].lower(), rows[0][2].lower()))
 
-    write_xlsx(blocks, out_path)
+    write_xlsx(blocks, out_path, unmatched=all_unmatched)
     total_rows = sum(len(b) for b in blocks)
     print(f"\nWrote {total_rows} rows across {len(blocks)} organ/sex/tool combination(s) to: {out_path}")
+    if all_unmatched:
+        print(f"{len(all_unmatched)} cell type(s) had no supertree match — see the "
+              f"\"Unclassified — Review\" tab.")
 
 
 if __name__ == "__main__":

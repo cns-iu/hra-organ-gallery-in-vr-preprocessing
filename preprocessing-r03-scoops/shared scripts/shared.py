@@ -6,9 +6,9 @@ Mostly project-agnostic: no fonts, no layout opinions live here.
 build_top9_granular_color_scheme() takes a palette argument so each
 project supplies its own OTHER_COLOR/BG_MODE (see each project's
 palette.py) while sharing the same ranking/grouping/shading algorithm.
-The one exception is BASE_HUES below — the 9 base colors are meant to be
-identical across every project (so "muscle cell" is the same color
-family in A5 and HRA), so that list lives here rather than being
+The one exception is CT_COLORS below — the 10 base colors are meant to
+be identical across every project (so "endothelial cell" is the same
+color family in A5 and HRA), so that dict lives here rather than being
 duplicated per project.
 """
 
@@ -28,17 +28,33 @@ import pandas as pd
 # Hex color helpers
 # =============================================================================
 
-BASE_HUES: List[str] = [
-    "#1f78b4",
-    "#33a02c",
-    "#e31a1c",
-    "#ff7f00",
-    "#6a3d9a",
-    "#ffff99",
-    "#a6cee3",
-    "#b2df8a",
-    "#fb9a99",
-]
+# Fixed AS/2 supertree label -> base hex color. Every project must use
+# these exact colors for these exact labels — "endothelial cell" is
+# always #e31a1c everywhere in the atlas, never reassigned by whichever
+# order categories happen to appear in for a given organ/sex/tool block
+# (that positional-first-appearance scheme is what BASE_HUES used to do,
+# and it's why the same AS/2 category could get a different color in
+# different blocks). Granular cell types under a category are shaded
+# variants of that category's fixed color (see _shades_for_group) and
+# must never be assigned the raw base color itself.
+#
+# Source: CT Colors.xlsx (ColorBrewer "Paired", n=10:
+# https://colorbrewer2.org/#type=qualitative&scheme=Paired&n=10). Keyed
+# on the current 10-label AS/2 supertree (supertree.csv, Aug 2026
+# revision) — if the supertree's AS/2 label set changes again, this dict
+# needs new entries, not a re-indexed list.
+CT_COLORS: Dict[str, str] = {
+    "connective tissue cell": "#1f78b4",
+    "endothelial cell":       "#e31a1c",
+    "epithelial cell":        "#ff7f00",
+    "germ line cell":         "#6a3d9a",
+    "hematopoietic cell":     "#fb9a99",
+    "mesenchymal cell":       "#a6cee3",
+    "neural cell":            "#33a02c",
+    "melanocyte":             "#cab2d6",
+    "muscle cell":            "#afabab",
+    "precursor cell":         "#b2df8a",
+}
 
 
 def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
@@ -141,10 +157,16 @@ def _shades_for_group(base_hex: str, n: int, bg_mode: str = "light") -> List[str
 # Top-9-granular + Other color scheme
 # =============================================================================
 # Rank granular (level-3) cell types organ-wide by count. The top 9 each
-# belong to a level-2 parent category; each parent gets one color from
-# `palette` (in first-appearance order). Members under the same parent
-# get HSL-lightness shades of that color (darkest = highest count).
+# belong to a level-2 parent category; each parent's color is a fixed
+# lookup in `palette` (CT_COLORS) by category name — not by first-
+# appearance order, so a given category is the same color in every organ/
+# sex/tool block, not just within one. Members under the same parent get
+# HSL-lightness shades of that color (darkest = highest count).
 # Everything outside the top 9 folds into one "Other" bucket (`other_color`).
+# A top-9 member whose supertree lookup finds no AS/2 category at all
+# (lvl2_of() returns "") is neither shaded nor folded into Other — it's
+# returned with hex="" so the caller can flag it for review instead of
+# silently guessing a color or silently dropping it from the legend.
 
 # Known spelling-variant duplicates in the raw HRApop cell_label field,
 # folded into one canonical label before ranking (e.g. a typo'd duplicate
@@ -162,7 +184,7 @@ def build_top9_granular_color_scheme(
     organ_cell_counts: Dict[str, float],
     cell_id_map: Dict[str, str],
     supertree: Dict[str, str],
-    palette: List[str],
+    palette: Dict[str, str],
     other_color: str,
     bg_mode: str = "light",
 ) -> Tuple[Dict[str, str], List[Tuple[str, str, str, float]]]:
@@ -173,21 +195,29 @@ def build_top9_granular_color_scheme(
         organ_cell_counts: cell_label -> organ-wide raw cell count.
         cell_id_map:       normalized cell_label key -> compact CL ID.
         supertree:         compact CL ID -> level-2 supertree label.
-        palette:           one color per level-2 parent category. Pass the
-                            same canonical 9 hues for every project so a
-                            given category means the same color family
-                            everywhere — use bg_mode to adapt legibility
-                            instead of swapping in different hues.
-        other_color:       color for the aggregate "Other" bucket.
+        palette:           AS/2 category name -> fixed hex color (pass
+                            CT_COLORS). Every project must pass the same
+                            dict so a given category means the same color
+                            family everywhere — use bg_mode to adapt
+                            legibility instead of swapping in different
+                            hues. A category with no entry in `palette`
+                            falls back to `other_color`.
+        other_color:       color for the aggregate "Other" bucket, and
+                            the fallback for any top-9 category missing
+                            from `palette`.
         bg_mode:           "light" or "dark" — see BG_LIGHTNESS_RANGES;
                             controls how far shades range from each base
                             hue so they stay legible on that background.
 
     Returns:
-        color_map: cell_label -> hex color.
+        color_map: cell_label -> hex color (unmatched top-9 labels map to "").
         legend_entries: ordered (label, hex, level2_label, count) — the
             top-9 granular cell types + one "Other" entry, sorted by
-            count descending with Other pinned last.
+            count descending with Other pinned last. A top-9 label with
+            no supertree match at all gets hex="" and level2_label="" —
+            distinct from "Other", which is deliberately not one of
+            these entries but the aggregate of everything ranked below
+            the top 9.
     """
     merged_counts: Dict[str, float] = defaultdict(float)
     for label, count in organ_cell_counts.items():
@@ -218,8 +248,8 @@ def build_top9_granular_color_scheme(
             ordered_lvl2.append(lvl2)
 
     lvl2_color = {
-        lvl2: palette[i] if i < len(palette) else other_color
-        for i, lvl2 in enumerate(ordered_lvl2)
+        lvl2: palette.get(lvl2, other_color)
+        for lvl2 in ordered_lvl2
     }
 
     groups: Dict[str, List[Tuple[str, float]]] = defaultdict(list)
@@ -235,6 +265,15 @@ def build_top9_granular_color_scheme(
         for (label, count), shade in zip(members, shades):
             color_map[label] = shade
             legend_entries.append((label, shade, lvl2, count))
+
+    # Top-9 members whose supertree lookup found no AS/2 category at all
+    # (lvl2_of() == "") used to be silently dropped here: groups[""] was
+    # populated but "" is never in ordered_lvl2, so the loop above never
+    # visited it. Surface them instead — hex="" is the signal to the
+    # caller that this needs a human decision, not an automatic color.
+    for label, count in sorted(groups.get("", []), key=lambda x: x[1], reverse=True):
+        color_map[label] = ""
+        legend_entries.append((label, "", "", count))
 
     other_total = 0.0
     for label, count in rest:

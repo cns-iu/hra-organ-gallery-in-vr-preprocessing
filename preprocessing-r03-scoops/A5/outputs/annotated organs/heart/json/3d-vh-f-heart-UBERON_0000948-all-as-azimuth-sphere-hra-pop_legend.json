@@ -5,7 +5,7 @@
     "tool": "azimuth",
     "uberon_id": "UBERON_0000948",
     "glb_filename": "3d-vh-f-heart.glb",
-    "generated_at": "2026-07-30T16:29:56.684775Z"
+    "generated_at": "2026-08-19T17:07:36.881047Z"
   },
   "organ_total_cell_count": {
     "organ": "heart",
@@ -28,15 +28,15 @@
       "Other"
     ],
     "colors": {
-      "Ventricular cardiomyocyte": "#0f3a57",
-      "fibroblast": "#1a5016",
-      "pericyte": "#85dc7f",
+      "Ventricular cardiomyocyte": "#686363",
+      "fibroblast": "#0f3a57",
+      "pericyte": "#7abce8",
       "capillary endothelial cell": "#e72f31",
-      "B cell": "#703800",
-      "smooth muscle cell": "#2387ca",
-      "monocyte-derived dendritic cell": "#ff8c1a",
-      "Atrial Cardiomyocyte": "#7abce8",
-      "macrophage": "#ffc78f",
+      "B cell": "#f61210",
+      "smooth muscle cell": "#a39e9e",
+      "monocyte-derived dendritic cell": "#f96b6a",
+      "Atrial Cardiomyocyte": "#e1e0e0",
+      "macrophage": "#fdc5c4",
       "Other": "#b15928"
     }
   },
