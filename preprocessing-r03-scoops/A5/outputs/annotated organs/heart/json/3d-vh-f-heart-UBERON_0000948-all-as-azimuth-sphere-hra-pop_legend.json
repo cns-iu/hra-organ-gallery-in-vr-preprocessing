@@ -5,7 +5,7 @@
     "tool": "azimuth",
     "uberon_id": "UBERON_0000948",
     "glb_filename": "3d-vh-f-heart.glb",
-    "generated_at": "2026-08-19T17:07:36.881047Z"
+    "generated_at": "2026-08-19T17:29:39.617066Z"
   },
   "organ_total_cell_count": {
     "organ": "heart",
@@ -47,8 +47,8 @@
         "VH_F_right_cardiac_atrium"
       ],
       "hra_pop_cell_count": 14535,
-      "allocated_markers": 328,
-      "plotted": 319
+      "allocated_markers": 656,
+      "plotted": 646
     },
     {
       "name": "left cardiac atrium",
@@ -56,8 +56,8 @@
         "VH_F_left_cardiac_atrium"
       ],
       "hra_pop_cell_count": 18090,
-      "allocated_markers": 408,
-      "plotted": 400
+      "allocated_markers": 816,
+      "plotted": 807
     },
     {
       "name": "heart right ventricle",
@@ -65,8 +65,8 @@
         "VH_F_right_ventricle"
       ],
       "hra_pop_cell_count": 40676,
-      "allocated_markers": 918,
-      "plotted": 909
+      "allocated_markers": 1835,
+      "plotted": 1823
     },
     {
       "name": "heart left ventricle",
@@ -74,8 +74,8 @@
         "VH_F_left_ventricle"
       ],
       "hra_pop_cell_count": 335664,
-      "allocated_markers": 7573,
-      "plotted": 7564
+      "allocated_markers": 15146,
+      "plotted": 15138
     },
     {
       "name": "interventricular septum",
@@ -83,8 +83,8 @@
         "VH_F_interventricular_septum"
       ],
       "hra_pop_cell_count": 30804,
-      "allocated_markers": 695,
-      "plotted": 685
+      "allocated_markers": 1390,
+      "plotted": 1378
     },
     {
       "name": "Posteromedial head of posterior papillary muscle of left ventricle",
@@ -93,14 +93,14 @@
         "VH_M_papillary_muscle_of_heart_posmed"
       ],
       "hra_pop_cell_count": 3464,
-      "allocated_markers": 78,
-      "plotted": 31
+      "allocated_markers": 157,
+      "plotted": 70
     }
   ],
   "cell_count_comparison": {
-    "total_plotted": 9908,
-    "total_requested": 10000,
-    "real_cells_per_marker": 756964
+    "total_plotted": 19862,
+    "total_requested": 20000,
+    "real_cells_per_marker": 377605
   },
   "size_reference": {
     "assumed_cell_size_um": 10.0,

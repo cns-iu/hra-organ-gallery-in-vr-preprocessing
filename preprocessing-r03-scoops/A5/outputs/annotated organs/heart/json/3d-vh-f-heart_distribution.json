@@ -332,12 +332,12 @@
     "Posteromedial head of posterior papillary muscle of left ventricle": 3464.1749999999997
   },
   "node_allocation": {
-    "right cardiac atrium": 328,
-    "left cardiac atrium": 408,
-    "heart right ventricle": 918,
-    "heart left ventricle": 7573,
-    "interventricular septum": 695,
-    "Posteromedial head of posterior papillary muscle of left ventricle": 78
+    "right cardiac atrium": 656,
+    "left cardiac atrium": 816,
+    "heart right ventricle": 1835,
+    "heart left ventricle": 15146,
+    "interventricular septum": 1390,
+    "Posteromedial head of posterior papillary muscle of left ventricle": 157
   },
   "organ_cell_counts": {
     "fibroblast": 111583.822,

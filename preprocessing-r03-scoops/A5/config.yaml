@@ -20,9 +20,9 @@ filters:
   modality: ""
 
 markers:
-  num_nodes: 10000
+  num_nodes: 20000
   shape: sphere
-  sphere_radius: 0.00025
+  sphere_radius: 0.001
   sphere_subdivisions: 2
   size: null
   top_cell_type_count: 11
