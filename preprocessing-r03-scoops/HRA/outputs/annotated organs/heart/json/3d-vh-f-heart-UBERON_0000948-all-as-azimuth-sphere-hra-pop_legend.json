@@ -5,7 +5,7 @@
     "tool": "azimuth",
     "uberon_id": "UBERON_0000948",
     "glb_filename": "3d-vh-f-heart.glb",
-    "generated_at": "2026-07-23T15:45:48.963591Z"
+    "generated_at": "2026-08-31T13:57:29.262004Z"
   },
   "organ_total_cell_count": {
     "organ": "heart",
@@ -28,15 +28,15 @@
       "Other"
     ],
     "colors": {
-      "Ventricular cardiomyocyte": "#2387ca",
-      "fibroblast": "#39b431",
-      "pericyte": "#85dc7f",
+      "Ventricular cardiomyocyte": "#767070",
+      "fibroblast": "#2387ca",
+      "pericyte": "#7abce8",
       "capillary endothelial cell": "#e72f31",
-      "B cell": "#e67200",
-      "smooth muscle cell": "#45a1df",
-      "monocyte-derived dendritic cell": "#ff9c3b",
-      "Atrial Cardiomyocyte": "#7abce8",
-      "macrophage": "#ffc78f",
+      "B cell": "#f61210",
+      "smooth muscle cell": "#bbb8b8",
+      "monocyte-derived dendritic cell": "#fa7574",
+      "Atrial Cardiomyocyte": "#ebeaea",
+      "macrophage": "#fdd8d8",
       "Other": "#C08552"
     }
   },
@@ -104,6 +104,10 @@
   },
   "size_reference": {
     "assumed_cell_size_um": 10.0,
-    "note": "All cell types assumed to be 10 µm in diameter."
+    "marker_radius_um": 250.0,
+    "marker_diameter_um": 500.0,
+    "marker_size_ratio": "500μm|10μm",
+    "marker_scale_factor": 50.0,
+    "note": "All cell types assumed to be 10 µm in diameter. Markers are rendered far larger than true biological scale for VR visibility — marker_scale_factor is how many times larger than a real cell each marker is (marker_diameter_um / assumed_cell_size_um)."
   }
 }
