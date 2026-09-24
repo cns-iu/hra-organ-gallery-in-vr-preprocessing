@@ -1,0 +1,95 @@
+organ,sex,tool,num_top_cell_types,distinct_as_in_top10,distinct_as_total_organ
+lung,Male,azimuth,10,17,17
+lung,Male,celltypist,10,17,17
+lung,Male,frmatch,10,17,17
+lung,Male,pan-human-azimuth,10,17,17
+lung,Male,popv,10,17,17
+lung,Female,azimuth,10,14,14
+lung,Female,celltypist,10,14,14
+lung,Female,frmatch,10,14,14
+lung,Female,pan-human-azimuth,10,14,14
+lung,Female,popv,10,14,14
+small intestine,Female,celltypist,10,8,8
+small intestine,Female,pan-human-azimuth,10,8,8
+small intestine,Female,popv,10,8,8
+large intestine,Female,celltypist,10,7,7
+large intestine,Female,pan-human-azimuth,10,7,7
+large intestine,Female,popv,10,7,7
+lymph node,Male,sc_proteomics,10,7,7
+small intestine,Male,celltypist,10,7,7
+small intestine,Male,pan-human-azimuth,10,7,7
+small intestine,Male,popv,10,7,7
+uterus,Female,pan-human-azimuth,10,7,7
+uterus,Female,popv,10,7,7
+Left kidney,Male,azimuth,10,6,6
+Left kidney,Male,pan-human-azimuth,10,6,6
+Right kidney,Male,azimuth,10,6,6
+Right kidney,Male,pan-human-azimuth,10,6,6
+heart,Female,azimuth,10,6,6
+heart,Female,celltypist,10,6,6
+heart,Female,pan-human-azimuth,10,6,6
+prostate,Male,pan-human-azimuth,10,6,6
+prostate,Male,popv,10,6,6
+small intestine,Female,sc_proteomics,10,6,6
+Left kidney,Female,azimuth,10,5,5
+Left kidney,Female,pan-human-azimuth,10,5,5
+Right kidney,Female,azimuth,10,5,5
+Right kidney,Female,pan-human-azimuth,10,5,5
+heart,Male,azimuth,10,5,5
+heart,Male,celltypist,10,5,5
+heart,Male,pan-human-azimuth,10,5,5
+large intestine,Female,sc_proteomics,10,5,5
+large intestine,Male,sc_proteomics,10,5,5
+pancreas,Female,sc_proteomics,4,5,5
+pancreas,Male,azimuth,8,5,5
+pancreas,Male,celltypist,4,5,5
+pancreas,Male,pan-human-azimuth,10,5,5
+pancreas,Male,popv,10,5,5
+small intestine,Male,sc_proteomics,10,5,5
+Right knee,Female,pan-human-azimuth,10,4,4
+large intestine,Male,celltypist,10,4,4
+large intestine,Male,pan-human-azimuth,10,4,4
+large intestine,Male,popv,10,4,4
+liver,Male,celltypist,10,4,4
+liver,Male,pan-human-azimuth,10,4,4
+liver,Male,popv,10,4,4
+pancreas,Male,sc_proteomics,4,4,4
+Left mammary gland,Female,pan-human-azimuth,10,3,3
+Left mammary gland,Female,popv,10,3,3
+Right mammary gland,Female,pan-human-azimuth,10,3,3
+Right mammary gland,Female,popv,10,3,3
+spleen,Male,sc_proteomics,10,3,3
+Left knee,Female,pan-human-azimuth,10,2,2
+liver,Female,celltypist,10,2,2
+liver,Female,pan-human-azimuth,10,2,2
+liver,Female,popv,10,2,2
+spleen,Female,sc_proteomics,10,2,2
+spleen,Male,pan-human-azimuth,10,2,2
+spleen,Male,popv,10,2,2
+thymus,Female,pan-human-azimuth,10,2,2
+thymus,Female,popv,10,2,2
+thymus,Male,pan-human-azimuth,10,2,2
+thymus,Male,popv,10,2,2
+urinary bladder,Male,pan-human-azimuth,10,2,2
+urinary bladder,Male,popv,10,2,2
+Left knee,Female,sc_proteomics,10,1,1
+Left knee,Male,sc_proteomics,10,1,1
+Left ovary,Female,pan-human-azimuth,10,1,1
+Left ureter,Female,azimuth,10,1,1
+Left ureter,Female,pan-human-azimuth,10,1,1
+Left ureter,Male,azimuth,10,1,1
+Left ureter,Male,pan-human-azimuth,10,1,1
+Right knee,Female,sc_proteomics,10,1,1
+Right knee,Male,sc_proteomics,10,1,1
+Right ovary,Female,pan-human-azimuth,10,1,1
+Right ureter,Female,azimuth,10,1,1
+Right ureter,Female,pan-human-azimuth,10,1,1
+Right ureter,Male,azimuth,10,1,1
+Right ureter,Male,pan-human-azimuth,10,1,1
+lung,Male,sc_proteomics,10,1,1
+skin,Male,celltypist,10,1,1
+skin,Male,pan-human-azimuth,10,1,1
+skin,Male,popv,10,1,1
+skin,Male,sc_proteomics,10,1,1
+urinary bladder,Female,pan-human-azimuth,10,1,1
+urinary bladder,Female,popv,10,1,1

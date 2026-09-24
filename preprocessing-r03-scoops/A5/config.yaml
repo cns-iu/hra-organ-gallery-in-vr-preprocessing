@@ -37,3 +37,7 @@ output:
   amended_folder: outputs/annotated organs
   save_hra_pop_csv: false
   save_cell_api_csv: false
+  # Set true and rerun to refresh outputs/AS_dataset_counts_A5.csv (stage
+  # 70). Only needs refreshing after a new HRApop data release, not on
+  # every pipeline run — leave false the rest of the time.
+  build_as_dataset_table: false

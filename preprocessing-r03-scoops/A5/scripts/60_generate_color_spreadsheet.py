@@ -73,11 +73,7 @@ def build_rows_for_distribution(
 
     # legend_entries is (label, hex, level2_label, count), count-descending
     # with "Other" pinned last. LEVEL2_TOP9_COLORS (CT_COLORS) is now a
-    # fixed name -> hex dict, so Base Color is a direct lookup — no more
-    # reconstructing "which slot of a positional palette did this category
-    # land in for this block", which was the actual bug behind the same
-    # category getting different colors in different organ/sex/tool
-    # blocks. "Other" and a top-9 member with no supertree match both
+    # fixed name -> hex dict, so Base Color is a direct lookup "Other" and a top-9 member with no supertree match both
     # have level2_label == "" and so both get a blank Base Color; they're
     # told apart by Hex Color — "Other" always has OTHER_COLOR, an
     # unmatched member has hex_color == "" (see shared.py) and gets
@@ -93,7 +89,7 @@ def build_rows_for_distribution(
 
 
 # =============================================================================
-# xlsx output — same styling as the manually-built reference spreadsheet
+# xlsx output 
 # =============================================================================
 
 def write_xlsx(
@@ -134,7 +130,7 @@ def write_xlsx(
             continue
 
         if block_idx > 0:
-            r += 1  # blank separator row between every block, left unstyled
+            r += 1  # blank separator row between every block
 
         block_start = r
         for organ, sex, tool, rank, cell_type, lvl2, base_color, hex_color, count in block_rows:

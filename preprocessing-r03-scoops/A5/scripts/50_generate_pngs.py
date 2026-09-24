@@ -1,19 +1,13 @@
 #!/usr/bin/env python3
 """
-50_generate_pngs.py — Generate grouped horizontal bar chart PNGs showing
-cell type distributions across all anatomical structures.
+50_generate_pngs.py — Pipeline stage: grouped horizontal bar chart PNGs
+of cell type distributions across all anatomical structures.
 
 Each AS gets one bar per nonzero cell type bucket (small multiples), not
-a single stacked bar — this makes it possible to see how many distinct
-cell types are present in a given AS. Bars show raw cell counts (no
-percentages) against one shared axis with visible gridlines. The AS name
-and its total cell count sit to the left of its bars.
+a single stacked bar. Bars show raw cell counts against one shared axis.
+The AS name and total cell count sit to the left of its bars.
 
-Color scheme: top-9-granular + Other, from
-shared.build_top9_granular_color_scheme() — level-2 parent categories
-each get one palette color, granular (level-3) types under a parent get
-HSL-lightness shades of it, and the legend shows the top 9 granular types
-plus one aggregate "Other".
+Color scheme: top-9-granular + Other (shared.build_top9_granular_color_scheme).
 
 Reads:  config.yaml
         outputs/annotated organs/<organ>/json/<stem>_distribution.json
@@ -21,7 +15,6 @@ Writes: outputs/annotated organs/<organ>/png/with-legend/<output_name>-with-lege
         outputs/annotated organs/<organ>/png/without-legend/<output_name>-without-legend.png
 
 Requires: plotly, kaleido
-    pip install plotly kaleido
 """
 
 from __future__ import annotations
@@ -32,8 +25,6 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-# shared.py is in the repo-root "shared scripts/" folder; palette.py is
-# right next to this file.
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "shared scripts"))
 sys.path.insert(0, str(Path(__file__).parent))
 from shared import (
@@ -64,15 +55,11 @@ CHART_HEIGHT_MIN    = 600
 ROW_LINE_HEIGHT     = 30    # px, vertical space per wrapped label line
 ROW_PADDING         = 14    # px, extra breathing room added around each AS block
 
-# One thin bar per cell-type bucket per AS — no per-bar value label, so
-# rows can pack tightly.
 CT_BAR_THICKNESS    = 12    # px
 CT_BAR_GAP          = 2     # px
 AS_BLOCK_GAP        = 18    # px, vertical gap between one AS's bars and the next
 
 FONT_FAMILY         = "BentonSansBook, Arial, sans-serif"
-# No font-embedding step for PNG (unlike the SVG sibling) — this is only
-# used as a reference for wrap_label()'s pixel measurement below.
 FONT_BOOK_PATH      = Path(__file__).parent.parent / "fonts" / "BentonSans-Book_T.ttf"
 
 TITLE_FONT_SIZE     = 34
@@ -93,7 +80,7 @@ MARGIN_TOP          = 100
 MARGIN_BOTTOM_NO_LEGEND = 90  # with-legend margin is computed in make_figure()
 
 # Custom legend grid, built from annotations — Plotly's native legend
-# didn't reliably wrap into multiple columns in kaleido's static export.
+# doesn't reliably wrap into multiple columns in kaleido's static export.
 LEGEND_NUM_COLUMNS   = 3
 LEGEND_ROW_HEIGHT    = 38   # px, height of a single-line legend row
 LEGEND_LINE_HEIGHT_PX = 26  # px, extra height added per wrapped line beyond the first
@@ -101,10 +88,9 @@ LEGEND_SWATCH_RESERVED_PX = 34  # px, width the "■  " swatch prefix takes befo
 LEGEND_COL_START_PX  = 40
 LEGEND_COL_WIDTH_PX  = (CHART_WIDTH - 2 * LEGEND_COL_START_PX) / LEGEND_NUM_COLUMNS
 LEGEND_BOTTOM_PAD    = 30
-# Note: xref/yref="paper" for annotations is scoped to the axis/plot
-# domain, not the full canvas — paper (0,0) is the axis's bottom-left
-# corner, (1,1) its top-right. PLOT_WIDTH converts an absolute canvas px
-# into that paper-fraction.
+# xref/yref="paper" for annotations is scoped to the axis/plot domain, not
+# the full canvas. PLOT_WIDTH converts an absolute canvas px into that
+# paper-fraction.
 PLOT_WIDTH           = CHART_WIDTH - MARGIN_LEFT - MARGIN_RIGHT
 AXIS_TITLE_BAND      = 60
 
@@ -137,9 +123,9 @@ try:
             str(FONT_BOOK_PATH),
             "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
             "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-            "/System/Library/Fonts/Supplemental/Arial.ttf",  # macOS
-            "/Library/Fonts/Arial.ttf",  # macOS (older/alt location)
-            "C:\\Windows\\Fonts\\arial.ttf",  # Windows
+            "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "/Library/Fonts/Arial.ttf",
+            "C:\\Windows\\Fonts\\arial.ttf",
         ):
             if Path(_font_candidate).exists():
                 return _ImageFont.truetype(_font_candidate, size)
@@ -161,8 +147,7 @@ def _text_width_px(text: str, font=None) -> float:
 
 
 def wrap_label(text: str, max_width_px: float = LABEL_AVAILABLE_PX, font=None) -> str:
-    """font lets legend callers pass _LEGEND_MEASURE_FONT so wrapping
-    matches that smaller font size instead of the AS-label font."""
+    """font lets legend callers pass _LEGEND_MEASURE_FONT for that font size."""
     words = text.split()
     lines, current = [], ""
     for word in words:
@@ -181,13 +166,9 @@ def compute_block_layout(
     wrapped_labels: List[str],
     nonzero_buckets_per_as: List[List[str]],
 ) -> Tuple[List[float], List[List[float]], float]:
-    """
-    Each AS gets a block tall enough for whichever needs more room: its
-    stack of individual cell-type bars, or its wrapped label + total-count
-    line. Returns (as_label_y_centers, ct_bar_y_centers, total_content_height).
-    ct_bar_y_centers[i] has one y-center per bar in nonzero_buckets_per_as[i],
-    in the same order.
-    """
+    """Each AS gets a block tall enough for whichever needs more room: its
+    stack of cell-type bars, or its wrapped label + total-count line.
+    Returns (as_label_y_centers, ct_bar_y_centers, total_content_height)."""
     as_label_y_centers: List[float] = []
     ct_bar_y_centers: List[List[float]] = []
     running = 0.0
@@ -196,8 +177,7 @@ def compute_block_layout(
         n_ct = max(1, len(buckets))
         ct_block_height = n_ct * CT_BAR_THICKNESS + (n_ct - 1) * CT_BAR_GAP
 
-        # +1 line for the total-count line appended under the AS name.
-        n_lines = wrapped.count("<br>") + 1 + 1
+        n_lines = wrapped.count("<br>") + 1 + 1  # +1 for the total-count line
         text_height = n_lines * ROW_LINE_HEIGHT
 
         block_height = max(ct_block_height, text_height) + ROW_PADDING
@@ -227,8 +207,7 @@ def prepare_chart_data(
     top9_labels: List[str],
 ) -> Tuple[List[str], Dict[str, List[float]], List[float]]:
     """Aggregate per-AS cell counts into the top-9 granular types plus
-    "Other", matching the legend from shared.build_top9_granular_color_scheme().
-    Values are raw cell counts, not percentages."""
+    "Other". Values are raw cell counts, not percentages."""
     as_labels:            List[str]                   = dist_data["as_labels"]
     as_total_counts:      Dict[str, float]            = dist_data["as_total_counts"]
     per_as_distributions: Dict[str, Dict[str, float]] = dist_data["per_as_distributions"]
@@ -277,9 +256,7 @@ def make_figure(
     legend_entries: List[Tuple[str, str, str, float]],
     show_legend: bool,
 ) -> go.Figure:
-    """legend_entries: ordered (label, hex, level2_label, count) — top 9
-    granular cell types plus one "Other" entry. Each AS gets one bar per
-    nonzero bucket (small multiples), not a single stacked bar."""
+    """legend_entries: ordered (label, hex, level2_label, count)."""
     fig = go.Figure()
     plot_order = [label for label, _hex, _lvl2, _count in legend_entries]
     color_map  = {label: hexcolor for label, hexcolor, _lvl2, _count in legend_entries}
@@ -336,7 +313,6 @@ def make_figure(
 
     axis_max = max_ct_value * (1 + AXIS_HEADROOM_RATIO) if max_ct_value > 0 else 1.0
 
-    # AS name + total cell count, both anchored left of the bars.
     for wrapped, total, y_center in zip(wrapped_labels, as_totals, as_label_y_centers):
         annotations.append(dict(
             x=-0.01,
@@ -358,18 +334,11 @@ def make_figure(
         f"</span>"
     )
 
-    # Wrap long legend labels (granular cell type names can run long,
-    # e.g. kidney's "kidney loop of Henle long descending thin limb outer
-    # medulla epithelial cell") to the column width instead of letting
-    # them overflow into the next column. Row height then grows to fit
-    # whichever entry in that row wrapped to the most lines.
     legend_label_max_width = LEGEND_COL_WIDTH_PX - LEGEND_SWATCH_RESERVED_PX
     wrapped_legend = []
     for label, hexcolor, _lvl2, _count in legend_entries:
         wrapped = wrap_label(label, max_width_px=legend_label_max_width, font=_LEGEND_MEASURE_FONT)
         n_lines = wrapped.count("<br>") + 1
-        # Soft-indent continuation lines so they don't start flush under
-        # the swatch icon.
         wrapped_display = wrapped.replace("<br>", "<br>&nbsp;&nbsp;&nbsp;&nbsp;")
         wrapped_legend.append((label, hexcolor, wrapped_display, n_lines))
 
@@ -464,9 +433,7 @@ def save_png(fig: go.Figure, output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     try:
         # Pass width/height explicitly — some kaleido versions ignore
-        # fig.layout.width/height set via update_layout() and silently
-        # fall back to Plotly's 700x500 default, squashing all the
-        # content computed for the real (much taller) canvas.
+        # fig.layout.width/height and fall back to Plotly's 700x500 default.
         fig.write_image(
             str(output_path), format="png",
             width=fig.layout.width, height=fig.layout.height,
