@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "organ": "kidney",
+    "sex": "male",
+    "tool": "azimuth",
+    "uberon_id": "UBERON_0004538",
+    "glb_filename": "3d-vh-m-kidney-l.glb",
+    "generated_at": "2026-07-21T17:07:32.183555Z"
+  },
+  "organ_total_cell_count": {
+    "organ": "kidney",
+    "total_cells": 1500000000,
+    "notes": "Estimated 1.5 billion cells per kidney.",
+    "source": "Lote, 2012",
+    "doi": ""
+  },
+  "cell_type_color_key": {
+    "cell type": [
+      "kidney loop of Henle cortical thick ascending limb epithelial cell",
+      "kidney inner medulla collecting duct epithelial cell",
+      "epithelial cell of proximal tubule segment 1",
+      "epithelial cell of early distal convoluted tubule",
+      "kidney loop of Henle thin ascending limb epithelial cell",
+      "kidney connecting tubule epithelial cell",
+      "epithelial cell of proximal tubule segment 3",
+      "kidney loop of Henle long descending thin limb outer medulla epithelial cell",
+      "kidney loop of Henle short descending thin limb epithelial cell",
+      "Other"
+    ],
+    "colors": {
+      "kidney loop of Henle cortical thick ascending limb epithelial cell": "#0f3a57",
+      "kidney inner medulla collecting duct epithelial cell": "#144c72",
+      "epithelial cell of proximal tubule segment 1": "#185e8d",
+      "epithelial cell of early distal convoluted tubule": "#1b699e",
+      "kidney loop of Henle thin ascending limb epithelial cell": "#2387ca",
+      "kidney connecting tubule epithelial cell": "#2993da",
+      "epithelial cell of proximal tubule segment 3": "#44a0df",
+      "kidney loop of Henle long descending thin limb outer medulla epithelial cell": "#5faee3",
+      "kidney loop of Henle short descending thin limb epithelial cell": "#7abce8",
+      "Other": "#b15928"
+    }
+  },
+  "anatomical_structures": [
+    {
+      "name": "renal papilla",
+      "glb_node": [
+        "VH_M_renal_papilla_L_i",
+        "VH_M_renal_papilla_L_h",
+        "VH_M_renal_papilla_L_g",
+        "VH_M_renal_papilla_L_f",
+        "VH_M_renal_papilla_L_e",
+        "VH_M_renal_papilla_L_d",
+        "VH_M_renal_papilla_L_c",
+        "VH_M_renal_papilla_L_b",
+        "VH_M_renal_papilla_L_a"
+      ],
+      "hra_pop_cell_count": 7543,
+      "allocated_markers": 22,
+      "plotted": 4
+    },
+    {
+      "name": "renal column",
+      "glb_node": [
+        "VH_M_renal_column_L"
+      ],
+      "hra_pop_cell_count": 7491,
+      "allocated_markers": 22,
+      "plotted": 15
+    },
+    {
+      "name": "kidney capsule",
+      "glb_node": [
+        "VH_M_kidney_capsule_L"
+      ],
+      "hra_pop_cell_count": 1428,
+      "allocated_markers": 4,
+      "plotted": 0
+    },
+    {
+      "name": "outer cortex of kidney",
+      "glb_node": [
+        "VH_M_outer_cortex_of_kidney_L"
+      ],
+      "hra_pop_cell_count": 2899573,
+      "allocated_markers": 8570,
+      "plotted": 8548
+    },
+    {
+      "name": "renal pyramid",
+      "glb_node": [
+        "VH_M_renal_pyramid_L_i",
+        "VH_M_renal_pyramid_L_h",
+        "VH_M_renal_pyramid_L_g",
+        "VH_M_renal_pyramid_L_f",
+        "VH_M_renal_pyramid_L_e",
+        "VH_M_renal_pyramid_L_d",
+        "VH_M_renal_pyramid_L_c",
+        "VH_M_renal_pyramid_L_b",
+        "VH_M_renal_pyramid_L_a"
+      ],
+      "hra_pop_cell_count": 461774,
+      "allocated_markers": 1365,
+      "plotted": 1215
+    },
+    {
+      "name": "hilum of kidney",
+      "glb_node": [
+        "VH_M_hilum_of_kidney_L"
+      ],
+      "hra_pop_cell_count": 5522,
+      "allocated_markers": 17,
+      "plotted": 11
+    }
+  ],
+  "cell_count_comparison": {
+    "total_plotted": 9793,
+    "total_requested": 10000,
+    "real_cells_per_marker": 153170
+  },
+  "size_reference": {
+    "assumed_cell_size_um": 10.0,
+    "note": "All cell types assumed to be 10 µm in diameter."
+  }
+}
