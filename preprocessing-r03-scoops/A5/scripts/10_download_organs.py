@@ -22,7 +22,7 @@ from shared import load_config, safe_name, resolve_glb_filename
 
 
 def fetch_reference_organs(api_url: str) -> list:
-    """Fetch the full list of reference organs from the HRA API."""
+    #Fetch the full list of reference organs from the HRA API.
     print(f"Fetching reference organs from: {api_url}")
     response = requests.get(api_url, timeout=120)
     response.raise_for_status()
@@ -33,7 +33,7 @@ def fetch_reference_organs(api_url: str) -> list:
 
 
 def matches_organ_config(organ: dict, name_filter: str, sex_filter: str) -> bool:
-    """Return True if this organ entry matches the configured organ name and sex."""
+    #Return True if this organ entry matches the configured organ name and sex.
     organ_label = str(organ.get("label", "")).lower()
     organ_sex = str(organ.get("sex", "")).lower()
 
@@ -44,7 +44,7 @@ def matches_organ_config(organ: dict, name_filter: str, sex_filter: str) -> bool
 
 
 def download_glb(glb_url: str, output_folder: Path) -> Path:
-    """Download a single GLB file into output_folder. Skips if already present."""
+    #Download a single GLB file into output_folder. Skips if already present.
     parsed = urlparse(glb_url)
     file_name = os.path.basename(parsed.path)
     file_path = output_folder / file_name

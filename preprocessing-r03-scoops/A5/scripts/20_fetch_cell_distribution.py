@@ -64,8 +64,7 @@ def rows_from_csv_bytes(raw: bytes) -> List[Dict[str, str]]:
 # github.com/hubmapconsortium/ccf-grlc/blob/main/grlc-workaround.md, query
 # source: github.com/hubmapconsortium/ccf-grlc/blob/main/hra-pop/
 # cell_types_in_anatomical_structurescts_per_as.rq
-# Unlike the plain GitHub CSV export, this returns organ_id (UBERON/FMA),
-# matching the columns fetch_hra_pop_rows() already expects.
+
 HRA_POP_SPARQL_QUERY = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>

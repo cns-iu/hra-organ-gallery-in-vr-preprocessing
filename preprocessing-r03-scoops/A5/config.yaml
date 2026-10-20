@@ -3,7 +3,7 @@
 # =============================================================================
 
 organ:
-  name: heart
+  name: liver
   sex: female
   side: 
   glb_filename:
@@ -16,7 +16,7 @@ apis:
   cell_hierarchy: https://docs.google.com/spreadsheets/d/10kV3beiTLrMFoDHN0pGYyJ2GounIF1Du7LaaP3PHqdo/export?format=csv&gid=1351060716
 
 filters:
-  tool: azimuth
+  tool: celltypist
   modality: ""
 
 markers:
@@ -39,5 +39,5 @@ output:
   save_cell_api_csv: false
   # Set true and rerun to refresh outputs/AS_dataset_counts_A5.csv (stage
   # 70). Only needs refreshing after a new HRApop data release, not on
-  # every pipeline run — leave false the rest of the time.
+  # every pipeline run - leave false the rest of the time.
   build_as_dataset_table: false

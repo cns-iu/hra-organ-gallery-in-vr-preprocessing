@@ -5,17 +5,11 @@ table of distinct AS count, dataset count, and total cell count, built
 from the raw HRApop data.
 
 Like stage 60 and unlike 10-50, this isn't scoped to the single organ in
-config.yaml — it rescans the full raw HRApop CSV (AS membership, cell
+config.yaml - it rescans the full raw HRApop CSV (AS membership, cell
 counts) plus atlas-as-cell-summaries.jsonld (dataset IDs) across every
 organ. Gated by output.build_as_dataset_table in config.yaml (default
 False) since it only needs recomputing on a new HRApop data release.
 
-No tool (CTann) column. as_count and dataset_count are unioned across
-every tool that reported the AS. total_cells is a single number when
-every reporting tool agrees (after rounding, to absorb float summation
-noise); when tools disagree, that cell instead holds a
-"tool: n  /  tool: n  /  ..." breakdown (TOOL_ORDER) rather than picking
-one. 
 
 Reads:  data/hra_pop_raw.csv (cache from 20_fetch_cell_distribution.py
         with output.save_hra_pop_csv: true)
