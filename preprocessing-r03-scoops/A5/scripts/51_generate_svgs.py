@@ -125,6 +125,16 @@ def assign_as_colors(dist_data: dict, as_labels: List[str]) -> Dict[str, str]:
     return {a: AS_PALETTE[i % len(AS_PALETTE)] for i, a in enumerate(ranked)}
 
 
+def apply_as_color_overrides(
+    as_colors: Dict[str, str], overrides: Dict[str, str],
+) -> Dict[str, str]:
+    """Apply explicit AS colors while retaining palette colors as fallback."""
+    for as_label, color in overrides.items():
+        if as_label in as_colors:
+            as_colors[as_label] = str(color)
+    return as_colors
+
+
 def build_groups(
     dist_data: dict, categories: List[str], as_labels: List[str],
 ) -> Dict[str, List[Tuple[str, float]]]:
@@ -241,7 +251,7 @@ def build_bar_body(
     # Pick the wrap width that gives the shortest label stack without
     # truncating labels or clipping the first one.
     best = None
-    for chars in range(LABEL_WRAP_CHARS, 31):
+    for chars in range(LABEL_WRAP_CHARS, max(31, LABEL_WRAP_CHARS + 1)):
         w = wrap_all(chars)
         truncated = any(l.endswith("…") for v in w.values() for l in v)
         if truncated or off_canvas(w):
@@ -276,7 +286,8 @@ def build_bar_body(
         y = y_for(p)
         out.append(f'<line x1="{x0:.1f}" y1="{y:.1f}" x2="{x1:.1f}" y2="{y:.1f}" stroke="{GRID_COLOR}" stroke-width="{0.6 * sc:.2f}"/>')
         out.append(f'<text x="{x0 - 4 * sc:.1f}" y="{y + font * 0.35:.1f}" font-size="{font:.2f}" fill="{TEXT_COLOR}" text-anchor="end">{p:.0f}%</text>')
-    ax_x, ax_y = 6 * sc + font / 2, (plot_top + plot_bottom) / 2
+    # Keep the y-axis title clear of the tick values.
+    ax_x, ax_y = 20 * sc, (plot_top + plot_bottom) / 2
     out.append(f'<text x="{ax_x:.1f}" y="{ax_y:.1f}" font-size="{font:.2f}" fill="{TEXT_COLOR}" text-anchor="middle" transform="rotate(-90 {ax_x:.1f} {ax_y:.1f})">Cells (%)</text>')
     out.append(f'<line x1="{x0:.1f}" y1="{plot_top:.1f}" x2="{x0:.1f}" y2="{plot_bottom:.1f}" stroke="{AXIS_COLOR}" stroke-width="{0.8 * sc:.2f}"/>')
     out.append(f'<line x1="{x0:.1f}" y1="{plot_bottom:.1f}" x2="{x1:.1f}" y2="{plot_bottom:.1f}" stroke="{AXIS_COLOR}" stroke-width="{0.8 * sc:.2f}"/>')
@@ -295,6 +306,10 @@ def build_bar_body(
         for li, line in enumerate(lines):
             out.append(f'<text x="0" y="{font * 0.8 + li * label_line_h:.1f}" font-size="{font:.2f}" fill="{TEXT_COLOR}" text-anchor="end">{escape(line)}</text>')
         out.append("</g>")
+
+    # Place the x-axis title below the complete rotated-label stack.
+    x_axis_title_y = plot_bottom + tick_gap + label_stack + font * 1.35
+    out.append(f'<text x="{(x0 + x1) / 2:.1f}" y="{x_axis_title_y:.1f}" font-size="{font:.2f}" fill="{TEXT_COLOR}" text-anchor="middle">Cell type</text>')
 
     return "".join(out), w_px, h_px
 
@@ -350,6 +365,13 @@ def compose_svg(chart: Tuple[str, float, float], legend: Tuple[str, float, float
 
 def main() -> None:
     config = load_config(Path(__file__).parent.parent / "config.yaml")
+    bar_graph_cfg = config.get("bar_graph", {}) or {}
+    global WIDTH_IN, FONT_PX, HEIGHT_IN, MAX_LABEL_LINES, LABEL_WRAP_CHARS
+    WIDTH_IN = float(bar_graph_cfg.get("width_in", WIDTH_IN))
+    FONT_PX = float(bar_graph_cfg.get("font_px", FONT_PX))
+    HEIGHT_IN = float(bar_graph_cfg.get("height_in", HEIGHT_IN))
+    MAX_LABEL_LINES = int(bar_graph_cfg.get("max_label_lines", MAX_LABEL_LINES))
+    LABEL_WRAP_CHARS = int(bar_graph_cfg.get("label_wrap_chars", LABEL_WRAP_CHARS))
 
     organ_name = config["organ"]["name"]
     organ_sex = config["organ"]["sex"]
@@ -373,6 +395,10 @@ def main() -> None:
     categories = pick_cell_types(dist_data, TOP_N_CELL_TYPES, CELL_TYPE_OVERRIDES.get(organ_key, []))
     as_labels = pick_as_labels(dist_data)
     as_colors = assign_as_colors(dist_data, as_labels)
+    as_colors = apply_as_color_overrides(
+        as_colors,
+        bar_graph_cfg.get("as_colors", {}) or {},
+    )
     if not categories or not as_labels:
         raise ValueError("No cell types or anatomical structures to plot.")
 
@@ -386,6 +412,7 @@ def main() -> None:
 
     uberon_id = dist_data.get("uberon_id", "")
     name = "-".join(p for p in [stem, uberon_id, f"top{len(categories)}", tool.lower(), "bar-graph"] if p)
+    name += str(bar_graph_cfg.get("output_suffix", ""))
 
     for folder, suffix, svg in (
         ("without-legend", "without-legend", compose_svg(chart)),
