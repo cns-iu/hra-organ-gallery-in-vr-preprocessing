@@ -1,0 +1,49 @@
+<svg viewBox="0 0 831 525" width="1.3843in" height="0.8750in" xmlns="http://www.w3.org/2000/svg" font-family="Nunito, Arial, Helvetica, sans-serif"><rect x="0" y="0" width="831" height="525" fill="#FAF8F5"/><text x="445.3" y="26" font-size="22" font-weight="bold" fill="#171616" text-anchor="middle">Heart — Azimuth — Female: cell type composition by AS</text>
+<line x1="90" y1="450.0" x2="800.5714285714284" y2="450.0" stroke="#ACA8A8" stroke-width="1"/>
+<text x="80" y="455.0" font-size="16" fill="#444444" text-anchor="end">0%</text>
+<line x1="90" y1="371.6" x2="800.5714285714284" y2="371.6" stroke="#ACA8A8" stroke-width="1"/>
+<text x="80" y="376.6" font-size="16" fill="#444444" text-anchor="end">10%</text>
+<line x1="90" y1="293.2" x2="800.5714285714284" y2="293.2" stroke="#ACA8A8" stroke-width="1"/>
+<text x="80" y="298.2" font-size="16" fill="#444444" text-anchor="end">20%</text>
+<line x1="90" y1="214.8" x2="800.5714285714284" y2="214.8" stroke="#ACA8A8" stroke-width="1"/>
+<text x="80" y="219.8" font-size="16" fill="#444444" text-anchor="end">30%</text>
+<line x1="90" y1="136.4" x2="800.5714285714284" y2="136.4" stroke="#ACA8A8" stroke-width="1"/>
+<text x="80" y="141.4" font-size="16" fill="#444444" text-anchor="end">40%</text>
+<line x1="90" y1="58.0" x2="800.5714285714284" y2="58.0" stroke="#ACA8A8" stroke-width="1"/>
+<text x="80" y="63.0" font-size="16" fill="#444444" text-anchor="end">50%</text>
+<text x="26" y="254.0" font-size="16" fill="#171616" transform="rotate(-90 26 254.0)" text-anchor="middle">Cells (%)</text>
+<line x1="90" y1="58" x2="90" y2="450.0" stroke="#444444" stroke-width="1.2"/>
+<line x1="90" y1="450.0" x2="800.5714285714284" y2="450.0" stroke="#444444" stroke-width="1.2"/>
+<rect x="90.0" y="215.6" width="11.4" height="234.4" fill="#fdb462"/>
+<rect x="111.4" y="334.4" width="11.4" height="115.6" fill="#fb8072"/>
+<rect x="132.7" y="323.4" width="11.4" height="126.6" fill="#ffffb3"/>
+<rect x="154.1" y="233.0" width="11.4" height="217.0" fill="#8dd3c7"/>
+<rect x="175.4" y="333.5" width="11.4" height="116.5" fill="#bebada"/>
+<rect x="196.8" y="334.8" width="11.4" height="115.2" fill="#80b1d3"/>
+<text x="149.1" y="477.0" font-size="15" fill="#171616" text-anchor="middle">fibroblast</text>
+<rect x="238.1" y="273.5" width="11.4" height="176.5" fill="#fdb462"/>
+<rect x="259.5" y="198.4" width="11.4" height="251.6" fill="#fb8072"/>
+<text x="297.2" y="477.0" font-size="15" fill="#171616" text-anchor="middle">Atrial</text>
+<text x="297.2" y="496.0" font-size="15" fill="#171616" text-anchor="middle">Cardiomyocyte</text>
+<rect x="386.2" y="377.0" width="11.4" height="73.0" fill="#fdb462"/>
+<rect x="407.6" y="351.7" width="11.4" height="98.3" fill="#fb8072"/>
+<rect x="428.9" y="359.1" width="11.4" height="90.9" fill="#ffffb3"/>
+<rect x="450.3" y="398.5" width="11.4" height="51.5" fill="#8dd3c7"/>
+<rect x="471.6" y="291.8" width="11.4" height="158.2" fill="#bebada"/>
+<rect x="493.0" y="293.2" width="11.4" height="156.8" fill="#80b1d3"/>
+<text x="445.3" y="477.0" font-size="15" fill="#171616" text-anchor="middle">capillary</text>
+<text x="445.3" y="496.0" font-size="15" fill="#171616" text-anchor="middle">endothelial</text>
+<text x="445.3" y="515.0" font-size="15" fill="#171616" text-anchor="middle">cell</text>
+<rect x="534.3" y="394.5" width="11.4" height="55.5" fill="#fdb462"/>
+<rect x="555.7" y="303.5" width="11.4" height="146.5" fill="#fb8072"/>
+<rect x="577.0" y="331.9" width="11.4" height="118.1" fill="#ffffb3"/>
+<rect x="598.4" y="395.1" width="11.4" height="54.9" fill="#8dd3c7"/>
+<rect x="619.8" y="336.1" width="11.4" height="113.9" fill="#bebada"/>
+<rect x="641.1" y="335.5" width="11.4" height="114.5" fill="#80b1d3"/>
+<text x="593.4" y="477.0" font-size="15" fill="#171616" text-anchor="middle">pericyte</text>
+<rect x="725.2" y="95.8" width="11.4" height="354.2" fill="#ffffb3"/>
+<rect x="746.5" y="112.9" width="11.4" height="337.1" fill="#8dd3c7"/>
+<rect x="767.9" y="181.9" width="11.4" height="268.1" fill="#bebada"/>
+<rect x="789.2" y="178.0" width="11.4" height="272.0" fill="#80b1d3"/>
+<text x="741.5" y="477.0" font-size="15" fill="#171616" text-anchor="middle">Ventricular</text>
+<text x="741.5" y="496.0" font-size="15" fill="#171616" text-anchor="middle">cardiomyocyte</text></svg>

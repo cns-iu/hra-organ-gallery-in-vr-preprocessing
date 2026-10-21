@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "organ": "liver",
+    "sex": "female",
+    "tool": "celltypist",
+    "uberon_id": "UBERON_0002107",
+    "glb_filename": "3d-vh-f-liver.glb",
+    "generated_at": "2026-10-18T02:44:42.810695Z"
+  },
+  "organ_total_cell_count": {
+    "organ": "liver",
+    "total_cells": "unknown",
+    "notes": "",
+    "source": "",
+    "doi": ""
+  },
+  "cell_type_color_key": {
+    "cell type": [
+      "endothelial cell",
+      "hepatocyte",
+      "T cell",
+      "macrophage",
+      "fibroblast",
+      "Cholangiocytes",
+      "neutrophil",
+      "liver-resident natural killer cell",
+      "plasma cell",
+      "Other"
+    ],
+    "colors": {
+      "endothelial cell": "#e72f31",
+      "hepatocyte": "#703800",
+      "T cell": "#f61210",
+      "macrophage": "#f73f3d",
+      "fibroblast": "#2387ca",
+      "Cholangiocytes": "#ffc78f",
+      "neutrophil": "#f96b6a",
+      "liver-resident natural killer cell": "#fa8280",
+      "plasma cell": "#fdc5c4",
+      "Other": "#b15928"
+    }
+  },
+  "anatomical_structures": [
+    {
+      "name": "capsule of the liver",
+      "glb_node": [
+        "VH_F_capsule_of_the_liver"
+      ],
+      "hra_pop_cell_count": 25903,
+      "allocated_markers": 4975,
+      "plotted": 4967
+    },
+    {
+      "name": "diaphragmatic surface of liver",
+      "glb_node": [
+        "VH_F_diaphragmatic_surface_of_liver"
+      ],
+      "hra_pop_cell_count": 130,
+      "allocated_markers": 25,
+      "plotted": 21
+    }
+  ],
+  "cell_count_comparison": {
+    "total_plotted": 4988,
+    "total_requested": 5000,
+    "real_cells_per_marker": 0
+  },
+  "size_reference": {
+    "assumed_cell_size_um": 10.0,
+    "note": "All cell types assumed to be 10 µm in diameter."
+  }
+}

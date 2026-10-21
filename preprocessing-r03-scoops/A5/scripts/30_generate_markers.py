@@ -222,11 +222,7 @@ def call_cell_api(
 # RETRY_API_NODES below will catch it automatically, but that's a sign
 # this floor needs to go back up.
 MIN_API_NODES   = 10
-# If even the floor comes back empty (truly degenerate geometry, not just
-# a rounding edge), retry once at a higher count before giving up on that
-# mesh. Only retried for the specific "no rows" case — other failures
-# (HTTP errors, timeouts, malformed responses) propagate immediately,
-# since more nodes wouldn't fix those.
+# If even the floor comes back empty, retry once at a higher count. 
 RETRY_API_NODES = 50
 
 
@@ -412,7 +408,7 @@ def write_nodes_csv(
         organ_marker_counts[cell_type] = organ_marker_counts.get(cell_type, 0) + 1
     organ_total = len(all_cell_types)
 
-    CELL_SIZE_DISPLAY = "10µm"  # constant placeholder cell size, shown with unit per row
+    CELL_SIZE_DISPLAY = "10µm"  # constant placeholder cell size
 
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with csv_path.open("w", newline="", encoding="utf-8") as f:

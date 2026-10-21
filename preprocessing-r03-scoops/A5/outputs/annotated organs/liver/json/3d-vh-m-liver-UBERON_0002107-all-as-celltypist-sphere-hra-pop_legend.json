@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "organ": "liver",
+    "sex": "male",
+    "tool": "celltypist",
+    "uberon_id": "UBERON_0002107",
+    "glb_filename": "3d-vh-m-liver.glb",
+    "generated_at": "2026-10-18T02:44:30.075484Z"
+  },
+  "organ_total_cell_count": {
+    "organ": "liver",
+    "total_cells": "unknown",
+    "notes": "",
+    "source": "",
+    "doi": ""
+  },
+  "cell_type_color_key": {
+    "cell type": [
+      "hepatocyte",
+      "endothelial cell",
+      "macrophage",
+      "T cell",
+      "fibroblast",
+      "Cholangiocytes",
+      "liver-resident natural killer cell",
+      "neutrophil",
+      "mature NK T cell",
+      "Other"
+    ],
+    "colors": {
+      "hepatocyte": "#703800",
+      "endothelial cell": "#e72f31",
+      "macrophage": "#f61210",
+      "T cell": "#f73f3d",
+      "fibroblast": "#2387ca",
+      "Cholangiocytes": "#ffc78f",
+      "liver-resident natural killer cell": "#f96b6a",
+      "neutrophil": "#fa8280",
+      "mature NK T cell": "#fdc5c4",
+      "Other": "#b15928"
+    }
+  },
+  "anatomical_structures": [
+    {
+      "name": "round ligament of liver",
+      "glb_node": [
+        "VH_M_round_ligament_of_liver"
+      ],
+      "hra_pop_cell_count": 376,
+      "allocated_markers": 108,
+      "plotted": 101
+    },
+    {
+      "name": "capsule of the liver",
+      "glb_node": [
+        "VH_M_coronary_ligament_of_liver",
+        "VH_M_triangular_ligament_of_liver",
+        "VH_M_round_ligament_of_liver",
+        "VH_M_quadrate_lobe_of_liver",
+        "VH_M_caudate_lobe_of_liver",
+        "VH_M_duodenal_impression_of_liver",
+        "VH_M_esophageal_impression_of_liver",
+        "VH_M_colic_impression_of_liver",
+        "VH_M_gastric_impression_of_liver",
+        "VH_M_renal_impression_of_liver",
+        "VH_M_suprarenal_impression_of_liver",
+        "VH_M_liver_capsule",
+        "VH_M_bare_area_of_liver"
+      ],
+      "hra_pop_cell_count": 2470,
+      "allocated_markers": 710,
+      "plotted": 643
+    },
+    {
+      "name": "gastric impression of liver",
+      "glb_node": [
+        "VH_M_gastric_impression_of_liver"
+      ],
+      "hra_pop_cell_count": 2618,
+      "allocated_markers": 752,
+      "plotted": 742
+    },
+    {
+      "name": "diaphragmatic surface of liver",
+      "glb_node": [
+        "VH_M_coronary_ligament_of_liver",
+        "VH_M_triangular_ligament_of_liver",
+        "VH_M_round_ligament_of_liver",
+        "VH_M_quadrate_lobe_of_liver",
+        "VH_M_caudate_lobe_of_liver",
+        "VH_M_duodenal_impression_of_liver",
+        "VH_M_esophageal_impression_of_liver",
+        "VH_M_colic_impression_of_liver",
+        "VH_M_gastric_impression_of_liver",
+        "VH_M_renal_impression_of_liver",
+        "VH_M_suprarenal_impression_of_liver",
+        "VH_M_diaphragmatic_surface",
+        "VH_M_bare_area_of_liver"
+      ],
+      "hra_pop_cell_count": 11932,
+      "allocated_markers": 3430,
+      "plotted": 3340
+    }
+  ],
+  "cell_count_comparison": {
+    "total_plotted": 4826,
+    "total_requested": 5000,
+    "real_cells_per_marker": 0
+  },
+  "size_reference": {
+    "assumed_cell_size_um": 10.0,
+    "note": "All cell types assumed to be 10 µm in diameter."
+  }
+}

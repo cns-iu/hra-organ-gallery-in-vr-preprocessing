@@ -5,7 +5,7 @@
     "tool": "azimuth",
     "uberon_id": "UBERON_0004538",
     "glb_filename": "3d-vh-f-kidney-l.glb",
-    "generated_at": "2026-07-16T15:35:55.133536Z"
+    "generated_at": "2026-10-18T02:43:32.103775Z"
   },
   "organ_total_cell_count": {
     "organ": "kidney",
@@ -28,15 +28,15 @@
       "Other"
     ],
     "colors": {
-      "kidney inner medulla collecting duct epithelial cell": "#0f3a57",
-      "kidney loop of Henle cortical thick ascending limb epithelial cell": "#144c72",
-      "kidney loop of Henle short descending thin limb epithelial cell": "#185e8d",
-      "epithelial cell of early distal convoluted tubule": "#1d70a8",
-      "kidney connecting tubule epithelial cell": "#2182c2",
-      "kidney loop of Henle medullary thick ascending limb epithelial cell": "#2993da",
-      "kidney loop of Henle long descending thin limb outer medulla epithelial cell": "#44a0df",
-      "kidney loop of Henle thin ascending limb epithelial cell": "#5faee3",
-      "kidney cortex collecting duct principal cell": "#7abce8",
+      "kidney inner medulla collecting duct epithelial cell": "#703800",
+      "kidney loop of Henle cortical thick ascending limb epithelial cell": "#944a00",
+      "kidney loop of Henle short descending thin limb epithelial cell": "#b85b00",
+      "epithelial cell of early distal convoluted tubule": "#db6d00",
+      "kidney connecting tubule epithelial cell": "#ff8c1a",
+      "kidney loop of Henle medullary thick ascending limb epithelial cell": "#ff9124",
+      "kidney loop of Henle long descending thin limb outer medulla epithelial cell": "#ffa347",
+      "kidney loop of Henle thin ascending limb epithelial cell": "#ffb56b",
+      "kidney cortex collecting duct principal cell": "#ffc78f",
       "Other": "#b15928"
     }
   },
@@ -57,8 +57,8 @@
         "VH_F_renal_papilla_L_a"
       ],
       "hra_pop_cell_count": 4108,
-      "allocated_markers": 16,
-      "plotted": 8
+      "allocated_markers": 8,
+      "plotted": 44
     },
     {
       "name": "renal column",
@@ -66,8 +66,8 @@
         "VH_F_renal_column_L"
       ],
       "hra_pop_cell_count": 25787,
-      "allocated_markers": 102,
-      "plotted": 86
+      "allocated_markers": 51,
+      "plotted": 37
     },
     {
       "name": "kidney capsule",
@@ -75,8 +75,8 @@
         "VH_F_kidney_capsule_L"
       ],
       "hra_pop_cell_count": 49755,
-      "allocated_markers": 197,
-      "plotted": 182
+      "allocated_markers": 98,
+      "plotted": 85
     },
     {
       "name": "outer cortex of kidney",
@@ -84,8 +84,8 @@
         "VH_F_outer_cortex_of_kidney_L"
       ],
       "hra_pop_cell_count": 492407,
-      "allocated_markers": 1949,
-      "plotted": 1927
+      "allocated_markers": 974,
+      "plotted": 952
     },
     {
       "name": "renal pyramid",
@@ -103,14 +103,14 @@
         "VH_F_renal_pyramid_L_a"
       ],
       "hra_pop_cell_count": 1955021,
-      "allocated_markers": 7736,
-      "plotted": 7496
+      "allocated_markers": 3869,
+      "plotted": 3650
     }
   ],
   "cell_count_comparison": {
-    "total_plotted": 9699,
-    "total_requested": 10000,
-    "real_cells_per_marker": 154655
+    "total_plotted": 4768,
+    "total_requested": 5000,
+    "real_cells_per_marker": 314597
   },
   "size_reference": {
     "assumed_cell_size_um": 10.0,

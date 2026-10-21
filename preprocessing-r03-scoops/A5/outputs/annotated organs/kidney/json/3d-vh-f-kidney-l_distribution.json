@@ -552,11 +552,11 @@
     "renal pyramid": 1955021.9360000007
   },
   "node_allocation": {
-    "renal papilla": 16,
-    "renal column": 102,
-    "kidney capsule": 197,
-    "outer cortex of kidney": 1949,
-    "renal pyramid": 7736
+    "renal papilla": 8,
+    "renal column": 51,
+    "kidney capsule": 98,
+    "outer cortex of kidney": 974,
+    "renal pyramid": 3869
   },
   "organ_cell_counts": {
     "kidney inner medulla collecting duct epithelial cell": 403399.4630000001,
@@ -777,8 +777,8 @@
     "colon_epithelial_cell": "CL:0011108",
     "branch_b1_(emn)": "CL:0002607",
     "cycling_macrophage": "CL:4033076",
-    "cycling_t_cell": "CL:4033069",
     "cycling_myeloid_cell": "CL:4033081",
+    "cycling_t_cell": "CL:4033069",
     "l5/6_excitatory_neuron": "CL:4023043",
     "sst_gabaergic_cortical_interneuron": "CL:4023017",
     "sst_gabaergic_interneuron": "CL:4023017",
@@ -923,9 +923,9 @@
     "ccl3_positive_alveolar_macrophage": "CL:4033041",
     "cycling_alveolar_macrophage": "CL:4033077",
     "lung_migratory_dendritic_cell": "CL:4033045",
-    "mesothelial_cell_of_pleura": "CL:1000491",
     "airway_submucosal_gland_collecting_duct_epithelial_cell": "CL:4033023",
     "brush_cell_of_tracheobronchial_tree": "CL:0002075",
+    "mesothelial_cell_of_pleura": "CL:1000491",
     "respiratory_tract_suprabasal_cell": "CL:4033048",
     "t_cells_proliferating": "CL:4033069",
     "tracheobronchial_goblet_cell": "CL:0019003",
