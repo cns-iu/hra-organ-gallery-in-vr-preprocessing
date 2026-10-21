@@ -6,9 +6,18 @@ Generates annotated 3D GLB files for HRA organs with cell type markers placed in
 
 ## Setup
 
+Requires Python 3.12 (the pinned numpy/pandas have no wheels for 3.13+). Run from this folder:
+
 ```bash
-python3 -m venv .venv
+# macOS / Linux
+python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt
+```
+
+```powershell
+# Windows
+py -3.12 -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 ---
@@ -16,10 +25,16 @@ python3 -m venv .venv
 ## Usage
 
 1. Edit `config.yaml` to set your organ, sex, tool, and marker settings.
-2. Run the pipeline:
+2. Run the pipeline with the venv's Python, e.g. from inside `A5/`:
 
 ```bash
-python setup_and_run.py
+# macOS / Linux
+../.venv/bin/python setup_and_run.py
+```
+
+```powershell
+# Windows
+..\.venv\Scripts\python.exe setup_and_run.py
 ```
 
 ---
