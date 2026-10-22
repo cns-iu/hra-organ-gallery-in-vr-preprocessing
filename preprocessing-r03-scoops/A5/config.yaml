@@ -41,3 +41,12 @@ output:
   # 70). Only needs refreshing after a new HRApop data release, not on
   # every pipeline run - leave false the rest of the time.
   build_as_dataset_table: false
+
+bar_graph:
+  output_suffix: "-custom"
+  font_px: 16
+  as_colors:
+    capsule of the liver: "#8dd3c7"
+    diaphragmatic surface of liver: "#ffffb3"
+    gastric impression of liver: "#bebada"
+    round ligament of liver: "#fb8072"
